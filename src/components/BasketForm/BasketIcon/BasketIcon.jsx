@@ -4,7 +4,7 @@ import { useMediaQuery } from "react-responsive";
 
 import s from "./BasketIcon.module.scss";
 
-import { ReactComponent as BasketSVG } from "../../../images/svg/basket.svg";
+import { ReactComponent as BasketSVG } from "images/svg/basket.svg";
 import { ReactComponent as HryvniaSymbol } from "../../../images/svg/hryvniaSymbol.svg";
 
 export default function Basket() {

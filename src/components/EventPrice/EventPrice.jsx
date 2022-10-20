@@ -11,11 +11,10 @@ import { getTicketsOperations } from "../../redux/tickets/tickets-operations";
 
 export default function EventForm() {
   const dispatch = useDispatch();
-  const [ticket, setTicket] = useState({
+  const [ticket, setiket] = useState({
     title: "Chernozem",
-    price: 2500,
+    price: 2500
   });
-  setTicket()
 
   const isMobile = useMediaQuery({ maxWidth: 767.98 });
   const isTabletDesktop = useMediaQuery({ minWidth: 768 });
