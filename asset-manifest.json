@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/100rokiv-react-goittemplate/static/css/main.ea532ddd.css",
-    "main.js": "/100rokiv-react-goittemplate/static/js/main.afa39f94.js",
+    "main.js": "/100rokiv-react-goittemplate/static/js/main.0084962d.js",
     "static/css/263.2e478397.chunk.css": "/100rokiv-react-goittemplate/static/css/263.2e478397.chunk.css",
     "static/js/263.ac73f43e.chunk.js": "/100rokiv-react-goittemplate/static/js/263.ac73f43e.chunk.js",
     "static/js/395.9eedd476.chunk.js": "/100rokiv-react-goittemplate/static/js/395.9eedd476.chunk.js",
@@ -67,7 +67,7 @@
     "static/media/warning.svg": "/100rokiv-react-goittemplate/static/media/warning.40f8f6a22f3f561187f557f6ebd22246.svg",
     "static/media/facebook.svg": "/100rokiv-react-goittemplate/static/media/facebook.752525714e58488662ce0985f0159f6c.svg",
     "main.ea532ddd.css.map": "/100rokiv-react-goittemplate/static/css/main.ea532ddd.css.map",
-    "main.afa39f94.js.map": "/100rokiv-react-goittemplate/static/js/main.afa39f94.js.map",
+    "main.0084962d.js.map": "/100rokiv-react-goittemplate/static/js/main.0084962d.js.map",
     "263.2e478397.chunk.css.map": "/100rokiv-react-goittemplate/static/css/263.2e478397.chunk.css.map",
     "263.ac73f43e.chunk.js.map": "/100rokiv-react-goittemplate/static/js/263.ac73f43e.chunk.js.map",
     "395.9eedd476.chunk.js.map": "/100rokiv-react-goittemplate/static/js/395.9eedd476.chunk.js.map",
@@ -102,6 +102,6 @@
   },
   "entrypoints": [
     "static/css/main.ea532ddd.css",
-    "static/js/main.afa39f94.js"
+    "static/js/main.0084962d.js"
   ]
 }
