@@ -15,6 +15,7 @@ export default function EventForm() {
     title: "Chernozem",
     price: 2500,
   });
+  setTicket()
 
   const isMobile = useMediaQuery({ maxWidth: 767.98 });
   const isTabletDesktop = useMediaQuery({ minWidth: 768 });
