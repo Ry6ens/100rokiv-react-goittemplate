@@ -11,7 +11,7 @@ import { getTicketsOperations } from "../../redux/tickets/tickets-operations";
 
 export default function EventForm() {
   const dispatch = useDispatch();
-  const [ticket, setiket] = useState({
+  const [ticket] = useState({
     title: "Chernozem",
     price: 2500
   });
