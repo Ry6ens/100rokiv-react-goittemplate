@@ -1,0 +1,66 @@
+@use './mixins';
+@import 'fonts';
+@import 'reset';
+@import 'common';
+
+:root {
+    // --font-family: Comfortaa, Sans-serif;
+    --font-family: 'ZionTrainOT', Sans-serif;
+    --font-family-light: 'ZionTrainOTLight', Sans-serif;
+
+    --text-title: 18px;
+    --line-height-title: 1.7;
+    --letter-spacing-title: 0.06em;
+
+    --text-size: 12px;
+    --line-height: 2;
+    --letter-spacing: 0.24em;
+
+    //TabletDesktop
+    --text-title-tablet: 20px;
+    --line-height-title-tablet: 1.7;
+    --letter-spacing-title-tablet: 0.12em;
+
+    --color-text: #43291b;
+    --color-text-invert: #fff;
+
+    --color-bg: #fdfbf8;
+    --color-bg-white: #fff;
+    --color-bg-panel: #f2eee8;
+    --color-bg-line: #F6F3EE;
+
+    --text-transform: uppercase;
+    --text-align: center;
+
+    --btn-hover: #259e5f;
+
+}
+
+body {
+    font-family: var(--font-family);
+    font-size: var(--text-size);
+    line-height: var(--line-height);
+    letter-spacing: var(--letter-spacing);
+
+    color: var(--color-text);
+    background-color: var(--color-bg);
+
+    text-transform: var(--text-transform);
+    text-align: var(--text-align);
+
+    &.no-scroll {
+        overflow: hidden;
+    }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color var(--color-bg);
+}
+
+.root {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+}
