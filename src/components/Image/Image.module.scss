@@ -1,0 +1,22 @@
+@use '../../styles/mixins';
+
+.img {
+    width: 100%;
+}
+
+.imgFloor {
+    margin-bottom: 25px;
+    
+    width: 100%;
+}
+
+.imgFounders {
+    width: 100%;
+
+    @include mixins.mq(desktop) {
+        display: flex;
+        height: 520px;
+        width: auto;
+        margin: 0 auto;
+    }
+}

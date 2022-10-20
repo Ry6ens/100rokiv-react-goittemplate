@@ -1,0 +1,20 @@
+.title {
+    font-size: var(--text-title);
+    line-height: var(--line-height-title);
+    letter-spacing: var(--letter-spacing-title);
+}
+
+.titleTop {
+    margin-top: 25px;
+
+    font-size: var(--text-title);
+    line-height: var(--line-height-title);
+    letter-spacing: var(--letter-spacing-title);
+}
+
+.titlePublicOffer {
+    margin: 25px 0px;
+    font-size: var(--text-title);
+    line-height: var(--line-height-title);
+    letter-spacing: var(--letter-spacing-title);
+}

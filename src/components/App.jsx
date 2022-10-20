@@ -1,16 +1,13 @@
+import Header from "./Header/Header";
+import UserRoutes from "./Routes/UserRoutes";
+import Footer from "./Footer/Footer";
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <>
+      <Header />
+      <UserRoutes />
+      <Footer />
+    </>
   );
 };

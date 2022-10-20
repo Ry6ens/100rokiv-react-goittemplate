@@ -1,0 +1,195 @@
+@use '../../styles/mixins';
+
+
+.ticketForm {
+    position: relative;
+    padding: 15px 20px;
+    background: #FFFFFF;
+    border-radius: 0 3px 3px 0;
+    box-shadow: 0 2px 8px #00000026;
+    overflow: hidden;
+
+    max-width: 400px;
+    margin: 0 auto;
+
+    display: grid;
+    align-items: end;
+    grid-template-areas:
+        "title price"
+        "infoData price";
+    gap: 10px;
+    justify-content: space-between;
+
+    text-align: left;
+
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 20px;
+        height: 20px;
+        background-image: url(../../images/svg/basket.svg);
+        background-color: rgba(255, 255, 255, 0.5);
+        border: 1px solid #dfdfed;
+        z-index: 3;
+        transition: color 0.2s ease 0.1s, background 0.2s ease 0.1s, border 0.2s ease 0.1s;
+    }
+
+
+    @include mixins.mq(tablet) {
+        column-gap: 50px;
+    }
+}
+
+.infoData {
+    grid-area: infoData;
+
+    font-size: 10px;
+    letter-spacing: var(--letter-spacing);
+}
+
+.overlayPrice {
+    display: flex;
+    align-items: flex-end;
+    gap: 5px;
+
+    grid-area: price;
+}
+
+.textPrice {
+    font-size: var(--text-title);
+    line-height: var(--line-height-title);
+    letter-spacing: var(--letter-spacing-title);
+}
+
+.textPriceSymbol {
+    text-transform: lowercase;
+
+    font-size: 16px;
+    line-height: var(--line-height-title);
+    letter-spacing: var(--letter-spacing-title);
+}
+
+.textTicket {
+    font-size: 10px;
+    letter-spacing: var(--letter-spacing);
+}
+
+.ticketOvalsFirst {
+    position: absolute;
+    top: 5px;
+    left: -5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #efefef 0%, #dddddd 100%);
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: calc(100% + 1px);
+        left: 0;
+        margin-top: 100%;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: inherit;
+    }
+
+    @include mixins.mq(tablet-before) {
+        // &::after {
+        //     content: "";
+        //     position: absolute;
+        //     top: calc(200% + 2px);
+        //     left: 0;
+        //     margin-top: 200%;
+        //     width: 100%;
+        //     height: 100%;
+        //     border-radius: 50%;
+        //     background: inherit;
+
+        // }
+    }
+
+
+    @include mixins.mq(tablet) {
+        &::before {
+            top: calc(100% + 1px);
+        }
+    }
+}
+
+.ticketOvalsSecond {
+    position: absolute;
+    top: calc(50% + 3px);
+    left: -5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #efefef 0%, #dddddd 100%);
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: calc(100% + 1px);
+        left: 0;
+        margin-top: 100%;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        background: inherit;
+    }
+
+
+
+    @include mixins.mq(tablet-before) {
+        // &::after {
+        //     content: "";
+        //     position: absolute;
+        //     top: calc(200% + 2px);
+        //     left: 0;
+        //     margin-top: 200%;
+        //     width: 100%;
+        //     height: 100%;
+        //     border-radius: 50%;
+        //     background: inherit;
+
+        // }
+    }
+
+    @include mixins.mq(tablet) {
+        &::before {
+            top: calc(100% + 1px);
+        }
+    }
+}
+
+.btn {
+    margin-top: 30px;
+
+    width: 100%;
+    height: 38px;
+
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: var(--letter-spacing);
+    text-transform: var(--text-transform);
+
+
+    background-color: #46B37A;
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0 1px 2px rgb(0 0 0 / 0%);
+
+    &:hover,
+    :focus {
+        background-color: var(--btn-hover);
+    }
+
+    @include mixins.mq(tablet) {
+        width: 400px;
+        height: 48px;
+    }
+}

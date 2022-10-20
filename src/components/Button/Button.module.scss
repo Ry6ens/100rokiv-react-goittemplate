@@ -1,0 +1,53 @@
+@use '../../styles/mixins';
+
+.btnLink {
+    margin-top: 25px;
+
+    @include mixins.mq(desktop) {
+        margin-top: 50px;
+    }
+}
+
+.btnBook {
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        background-color: currentColor;
+        color: var(--text-color);
+        height: 1px;
+        bottom: -6px;
+        transition: width 0.2s;
+        pointer-events: none;
+    }
+}
+
+.boxButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #46B37A;
+    border: 1px solid transparent;
+    border-radius: 50px;
+    width: 280px;
+    height: 38px;
+
+    text-align: center;
+
+    color: #fff;
+    margin-top: 30px;
+
+    &:hover {
+        background: transparent;
+        border-color: var(--color-text);
+
+        &:before {
+            transform: translateX(250px) rotate(45deg);
+        }
+    }
+}

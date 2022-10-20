@@ -1,0 +1,66 @@
+.activeLink {
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        background-color: currentColor;
+        color: var(--text-color);
+        height: 1px;
+        bottom: -6px;
+        transition: width 0.2s;
+        pointer-events: none;
+    }
+}
+
+.link {
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 0%;
+        background-color: currentColor;
+        height: 1px;
+        bottom: -6px;
+        transition: width 0.2s;
+        pointer-events: none;
+    }
+
+    &:hover:after,
+    :focus:after {
+        width: 100%;
+        color: var(--text-color);
+    }
+}
+
+.footer-navigation_desktop {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 40px;
+
+    padding: 20px 20px 0px 20px;
+    margin-bottom: 60px;
+
+    font-size: var(--text-size);
+    line-height: var(--line-height);
+    letter-spacing: var(--letter-spacing);
+
+    border-top: 1px solid var(--color-bg-line);
+}
+
+.hamburger-menu_list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+
+    margin-bottom: 60px;
+}

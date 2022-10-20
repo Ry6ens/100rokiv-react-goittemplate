@@ -1,0 +1,13 @@
+@use '../../styles/mixins';
+
+.galleryMenuList {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    margin-top: 25px;
+
+    @include mixins.mq(desktop) {
+        flex-direction: row;
+    }
+}

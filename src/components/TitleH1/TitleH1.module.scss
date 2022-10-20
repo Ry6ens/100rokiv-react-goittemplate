@@ -1,0 +1,41 @@
+@use '../../styles/mixins';
+
+.title {
+    font-size: var(--text-title);
+    line-height: var(--line-height-title);
+    letter-spacing: var(--letter-spacing-title);
+
+    @include mixins.mq(tablet) {
+        font-size: var(--text-title-tablet);
+        line-height: var(--line-height-title-tablet);
+        letter-spacing: var(--letter-spacing-title-tablet);
+    }
+}
+
+.titleBottom {
+    margin-bottom: 25px;
+    
+    font-size: var(--text-title);
+    line-height: var(--line-height-title);
+    letter-spacing: var(--letter-spacing-title);
+
+    @include mixins.mq(tablet) {
+        font-size: var(--text-title-tablet);
+        line-height: var(--line-height-title-tablet);
+        letter-spacing: var(--letter-spacing-title-tablet);
+    }
+}
+
+.titleEventForm {
+    grid-area: title;
+
+    font-size: var(--text-title);
+    line-height: var(--line-height-title);
+    letter-spacing: var(--letter-spacing-title);
+
+    @include mixins.mq(tablet) {
+        font-size: var(--text-title-tablet);
+        line-height: var(--line-height-title-tablet);
+        letter-spacing: var(--letter-spacing-title-tablet);
+    }
+}

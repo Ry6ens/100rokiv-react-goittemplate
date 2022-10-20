@@ -1,0 +1,37 @@
+@use '../../styles/mixins';
+
+.section {
+    margin-bottom: 50px;
+
+    padding: 0px 20px;
+}
+
+.sectionMenu {
+    padding: 30px 20px;
+
+    background: linear-gradient(to bottom, var(--color-bg-panel), var(--color-bg));
+
+    @include mixins.mq(desktop) {
+        padding: 90px 20px;
+    }
+}
+
+.sectionPublicOffer {
+    margin-bottom: 50px;
+
+    padding: 0px 20px;
+
+    @include mixins.mq(desktop) {
+        max-width: 700px;
+        margin: 0px auto 50px auto;
+    }
+}
+
+.sectionNotFound {
+    padding: 0px 20px 30px 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 200px
+}
