@@ -18,6 +18,10 @@ export default function Burger() {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
+  const getClassName = ({ isActive }) => {
+    return isActive ? "activeLink" : "link";
+  };
+
   return (
     <>
       <div
@@ -32,7 +36,7 @@ export default function Burger() {
           <Navigation navClass="hamburger-menu_list" onClick="scrollTop" />
           <div className="hamburger-menu_mobile">
             <ul className="hamburger-menu_list">
-              <li className="hamburger-menu_item">
+              <li >
                 <a
                   href="https://www.instagram.com/100rokivtomuvpered/"
                   rel="noreferrer"
@@ -41,7 +45,7 @@ export default function Burger() {
                   Instagram
                 </a>
               </li>
-              <li className="hamburger-menu_item">
+              <li >
                 <a
                   href="https://www.facebook.com/100rokivtomuvpered"
                   rel="noreferrer"
@@ -50,13 +54,13 @@ export default function Burger() {
                   Facebook
                 </a>
               </li>
-              <li className="hamburger-menu_item">
-                <NavLink to="/privacy-policy" onClick={scrollTop}>
+              <li >
+                <NavLink to="/privacy-policy" className={getClassName}  onClick={scrollTop}>
                   Політика конфіденційності
                 </NavLink>
               </li>
-              <li className="hamburger-menu_item">
-                <NavLink to="/public-offer" onClick={scrollTop}>
+              <li >
+                <NavLink to="/public-offer" className={getClassName}  onClick={scrollTop}>
                   Публічна оферта
                 </NavLink>
               </li>

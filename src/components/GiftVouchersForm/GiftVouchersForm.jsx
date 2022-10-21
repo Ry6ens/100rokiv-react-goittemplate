@@ -37,6 +37,7 @@ export default function GiftVouchersForm() {
   });
 
   useEffect(() => {
+    
     dispatch(successFalse(false));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -53,7 +54,10 @@ export default function GiftVouchersForm() {
   return (
     <>
       {emailSuccess === true ? (
-        <div className={s.successBox}>Дякуємо за замовлення</div>
+        <div className={s.successBox}>
+          <p>Дякуємо за замовлення</p>
+          <p className={s.successBoxText}>Менеджер ресторану зв'яжеться з вами найближчим часом</p>
+        </div>
       ) : (
         <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
           <Controller

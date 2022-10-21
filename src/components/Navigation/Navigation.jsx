@@ -15,7 +15,7 @@ const scrollTop = () => {
 export default function Navigation({ navClass }) {
   const elements = items.map(({ id, to, text }) => (
     <li key={id}>
-      <NavLink to={to} className={getClassName} onClick={scrollTop} end>
+      <NavLink to={to} className={getClassName}  onClick={scrollTop}>
         {text}
       </NavLink>
     </li>

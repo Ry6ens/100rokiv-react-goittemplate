@@ -1,7 +1,7 @@
 export const items = [
   {
     id: "1",
-    to: "/",
+    to: "/home",
     text: "100років",
     private: false,
   },
