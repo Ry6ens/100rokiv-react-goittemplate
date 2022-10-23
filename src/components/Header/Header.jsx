@@ -1,17 +1,16 @@
-import { Link } from "react-router-dom";
-import { useMediaQuery } from "react-responsive";
-import { useSelector } from "react-redux";
+import { Link } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
+import { useSelector } from 'react-redux';
 
-import Burger from "./Burger/Burger";
-import s from "./Header.module.scss";
+import Burger from './Burger/Burger';
+import s from './Header.module.scss';
 
-import BasketIcon from "../BasketForm/BasketIcon/BasketIcon";
+import BasketIcon from '../BasketForm/BasketIcon/BasketIcon';
 
 export default function Header() {
   const isMobileTablet = useMediaQuery({ maxWidth: 1023.98 });
   const isDesktop = useMediaQuery({ minWidth: 1024 });
-
-  const tickets = useSelector((store) => store.tickets.items);
+  const products = useSelector(store => store.products.items);
 
   return (
     <header className={s.header}>
@@ -42,7 +41,7 @@ export default function Header() {
         </Link>
       </div> */}
 
-      {tickets.length ? (
+      {products.length ? (
         <BasketIcon />
       ) : (
         <div className={s.overlay}>

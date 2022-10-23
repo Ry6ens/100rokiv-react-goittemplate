@@ -19,7 +19,7 @@ export const items = [
   },
   {
     id: "4",
-    to: "/delivery",
+    to: "/delivery-food",
     text: "Доставка їжі",
     private: false,
   },

@@ -1,3 +1,5 @@
+@use 'styles/mixins';
+
 .nav {
     margin-bottom: 50px;
 }
@@ -21,11 +23,11 @@
         background-color: rgba(223, 223, 237, 0.8);
         z-index: -1;
     }
-}
 
-.item {
-    // width: 30px;
-    // height: 30px;
+    @include mixins.mq(desktop) {
+      max-width: 800px;
+
+    }
 }
 
 .link {

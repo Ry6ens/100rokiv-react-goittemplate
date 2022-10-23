@@ -1,0 +1,27 @@
+@use '../../styles/mixins';
+
+.btnBack {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+
+  padding: 5px;
+
+  background-color: var(--color-bg);
+  cursor: pointer;
+
+  @include mixins.mq(tablet) {
+    left: 20px;
+
+    background-color: var(--color-bg-white);
+  }
+}
+
+.overlay {
+  display: flex;
+  align-items: center;
+}
+
+.iconArrowLeft {
+  margin-right: 5px;
+}

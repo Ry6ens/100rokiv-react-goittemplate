@@ -9,14 +9,14 @@ import {
   REGISTER,
 } from "redux-persist";
 
-import getEmailSlice from "../redux/email/email-slice";
-import getSheetSlice from "../redux/google/sheet-slice";
-import getTelegramSlice from "../redux/telegram/telegram-slice";
-import getTicketsSlice from "../redux/tickets/tickets-slice";
+import getEmailSlice from "redux/email/email-slice";
+import getSheetSlice from "redux/google/sheet-slice";
+import getTelegramSlice from "redux/telegram/telegram-slice";
+import getProductsSlice from 'redux/products/products-slice'
 
 export const store = configureStore({
   reducer: {
-    tickets: getTicketsSlice,
+    products: getProductsSlice,
     email: getEmailSlice,
     google: getSheetSlice,
     telegram: getTelegramSlice,

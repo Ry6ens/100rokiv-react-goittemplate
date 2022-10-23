@@ -1,26 +1,22 @@
 import { useMediaQuery } from "react-responsive";
 import { useDispatch } from "react-redux";
-import { useState } from "react";
 import { nanoid } from "@reduxjs/toolkit";
 
 import s from "./EventPrice.module.scss";
 
 import TitleH1 from "../TitleH1/TitleH1";
 
-import { getTicketsOperations } from "../../redux/tickets/tickets-operations";
+import { productActions } from "redux/products/products-slice";
 
 export default function EventForm() {
   const dispatch = useDispatch();
-  const [ticket] = useState({
-    title: "Chernozem",
-    price: 2500
-  });
 
   const isMobile = useMediaQuery({ maxWidth: 767.98 });
   const isTabletDesktop = useMediaQuery({ minWidth: 768 });
 
-  function handleClick() {
-    dispatch(getTicketsOperations({ ...ticket, id: nanoid() }));
+  function addToBasket() {
+    dispatch(productActions.addToBasket({ id: nanoid(), title: "Чорнозем", price: 2500, category: "ticket", time: '18:30', date: "10.10.2022" }));
+
   }
 
   return (
@@ -37,7 +33,7 @@ export default function EventForm() {
           <button
             className={s.btn}
             type="button"
-            onClick={() => handleClick(ticket)}
+            onClick={addToBasket}
           >
             Купити
           </button>
@@ -48,7 +44,7 @@ export default function EventForm() {
       </div>
 
       {isTabletDesktop && (
-        <button className={s.btn} type="button" onClick={handleClick}>
+        <button className={s.btn} type="button" onClick={addToBasket}>
           Купити
         </button>
       )}

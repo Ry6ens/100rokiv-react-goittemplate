@@ -1,41 +1,55 @@
 @use '../../styles/mixins';
 
 .title {
-    font-size: var(--text-title);
-    line-height: var(--line-height-title);
-    letter-spacing: var(--letter-spacing-title);
+  font-size: var(--text-title);
+  line-height: var(--line-height-title);
+  letter-spacing: var(--letter-spacing-title);
 
-    @include mixins.mq(tablet) {
-        font-size: var(--text-title-tablet);
-        line-height: var(--line-height-title-tablet);
-        letter-spacing: var(--letter-spacing-title-tablet);
-    }
+  @include mixins.mq(tablet) {
+    font-size: var(--text-title-tablet);
+    line-height: var(--line-height-title-tablet);
+    letter-spacing: var(--letter-spacing-title-tablet);
+  }
 }
 
 .titleBottom {
-    margin-bottom: 25px;
-    
-    font-size: var(--text-title);
-    line-height: var(--line-height-title);
-    letter-spacing: var(--letter-spacing-title);
+  margin-bottom: 25px;
 
-    @include mixins.mq(tablet) {
-        font-size: var(--text-title-tablet);
-        line-height: var(--line-height-title-tablet);
-        letter-spacing: var(--letter-spacing-title-tablet);
-    }
+  font-size: var(--text-title);
+  line-height: var(--line-height-title);
+  letter-spacing: var(--letter-spacing-title);
+
+  @include mixins.mq(tablet) {
+    font-size: var(--text-title-tablet);
+    line-height: var(--line-height-title-tablet);
+    letter-spacing: var(--letter-spacing-title-tablet);
+  }
 }
 
 .titleEventForm {
+  grid-area: title;
+
+  font-size: var(--text-title);
+  line-height: var(--line-height-title);
+  letter-spacing: var(--letter-spacing-title);
+
+  @include mixins.mq(tablet) {
+    font-size: var(--text-title-tablet);
+    line-height: var(--line-height-title-tablet);
+    letter-spacing: var(--letter-spacing-title-tablet);
+  }
+}
+
+.titleProductDetails {
+  padding: 0px 20px;
+
+  font-size: var(--text-title);
+  line-height: var(--line-height-title);
+  letter-spacing: var(--letter-spacing-title);
+
+  @include mixins.mq(tablet) {
+    padding: 0px;
+    text-align: center;
     grid-area: title;
-
-    font-size: var(--text-title);
-    line-height: var(--line-height-title);
-    letter-spacing: var(--letter-spacing-title);
-
-    @include mixins.mq(tablet) {
-        font-size: var(--text-title-tablet);
-        line-height: var(--line-height-title-tablet);
-        letter-spacing: var(--letter-spacing-title-tablet);
-    }
+  }
 }

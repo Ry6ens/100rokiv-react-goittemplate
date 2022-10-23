@@ -1,41 +1,61 @@
 @use '../../styles/mixins';
 
 .text {
-    margin-top: 25px;
+  margin-top: 25px;
 }
 
 .textLight {
-    margin-top: 25px;
+  margin-top: 25px;
 
-    font-family: var(--font-family-light);
-    font-weight: 300;
+  font-family: var(--font-family-light);
+  font-weight: 300;
 }
 
 .textFounders {
-    margin-top: 25px;
+  margin-top: 25px;
 
-    font-family: var(--font-family-light);
-    font-weight: 300;
+  font-family: var(--font-family-light);
+  font-weight: 300;
 
-    @include mixins.mq(desktop) {
-        max-width: 700px;
-        margin: 0 auto;
-        padding-top: 25px;
-    }
+  @include mixins.mq(desktop) {
+    max-width: 700px;
+    margin: 0 auto;
+    padding-top: 25px;
+  }
 }
 
 .textPublicOffer {
-    margin-top: 25px;
+  margin-top: 25px;
 
-    font-family: var(--font-family-light);
-    font-weight: 300;
-    text-align: left;
-    text-transform: initial;
+  font-family: var(--font-family-light);
+  font-weight: 300;
+  text-align: left;
+  text-transform: initial;
 }
 
 .textPublicOfferAddress {
-    font-family: var(--font-family-light);
-    font-weight: 300;
-    text-align: left;
-    text-transform: initial;
+  font-family: var(--font-family-light);
+  font-weight: 300;
+  text-align: left;
+  text-transform: initial;
+}
+
+.textProductsList {
+  margin-top: 10px;
+
+  font-family: var(--font-family-light);
+  font-weight: 300;
+}
+
+.textProductsDetails {
+  padding: 0px 20px;
+
+  font-family: var(--font-family-light);
+  font-weight: 300;
+  text-transform: initial;
+
+  @include mixins.mq(tablet) {
+    padding: 0px 0px 30px 20px;
+    grid-area: textDescr;
+  }
 }

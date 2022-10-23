@@ -1,5 +1,4 @@
 import { useForm, Controller } from "react-hook-form";
-import Select from "react-select";
 import PhoneInput from "react-phone-number-input";
 import { ErrorMessage } from "@hookform/error-message";
 import { useDispatch, useSelector } from "react-redux";
@@ -14,6 +13,8 @@ import { getEmailSuccess } from "../../redux/email/email-selectors";
 import { successFalse } from "../../redux/email/email-slice";
 
 import { ReactComponent as Warning } from "../../images/svg/warning.svg";
+
+import SelectOptions from 'components/SelectOptions/SelectOptions';
 
 import s from "./GiftVouchersForm.module.scss";
 import "./styles.scss";
@@ -37,12 +38,13 @@ export default function GiftVouchersForm() {
   });
 
   useEffect(() => {
-    
+
     dispatch(successFalse(false));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const onSubmit = (data, e) => {
+    console.log(data)
     e.preventDefault();
     const date = moment(new Date()).format("DD-MM-yyyy, HH:mm");
     dispatch(getEmailOperations({ ...data, date }));
@@ -56,7 +58,9 @@ export default function GiftVouchersForm() {
       {emailSuccess === true ? (
         <div className={s.successBox}>
           <p>Дякуємо за замовлення</p>
-          <p className={s.successBoxText}>Менеджер ресторану зв'яжеться з вами найближчим часом</p>
+          <p className={s.successBoxText}>
+            Менеджер ресторану зв'яжеться з вами найближчим часом
+          </p>
         </div>
       ) : (
         <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
@@ -64,20 +68,10 @@ export default function GiftVouchersForm() {
             name="sum"
             control={control}
             rules={{ required: "Обов'язкове поле" }}
-            render={({ field: { onChange, value } }) => (
-              <Select
-                placeholder="Оберіть суму ..."
-                className={s.select}
-                isClearable
+            render={({ field: { onChange } }) => (
+              <SelectOptions
+                options="optionsGiftVoucher"
                 onChange={onChange}
-                value={value}
-                options={[
-                  { value: "1000", label: "1000 грн" },
-                  { value: "1500", label: "1500 грн" },
-                  { value: "2000", label: "2000 грн" },
-                  { value: "2500", label: "2500 грн" },
-                  { value: "3000", label: "3000 грн" },
-                ]}
               />
             )}
           />
@@ -95,7 +89,7 @@ export default function GiftVouchersForm() {
           <label>
             <input
               className={s.input}
-              {...register("name", {
+              {...register('name', {
                 required: "Обов'язкове поле",
                 pattern: {
                   value: /[A-Za-z]|[бвгґджзклмнпрстфхцчшщйаеєиіїоуюяь]/,
@@ -126,7 +120,7 @@ export default function GiftVouchersForm() {
                 maxLength="16"
                 value={value}
                 placeholder="+380 (99) 999-99-99"
-                name={"query"}
+                name={'query'}
                 control={control}
                 onChange={onChange}
                 defaultCountry="UA"

@@ -7,12 +7,7 @@ import { ReactComponent as Facebook } from '../../images/svg/facebook.svg';
 import { ReactComponent as Instagram } from '../../images/svg/instagram.svg';
 
 export default function Footer() {
-  // const isTablet = useMediaQuery({ minWidth: 768 });
   const isDesktop = useMediaQuery({ minWidth: 1024 });
-
-  const scrollTop = () => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-  };
 
   const getClassName = ({ isActive }) => {
     return isActive ? s.activeLink : s.link;
@@ -37,7 +32,6 @@ export default function Footer() {
                 <NavLink
                   to="/privacy-policy"
                   className={getClassName}
-                  onClick={scrollTop}
                 >
                   Політика конфіденційності
                 </NavLink>
@@ -46,7 +40,6 @@ export default function Footer() {
                 <NavLink
                   to="/public-offer"
                   className={getClassName}
-                  onClick={scrollTop}
                 >
                   Публічна оферта
                 </NavLink>

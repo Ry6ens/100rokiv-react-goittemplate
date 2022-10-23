@@ -8,14 +8,10 @@ const getClassName = ({ isActive }) => {
   return isActive ? s.activeLink : s.link;
 };
 
-const scrollTop = () => {
-  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-};
-
 export default function Navigation({ navClass }) {
   const elements = items.map(({ id, to, text }) => (
     <li key={id}>
-      <NavLink to={to} className={getClassName}  onClick={scrollTop}>
+      <NavLink to={to} className={getClassName} >
         {text}
       </NavLink>
     </li>

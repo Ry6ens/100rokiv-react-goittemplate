@@ -1,21 +1,47 @@
-import s from "./BasketForm.module.scss";
+import { useSelector } from 'react-redux';
 
-import TitleH1 from "../TitleH1/TitleH1";
+import s from './BasketForm.module.scss';
+
+import TitleH1 from '../TitleH1/TitleH1';
+import TitleH2 from '../TitleH2/TitleH2';
+import Image from 'components/Image/Image';
 
 export default function BasketForm() {
+  const products = useSelector(store => store.products.items);
+
+  const productsTicket = products.filter(el => el.category === 'ticket');
+  const productsFood = products.filter(el => el.category !== 'ticket');
+
+  console.log(productsFood);
+
   return (
     <>
       <TitleH1 text="Кошик" />
-      <div className={s.ticketForm}>
-        <TitleH1 text="Чорнозем" titleClass="titleEventForm" />
-        <p className={s.infoData}>10.10.2022 о 18:30</p>
-        <div className={s.overlayPrice}>
-          <span className={s.textPrice}>2500</span>
-          <span className={s.textPriceSymbol}>грн</span>
-        </div>
-        <div className={s.ticketOvalsFirst}></div>
-        <div className={s.ticketOvalsSecond}></div>
-      </div>
+
+      {productsTicket?.map(({ id, price, title, time, date }) => (
+        <>
+          <div className={s.ticketForm} key={id}>
+            <TitleH2 text={title} titleClass="titleEventForm" />
+            <p className={s.infoData}>
+              {date} о {time}
+            </p>
+            <p className={s.textPrice}>{price} грн</p>
+            <div className={s.ticketOvalsFirst}></div>
+            <div className={s.ticketOvalsSecond}></div>
+          </div>
+        </>
+      ))}
+
+      {productsFood?.map(({ id, img, price, title }) => (
+        <>
+          <div className={s.productForm} key={id}>
+            <TitleH2 text={title} titleClass="titleBasketForm" />
+            <Image src={img} alt={title} imgClass="imgBasketProducts" />
+            <p className={s.textProductPrice}>{price} грн</p>
+          </div>
+        </>
+      ))}
+
       <button className={s.btn} type="button">
         Оформити
       </button>

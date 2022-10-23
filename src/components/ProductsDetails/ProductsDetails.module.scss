@@ -1,0 +1,101 @@
+@use '../../styles/mixins';
+
+.overlay {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  text-align: left;
+
+  background-color: var(--color-bg-white);
+  border: 1px solid var(--color-bg-line);
+
+  @include mixins.mq(tablet) {
+    max-width: 800px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    grid-template-areas:
+      'img img'
+      "title title"
+      "textDescr textWeight"
+      "textDescr textPrice"
+      "textDescr btn";
+
+  }
+
+  @include mixins.mq(desktop) {
+    max-width: 800px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    grid-template-areas:
+      'img img'
+      "title title"
+      "textDescr textWeight"
+      "textDescr textPrice"
+      "textDescr btn";
+
+  }
+
+
+}
+
+.btn {
+  margin: 0px 20px;
+
+  height: 38px;
+
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: var(--letter-spacing);
+  text-transform: var(--text-transform);
+
+
+  background-color: #46B37A;
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0%);
+
+  &:hover,
+  :focus {
+    background-color: var(--btn-hover);
+  }
+
+  @include mixins.mq(tablet) {
+    margin: 0px 20px 30px 0px;
+
+    grid-area: btn;
+    height: 48px;
+  }
+}
+
+.textPrice {
+  padding: 0px 20px;
+
+  font-size: var(--text-title);
+  line-height: var(--line-height-title);
+  letter-spacing: var(--letter-spacing-title);
+  text-transform: initial;
+
+  @include mixins.mq(tablet) {
+    padding: 0px;
+    grid-area: textPrice;
+  }
+}
+
+.textWeight {
+  padding: 0px 20px 30px;
+
+  font-family: var(--font-family-light);
+  font-weight: 300;
+  text-transform: initial;
+
+  @include mixins.mq(tablet) {
+    padding: 0px;
+    grid-area: textWeight;
+  }
+}

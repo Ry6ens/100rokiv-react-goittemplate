@@ -1,197 +1,233 @@
-@use '../../styles/mixins';
-
+@use 'styles/mixins';
 
 .ticketForm {
-    position: relative;
-    padding: 15px 20px;
-    background: #FFFFFF;
-    border-radius: 0 3px 3px 0;
-    box-shadow: 0 2px 8px #00000026;
-    overflow: hidden;
+  position: relative;
+  padding: 15px 20px;
+  background: var(--color-bg-white);
+  border-radius: 0 3px 3px 0;
+  box-shadow: 0 2px 8px #00000026;
+  overflow: hidden;
 
-    max-width: 400px;
-    margin: 0 auto;
+  max-width: 400px;
+  margin: 30px auto;
 
-    display: grid;
-    align-items: end;
-    grid-template-areas:
-        "title price"
-        "infoData price";
-    gap: 10px;
-    justify-content: space-between;
+  display: grid;
+  align-items: end;
+  grid-template-areas:
+    "title price"
+    "infoData price";
+  gap: 10px;
+  justify-content: space-between;
 
-    text-align: left;
-
-
-    &::before {
-        content: "";
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        width: 20px;
-        height: 20px;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='%2343291b' viewBox='0 0 32 32'%3E%3Cpath d='M31.708 25.708 22 16l9.708-9.708a1 1 0 0 0 0-1.414L27.122.292a1 1 0 0 0-1.414-.001L16 9.999 6.292.291a.998.998 0 0 0-1.414.001L.292 4.878a1 1 0 0 0 0 1.414L10 16 .292 25.708a.999.999 0 0 0 0 1.414l4.586 4.586a1 1 0 0 0 1.414 0L16 22l9.708 9.708a1 1 0 0 0 1.414 0l4.586-4.586a.999.999 0 0 0 0-1.414z'/%3E%3C/svg%3E%0A");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-color: rgba(255, 255, 255, 0.5);
-        border: 1px solid #dfdfed;
-        z-index: 3;
-        transition: color 0.2s ease 0.1s, background 0.2s ease 0.1s, border 0.2s ease 0.1s;
-    }
+  text-align: left;
 
 
-    @include mixins.mq(tablet) {
-        column-gap: 50px;
-    }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='%2343291b' viewBox='0 0 32 32'%3E%3Cpath d='M31.708 25.708 22 16l9.708-9.708a1 1 0 0 0 0-1.414L27.122.292a1 1 0 0 0-1.414-.001L16 9.999 6.292.291a.998.998 0 0 0-1.414.001L.292 4.878a1 1 0 0 0 0 1.414L10 16 .292 25.708a.999.999 0 0 0 0 1.414l4.586 4.586a1 1 0 0 0 1.414 0L16 22l9.708 9.708a1 1 0 0 0 1.414 0l4.586-4.586a.999.999 0 0 0 0-1.414z'/%3E%3C/svg%3E%0A") no-repeat center;
+    background-color: var(--color-bg-white);
+    border: 1px solid var(--color-bg-line);
+    z-index: 3;
+    transition: color 0.2s ease 0.1s, background 0.2s ease 0.1s, border 0.2s ease 0.1s;
+  }
+
+
+  @include mixins.mq(tablet) {
+    column-gap: 50px;
+  }
+
+  @include mixins.mq(desktop) {
+    max-width: 800px;
+  }
 }
 
 .infoData {
-    grid-area: infoData;
+  grid-area: infoData;
 
-    font-size: 10px;
-    letter-spacing: var(--letter-spacing);
-}
-
-.overlayPrice {
-    display: flex;
-    align-items: flex-end;
-    gap: 5px;
-
-    grid-area: price;
+  font-size: 10px;
+  letter-spacing: var(--letter-spacing);
 }
 
 .textPrice {
-    font-size: var(--text-title);
-    line-height: var(--line-height-title);
-    letter-spacing: var(--letter-spacing-title);
-}
+  grid-area: price;
 
-.textPriceSymbol {
-    text-transform: lowercase;
+  font-size: 16px;
+  line-height: var(--line-height-title);
+  letter-spacing: var(--letter-spacing-title);
 
-    font-size: 16px;
-    line-height: var(--line-height-title);
-    letter-spacing: var(--letter-spacing-title);
+  text-transform: lowercase;
+
 }
 
 .textTicket {
-    font-size: 10px;
-    letter-spacing: var(--letter-spacing);
+  font-size: 10px;
+  letter-spacing: var(--letter-spacing);
 }
 
 .ticketOvalsFirst {
+  position: absolute;
+  top: 5px;
+  left: -5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(to right, #efefef 0%, #dddddd 100%);
+
+  &::before {
+    content: "";
     position: absolute;
-    top: 5px;
-    left: -5px;
-    width: 10px;
-    height: 10px;
+    top: calc(100% + 1px);
+    left: 0;
+    margin-top: 100%;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
-    background: linear-gradient(to right, #efefef 0%, #dddddd 100%);
+    background: inherit;
+  }
 
+  @include mixins.mq(tablet-before) {
+    // &::after {
+    //     content: "";
+    //     position: absolute;
+    //     top: calc(200% + 2px);
+    //     left: 0;
+    //     margin-top: 200%;
+    //     width: 100%;
+    //     height: 100%;
+    //     border-radius: 50%;
+    //     background: inherit;
+
+    // }
+  }
+
+
+  @include mixins.mq(tablet) {
     &::before {
-        content: "";
-        position: absolute;
-        top: calc(100% + 1px);
-        left: 0;
-        margin-top: 100%;
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        background: inherit;
+      top: calc(100% + 1px);
     }
-
-    @include mixins.mq(tablet-before) {
-        // &::after {
-        //     content: "";
-        //     position: absolute;
-        //     top: calc(200% + 2px);
-        //     left: 0;
-        //     margin-top: 200%;
-        //     width: 100%;
-        //     height: 100%;
-        //     border-radius: 50%;
-        //     background: inherit;
-
-        // }
-    }
-
-
-    @include mixins.mq(tablet) {
-        &::before {
-            top: calc(100% + 1px);
-        }
-    }
+  }
 }
 
 .ticketOvalsSecond {
+  position: absolute;
+  top: calc(50% + 3px);
+  left: -5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(to right, #efefef 0%, #dddddd 100%);
+
+  &::before {
+    content: "";
     position: absolute;
-    top: calc(50% + 3px);
-    left: -5px;
-    width: 10px;
-    height: 10px;
+    top: calc(100% + 1px);
+    left: 0;
+    margin-top: 100%;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
-    background: linear-gradient(to right, #efefef 0%, #dddddd 100%);
+    background: inherit;
+  }
 
+
+
+  @include mixins.mq(tablet-before) {
+    // &::after {
+    //     content: "";
+    //     position: absolute;
+    //     top: calc(200% + 2px);
+    //     left: 0;
+    //     margin-top: 200%;
+    //     width: 100%;
+    //     height: 100%;
+    //     border-radius: 50%;
+    //     background: inherit;
+
+    // }
+  }
+
+  @include mixins.mq(tablet) {
     &::before {
-        content: "";
-        position: absolute;
-        top: calc(100% + 1px);
-        left: 0;
-        margin-top: 100%;
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        background: inherit;
+      top: calc(100% + 1px);
     }
-
-
-
-    @include mixins.mq(tablet-before) {
-        // &::after {
-        //     content: "";
-        //     position: absolute;
-        //     top: calc(200% + 2px);
-        //     left: 0;
-        //     margin-top: 200%;
-        //     width: 100%;
-        //     height: 100%;
-        //     border-radius: 50%;
-        //     background: inherit;
-
-        // }
-    }
-
-    @include mixins.mq(tablet) {
-        &::before {
-            top: calc(100% + 1px);
-        }
-    }
+  }
 }
 
 .btn {
-    margin-top: 30px;
+  margin-top: 30px;
 
-    width: 100%;
-    height: 38px;
+  width: 100%;
+  height: 38px;
 
-    font-size: 16px;
-    font-weight: 300;
-    letter-spacing: var(--letter-spacing);
-    text-transform: var(--text-transform);
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: var(--letter-spacing);
+  text-transform: var(--text-transform);
 
 
-    background-color: #46B37A;
-    color: #fff;
-    border-color: transparent;
-    box-shadow: 0 1px 2px rgb(0 0 0 / 0%);
+  background-color: #46B37A;
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0%);
 
-    &:hover,
-    :focus {
-        background-color: var(--btn-hover);
-    }
+  &:hover,
+  :focus {
+    background-color: var(--btn-hover);
+  }
 
-    @include mixins.mq(tablet) {
-        width: 400px;
-        height: 48px;
-    }
+  @include mixins.mq(tablet) {
+    width: 400px;
+    height: 48px;
+  }
+}
+
+.productForm {
+  position: relative;
+  display: grid;
+  align-items: end;
+  justify-content: space-between;
+  gap: 10px;
+  grid-template-areas:
+    "title title"
+    "img price";
+
+  margin: 30px auto;
+  padding: 15px 20px;
+
+  border-radius: 0 3px 3px 0;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+
+  background: var(--color-bg-white);
+
+  text-align: left;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='%2343291b' viewBox='0 0 32 32'%3E%3Cpath d='M31.708 25.708 22 16l9.708-9.708a1 1 0 0 0 0-1.414L27.122.292a1 1 0 0 0-1.414-.001L16 9.999 6.292.291a.998.998 0 0 0-1.414.001L.292 4.878a1 1 0 0 0 0 1.414L10 16 .292 25.708a.999.999 0 0 0 0 1.414l4.586 4.586a1 1 0 0 0 1.414 0L16 22l9.708 9.708a1 1 0 0 0 1.414 0l4.586-4.586a.999.999 0 0 0 0-1.414z'/%3E%3C/svg%3E%0A") no-repeat center;
+    background-color: var(--color-bg-white);
+    border: 1px solid var(--color-bg-line);
+    z-index: 3;
+    transition: color 0.2s ease 0.1s, background 0.2s ease 0.1s, border 0.2s ease 0.1s;
+  }
+}
+
+.textProductPrice {
+  grid-area: price;
+
+  font-size: 16px;
+  line-height: var(--line-height-title);
+  letter-spacing: var(--letter-spacing-title);
+
+  text-transform: lowercase;
+  text-align: right;
 }

@@ -1,25 +1,21 @@
-import { NavLink } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 
-import "./hamburgers.scss";
-import "./Burger.scss";
+import './hamburgers.scss';
+import './Burger.scss';
 
-import Navigation from "../../Navigation/Navigation";
+import Navigation from '../../Navigation/Navigation';
 
 export default function Burger() {
   const handleClick = ({ target, currentTarget }) => {
-    if (target.nodeName === "UL") {
+    if (target.nodeName === 'UL') {
       return;
     }
-    currentTarget.classList.toggle("is-active");
-    document.body.classList.toggle("no-scroll");
-  };
-
-  const scrollTop = () => {
-    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    currentTarget.classList.toggle('is-active');
+    document.body.classList.toggle('no-scroll');
   };
 
   const getClassName = ({ isActive }) => {
-    return isActive ? "activeLink" : "link";
+    return isActive ? 'activeLink' : 'link';
   };
 
   return (
@@ -33,10 +29,10 @@ export default function Burger() {
           <span className="hamburger-inner"></span>
         </span>
         <div className="hamburger-menu_nav">
-          <Navigation navClass="hamburger-menu_list" onClick="scrollTop" />
+          <Navigation navClass="hamburger-menu_list" />
           <div className="hamburger-menu_mobile">
             <ul className="hamburger-menu_list">
-              <li >
+              <li>
                 <a
                   href="https://www.instagram.com/100rokivtomuvpered/"
                   rel="noreferrer"
@@ -45,7 +41,7 @@ export default function Burger() {
                   Instagram
                 </a>
               </li>
-              <li >
+              <li>
                 <a
                   href="https://www.facebook.com/100rokivtomuvpered"
                   rel="noreferrer"
@@ -54,13 +50,13 @@ export default function Burger() {
                   Facebook
                 </a>
               </li>
-              <li >
-                <NavLink to="/privacy-policy" className={getClassName}  onClick={scrollTop}>
+              <li>
+                <NavLink to="/privacy-policy" className={getClassName}>
                   Політика конфіденційності
                 </NavLink>
               </li>
-              <li >
-                <NavLink to="/public-offer" className={getClassName}  onClick={scrollTop}>
+              <li>
+                <NavLink to="/public-offer" className={getClassName}>
                   Публічна оферта
                 </NavLink>
               </li>
