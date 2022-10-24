@@ -15,7 +15,7 @@ export default function EventForm() {
   const isTabletDesktop = useMediaQuery({ minWidth: 768 });
 
   function addToBasket() {
-    dispatch(productActions.addToBasket({ id: nanoid(), title: "Чорнозем", price: 2500, category: "ticket", time: '18:30', date: "10.10.2022" }));
+    dispatch(productActions.addToBasket({ id: nanoid(), title: "Чорнозем", price: 2500, category: "ticket", time: '18:30', date: "10.10.2022", quantity: 1 }));
 
   }
 

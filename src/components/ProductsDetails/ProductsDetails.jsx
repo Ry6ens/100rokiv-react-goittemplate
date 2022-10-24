@@ -21,7 +21,7 @@ export default function ProductsDetails({ onClick }) {
   const backLinkHref = location.state?.from ?? '/delivery-food';
 
   const product = products.find(el => el.id === id);
-  const { title, price, weight, img, descr, category } = product;
+  const { title, price, weight, img, descr, category, quantity } = product;
 
   const handelClick = () => {
     const text = { value: category };
@@ -30,7 +30,7 @@ export default function ProductsDetails({ onClick }) {
   };
 
   function addToBasket() {
-    dispatch(productActions.addToBasket({ id , title, img , price }));
+    dispatch(productActions.addToBasket({ id , title, img , price, quantity }));
   }
 
   return (

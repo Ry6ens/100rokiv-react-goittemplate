@@ -51,9 +51,14 @@
 .titleBasketForm {
   grid-area: title;
 
+  padding-right: 20px;
+
   font-size: 10px;
   line-height: var(--line-height-title);
   letter-spacing: var(--letter-spacing-title);
 
   text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
