@@ -51,7 +51,7 @@ export default function BasketProductsFood() {
                 className={s.quantityBtn}
                 onClick={handleDecrement}
               >
-                <span>
+                <span className={s.overlay}>
                   <Minus />
                 </span>
               </button>
@@ -62,7 +62,7 @@ export default function BasketProductsFood() {
                 className={s.quantityBtn}
                 onClick={handleIncrement}
               >
-                <span>
+                <span className={s.overlay}>
                   <Plus />
                 </span>
               </button>
