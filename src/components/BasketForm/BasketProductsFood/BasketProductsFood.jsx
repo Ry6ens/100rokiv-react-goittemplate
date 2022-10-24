@@ -51,7 +51,7 @@ export default function BasketProductsFood() {
                 className={s.quantityBtn}
                 onClick={handleDecrement}
               >
-                <Minus />
+                <Minus />++
               </button>
               <span>{quantity}</span>
               <button
