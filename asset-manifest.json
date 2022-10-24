@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/100rokiv-react-goittemplate/static/css/main.a814b8b9.css",
-    "main.js": "/100rokiv-react-goittemplate/static/js/main.e5f47467.js",
+    "main.js": "/100rokiv-react-goittemplate/static/js/main.ee40612c.js",
     "static/css/263.f9d1be00.chunk.css": "/100rokiv-react-goittemplate/static/css/263.f9d1be00.chunk.css",
     "static/js/263.407d97d5.chunk.js": "/100rokiv-react-goittemplate/static/js/263.407d97d5.chunk.js",
     "static/js/395.9eedd476.chunk.js": "/100rokiv-react-goittemplate/static/js/395.9eedd476.chunk.js",
@@ -28,7 +28,7 @@
     "static/js/386.fb7d3f49.chunk.js": "/100rokiv-react-goittemplate/static/js/386.fb7d3f49.chunk.js",
     "static/css/240.bb00d4e4.chunk.css": "/100rokiv-react-goittemplate/static/css/240.bb00d4e4.chunk.css",
     "static/js/240.3a9dcc80.chunk.js": "/100rokiv-react-goittemplate/static/js/240.3a9dcc80.chunk.js",
-    "static/css/856.345135c8.chunk.css": "/100rokiv-react-goittemplate/static/css/856.345135c8.chunk.css",
+    "static/css/856.ee708ded.chunk.css": "/100rokiv-react-goittemplate/static/css/856.ee708ded.chunk.css",
     "static/js/856.c4a2a3e8.chunk.js": "/100rokiv-react-goittemplate/static/js/856.c4a2a3e8.chunk.js",
     "static/js/271.05facbe0.chunk.js": "/100rokiv-react-goittemplate/static/js/271.05facbe0.chunk.js",
     "static/css/166.856af5c2.chunk.css": "/100rokiv-react-goittemplate/static/css/166.856af5c2.chunk.css",
@@ -82,7 +82,7 @@
     "static/media/plus.svg": "/100rokiv-react-goittemplate/static/media/plus.70e06242c1683cd9e6a747fc8bb88eba.svg",
     "static/media/minus.svg": "/100rokiv-react-goittemplate/static/media/minus.0d0414bcffb614fce3459d3d30825376.svg",
     "main.a814b8b9.css.map": "/100rokiv-react-goittemplate/static/css/main.a814b8b9.css.map",
-    "main.e5f47467.js.map": "/100rokiv-react-goittemplate/static/js/main.e5f47467.js.map",
+    "main.ee40612c.js.map": "/100rokiv-react-goittemplate/static/js/main.ee40612c.js.map",
     "263.f9d1be00.chunk.css.map": "/100rokiv-react-goittemplate/static/css/263.f9d1be00.chunk.css.map",
     "263.407d97d5.chunk.js.map": "/100rokiv-react-goittemplate/static/js/263.407d97d5.chunk.js.map",
     "395.9eedd476.chunk.js.map": "/100rokiv-react-goittemplate/static/js/395.9eedd476.chunk.js.map",
@@ -109,7 +109,7 @@
     "386.fb7d3f49.chunk.js.map": "/100rokiv-react-goittemplate/static/js/386.fb7d3f49.chunk.js.map",
     "240.bb00d4e4.chunk.css.map": "/100rokiv-react-goittemplate/static/css/240.bb00d4e4.chunk.css.map",
     "240.3a9dcc80.chunk.js.map": "/100rokiv-react-goittemplate/static/js/240.3a9dcc80.chunk.js.map",
-    "856.345135c8.chunk.css.map": "/100rokiv-react-goittemplate/static/css/856.345135c8.chunk.css.map",
+    "856.ee708ded.chunk.css.map": "/100rokiv-react-goittemplate/static/css/856.ee708ded.chunk.css.map",
     "856.c4a2a3e8.chunk.js.map": "/100rokiv-react-goittemplate/static/js/856.c4a2a3e8.chunk.js.map",
     "271.05facbe0.chunk.js.map": "/100rokiv-react-goittemplate/static/js/271.05facbe0.chunk.js.map",
     "166.856af5c2.chunk.css.map": "/100rokiv-react-goittemplate/static/css/166.856af5c2.chunk.css.map",
@@ -122,6 +122,6 @@
   },
   "entrypoints": [
     "static/css/main.a814b8b9.css",
-    "static/js/main.e5f47467.js"
+    "static/js/main.ee40612c.js"
   ]
 }
