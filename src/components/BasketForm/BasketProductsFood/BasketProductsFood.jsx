@@ -51,7 +51,9 @@ export default function BasketProductsFood() {
                 className={s.quantityBtn}
                 onClick={handleDecrement}
               >
-                <Minus />++
+                <span>
+                  <Minus />
+                </span>
               </button>
               <span>{quantity}</span>
               <button
@@ -60,7 +62,9 @@ export default function BasketProductsFood() {
                 className={s.quantityBtn}
                 onClick={handleIncrement}
               >
-                <Plus />
+                <span>
+                  <Plus />
+                </span>
               </button>
             </div>
             <p className={s.textProductPrice}>{price * quantity} грн</p>
