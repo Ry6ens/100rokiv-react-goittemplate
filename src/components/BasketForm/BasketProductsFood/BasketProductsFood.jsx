@@ -44,7 +44,7 @@ export default function BasketProductsFood() {
                 backgroundImage: `url(${img})`,
               }}
             ></div>
-            <div className={s.quantity}>
+            <div className={s.quantityOverlay}>
               <button
                 id={id}
                 type="button"
@@ -55,7 +55,7 @@ export default function BasketProductsFood() {
                   <Minus />
                 </span>
               </button>
-              <span>{quantity}</span>
+              <span className={s.quantity}>{quantity}</span>
               <button
                 id={id}
                 type="button"
