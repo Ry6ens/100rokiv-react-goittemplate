@@ -29,7 +29,8 @@
   }
 
   @include mixins.mq(tablet) {
-    height: 300px;
+    // width: 400px;
+    height: 400px;
 
   }
 }
