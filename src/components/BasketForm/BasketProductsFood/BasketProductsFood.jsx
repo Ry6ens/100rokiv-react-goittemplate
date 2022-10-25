@@ -67,7 +67,10 @@ export default function BasketProductsFood() {
                 </span>
               </button>
             </div>
+            <div className={s.textProductPriceOverlay}>
             <p className={s.textProductPrice}>{price * quantity} грн</p>
+
+            </div>
           </div>
         </>
       ))}{' '}

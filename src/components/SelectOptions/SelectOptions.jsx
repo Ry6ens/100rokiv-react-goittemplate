@@ -37,6 +37,7 @@ export default function SelectOptions({ options, onChange }) {
         options={optionsDelivery}
         className={s.options}
         onChange={(e)=> selectValue(e)}
+        isSearchable={false}
       />
     );
   }
@@ -48,6 +49,7 @@ export default function SelectOptions({ options, onChange }) {
         options={optionsGiftVoucher}
         className={s.options}
         isClearable
+        isSearchable={false}
         onChange={onChange}
       />
     );

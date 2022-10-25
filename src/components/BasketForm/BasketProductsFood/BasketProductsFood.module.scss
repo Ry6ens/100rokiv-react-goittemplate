@@ -4,8 +4,8 @@
   position: relative;
   display: grid;
   align-items: end;
-  justify-content: space-between;
-  gap: 10px;
+  // justify-content: space-between;
+  row-gap: 10px;
   grid-template-areas:
     "title title title"
     "img quantity price";
@@ -22,14 +22,8 @@
 
   text-align: left;
 
-  @include mixins.mq(tablet) {
-    grid-template-areas:
-    "title title title"
-    "img quantity price";
-  }
-
   @include mixins.mq(desktop) {
-    max-width: 600px;
+    max-width: 500px;
   }
 }
 
@@ -61,9 +55,15 @@
   background-position: center;
 }
 
-.textProductPrice {
+.textProductPriceOverlay {
   grid-area: price;
 
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.textProductPrice {
   width: 80px;
 
   font-size: 16px;
@@ -77,30 +77,16 @@
 .quantityOverlay {
   grid-area: quantity;
 
-  display: -webkit-box;
-
-  display: -ms-flexbox;
-
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: flex-end;
-  // gap: 10px;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .quantityBtn {
-  // display: -webkit-box;
-  // display: -ms-flexbox;
-  // display: flex;
-  // -webkit-box-align: center;
-  // -ms-flex-align: center;
-  // align-items: center;
 
-  // width: 20px;
-  // height: 20px;
+  padding: 0px;
 
   background-color: var(--color-bg-white);
-  // border: 1px solid var(--color-bg-line);
   border: none;
 }
 
@@ -114,13 +100,28 @@
 
   background-color: var(--color-bg-white);
   border: 1px solid var(--color-bg-line);
+
+  @include mixins.mq(desktop) {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 .quantity {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
 
   width: 30px;
   height: 30px;
+
+
+  @include mixins.mq(desktop) {
+    width: 35px;
+    height: 35px;
+
+    font-size: 14px;
+    line-height: var(--line-height-title);
+    letter-spacing: var(--letter-spacing-title);
+  }
 }
