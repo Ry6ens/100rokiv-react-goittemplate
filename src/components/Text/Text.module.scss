@@ -9,6 +9,11 @@
 
   font-family: var(--font-family-light);
   font-weight: 300;
+
+  @include mixins.mq(desktop) {
+    width: 700px;
+    margin: 25px auto 0px;
+  }
 }
 
 .textFounders {
@@ -18,7 +23,7 @@
   font-weight: 300;
 
   @include mixins.mq(desktop) {
-    max-width: 700px;
+    width: 700px;
     margin: 0 auto;
     padding-top: 25px;
   }
@@ -31,6 +36,11 @@
   font-weight: 300;
   text-align: left;
   text-transform: initial;
+
+  @include mixins.mq(desktop) {
+    width: 700px;
+    margin: 25px auto 0px;
+  }
 }
 
 .textPublicOfferAddress {

@@ -39,7 +39,7 @@ export default function WhatsOnPage() {
       /> */}
 
         <Link to="event" onClick={scrollTop}>
-          {isMobileTablet && <Image src={chornozemSQIMG} alt="poster" />}
+          {isMobileTablet && <Image src={ChornozemFBIMG} alt="poster" />}
           {isDesktop && <Image src={ChornozemFBIMG} alt="poster" />}
         </Link>
 
