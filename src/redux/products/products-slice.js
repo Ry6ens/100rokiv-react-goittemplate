@@ -5,7 +5,9 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   items: [],
   selectOptions: 'закуски',
+  deliveryPrice: 0,
   totalQuantity: 0,
+  subTotal: 0,
   totalAmount: 0,
 };
 
@@ -22,41 +24,53 @@ const getProductsSlice = createSlice({
         item.quantity += 1;
       } else state.items.push(payload);
       state.totalQuantity = state.items.length;
-      state.totalAmount = state.items.reduce(
+      state.subTotal = state.items.reduce(
         (accm, { price, quantity }) => accm + price * quantity,
         0
       );
+      state.totalAmount = state.subTotal;
     },
     deleteFromBasket: (state, { payload }) => {
-      console.log(payload.quantity);
       state.items = state.items.filter(el => el.id !== payload.id);
       state.totalQuantity = state.items.length;
-      state.totalAmount = state.items.reduce(
+      state.subTotal = state.items.reduce(
         (accm, { price, quantity }) => accm + price * quantity,
         0
       );
+      state.totalAmount = state.subTotal;
     },
     incrementProduct: (state, { payload }) => {
-      console.log(payload);
       const item = state.items.find(el => el.id === payload);
       item.quantity += 1;
-      state.totalAmount = state.items.reduce(
+      state.subTotal = state.items.reduce(
         (accm, { price, quantity }) => accm + price * quantity,
         0
       );
+      state.totalAmount = state.subTotal;
     },
     decrementProduct: (state, { payload }) => {
       const item = state.items.find(el => el.id === payload);
       item.quantity -= 1;
       state.totalQuantity = state.items.length;
-      state.totalAmount = state.items.reduce(
+      state.subTotal = state.items.reduce(
         (accm, { price, quantity }) => accm + price * quantity,
         0
       );
+      state.totalAmount = state.subTotal;
       if (!item.quantity) {
         const itemIndex = state.items.findIndex(el => el.id === payload);
         state = state.items.splice(itemIndex, 1);
       } else state.totalQuantity = state.items.length;
+    },
+    addDeliveryPrice: (state, { payload }) => {
+      state.deliveryPrice = payload;
+      if (state.subTotal > 700) {
+        state.deliveryPrice = 0;
+      }
+      if (payload === 0) {
+        state.totalAmount = state.subTotal;
+      } else state.totalAmount = state.totalAmount + state.deliveryPrice;
+
     },
   },
 });

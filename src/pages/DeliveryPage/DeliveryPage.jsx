@@ -1,9 +1,9 @@
+import BasketDelivery from 'components/BasketForm/BasketDelivery/BasketDelivery'
+
 export default function DeliveryPage() {
   return (
     <>
-      <p>213123</p>
-      <p>213123</p>
-      <p>213123</p>
+      <BasketDelivery />
     </>
   );
 }

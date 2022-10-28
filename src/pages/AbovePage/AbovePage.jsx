@@ -6,7 +6,7 @@ import Section from "../../components/Section/Section";
 import Image from "../../components/Image/Image";
 import Gallery from "../../components/Gallery/Gallery";
 import Menu from "../../components/Menu/Menu";
-import Button from "../../components/Button/Button";
+import ButtonLink from "../../components/ButtonLink/ButtonLink";
 
 export default function AbovePage() {
   return (
@@ -24,7 +24,7 @@ export default function AbovePage() {
           text="Декілька раз на місяць ми проводимо тут спеціальні заходи, які розширюють ваші уявлення про українську їжу. Розумієте,
     яку дивовижну енергетику мая ця зала."
         />
-        <Button to="/book" text="Забронювати столик" />
+        <ButtonLink to="/book" btnClass="btnLineMargin" text="Забронювати столик" />
       </Section>
 
       <Menu />

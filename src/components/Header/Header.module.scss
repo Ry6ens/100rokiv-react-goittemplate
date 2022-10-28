@@ -53,27 +53,6 @@
     }
 }
 
-.btnBook {
-    position: relative;
-
-    &::after {
-        content: "";
-        position: absolute;
-        bottom: 0px;
-        left: 0px;
-        width: 100%;
-        background-color: currentColor;
-        height: 1px;
-        bottom: -6px;
-        transition: width 0.2s;
-        pointer-events: none;
-    }
-
-    &:hover:after {
-        width: 0%;
-    }
-}
-
 .tel {
     position: relative;
 

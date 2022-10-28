@@ -20,7 +20,7 @@ export const axiosTelegram = async (formData) => {
 
     <b>Ім'я:</b> ${name}
     <b>Телефон:</b> ${tel}
-    <b>Сума:</b> ${sum.label}
+    <b>Сума:</b> ${sum}
     <b>Дата:</b> ${date}
     `,
   });

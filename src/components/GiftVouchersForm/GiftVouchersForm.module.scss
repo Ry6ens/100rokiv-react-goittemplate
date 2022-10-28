@@ -1,16 +1,16 @@
 @use '../../styles/mixins';
 
 .form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 
+  max-width: 400px;
+  margin: 0 auto;
 
-    @include mixins.mq(tablet) {
-        width: 620px;
-
-        margin: 0 auto;
-    }
+  @include mixins.mq(desktop) {
+    max-width: 500px;
+  }
 }
 
 .span {

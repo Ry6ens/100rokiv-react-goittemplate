@@ -1,6 +1,4 @@
-import { useForm, Controller } from "react-hook-form";
-import PhoneInput from "react-phone-number-input";
-import { ErrorMessage } from "@hookform/error-message";
+import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import moment from "moment";
 import { useEffect } from "react";
@@ -12,9 +10,10 @@ import { getTelegramOperations } from "../../redux/telegram/telegram-operations"
 import { getEmailSuccess } from "../../redux/email/email-selectors";
 import { successFalse } from "../../redux/email/email-slice";
 
-import { ReactComponent as Warning } from "../../images/svg/warning.svg";
-
-import SelectOptions from 'components/SelectOptions/SelectOptions';
+import ButtonSubmit from "components/ButtonSubmit/ButtonSubmit";
+import FormInputText from "components/FormComponents/FormInputText";
+import FormInputTel from "components/FormComponents/FormInputTel";
+import FormInputSelect from "components/FormComponents/FormInputSelect";
 
 import s from "./GiftVouchersForm.module.scss";
 import "./styles.scss";
@@ -25,10 +24,9 @@ export default function GiftVouchersForm() {
 
   const {
     control,
-    register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState,
   } = useForm({
     defaultValues: {
       name: "",
@@ -43,8 +41,17 @@ export default function GiftVouchersForm() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useEffect(() => {
+    if (formState.isSubmitSuccessful) {
+      reset({
+        name: '',
+        tel: '',
+        sum: '',
+      });
+    }
+  }, [formState, reset]);
+
   const onSubmit = (data, e) => {
-    console.log(data)
     e.preventDefault();
     const date = moment(new Date()).format("DD-MM-yyyy, HH:mm");
     dispatch(getEmailOperations({ ...data, date }));
@@ -64,84 +71,10 @@ export default function GiftVouchersForm() {
         </div>
       ) : (
         <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
-          <Controller
-            name="sum"
-            control={control}
-            rules={{ required: "Обов'язкове поле" }}
-            render={({ field: { onChange } }) => (
-              <SelectOptions
-                options="optionsGiftVoucher"
-                onChange={onChange}
-              />
-            )}
-          />
-          <ErrorMessage
-            errors={errors}
-            name="sum"
-            render={({ message }) => (
-              <div className={s.errorOverlay}>
-                <Warning />
-                <p className={s.errorMessage}>{message}</p>
-              </div>
-            )}
-          />
-
-          <label>
-            <input
-              className={s.input}
-              {...register('name', {
-                required: "Обов'язкове поле",
-                pattern: {
-                  value: /[A-Za-z]|[бвгґджзклмнпрстфхцчшщйаеєиіїоуюяь]/,
-                  message: "Обов'язкове поле",
-                },
-              })}
-              type="text"
-              placeholder="Ім‘я того, хто дарує"
-            />
-          </label>
-          <ErrorMessage
-            errors={errors}
-            name="name"
-            render={({ message }) => (
-              <div className={s.errorOverlay}>
-                <Warning />
-                <p className={s.errorMessage}>{message}</p>
-              </div>
-            )}
-          />
-
-          <Controller
-            control={control}
-            name="tel"
-            rules={{ required: "Обов'язкове поле" }}
-            render={({ field: { onChange, value } }) => (
-              <PhoneInput
-                maxLength="16"
-                value={value}
-                placeholder="+380 (99) 999-99-99"
-                name={'query'}
-                control={control}
-                onChange={onChange}
-                defaultCountry="UA"
-                international
-              />
-            )}
-          />
-          <ErrorMessage
-            errors={errors}
-            name="tel"
-            render={({ message }) => (
-              <div className={s.errorOverlay}>
-                <Warning />
-                <p className={s.errorMessage}>{message}</p>
-              </div>
-            )}
-          />
-
-          <button className={s.btn} type="submit">
-            Подарувати
-          </button>
+          <FormInputSelect name="sum" control={control} label="Оберіть суму ..." required={"Обов'язкове поле"}/>
+          <FormInputText name="name" control={control} label="Ім‘я того, хто дарує" type="text" required={"Обов'язкове поле"}/>
+          <FormInputTel name="tel" control={control} required={"Обов'язкове поле"}/>
+          <ButtonSubmit text="Подарувати" />
         </form>
       )}
     </>

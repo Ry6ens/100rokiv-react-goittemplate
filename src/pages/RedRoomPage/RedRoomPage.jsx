@@ -6,7 +6,7 @@ import Section from "../../components/Section/Section";
 import Image from "../../components/Image/Image";
 import Gallery from "../../components/Gallery/Gallery";
 import Menu from "../../components/Menu/Menu";
-import Button from "../../components/Button/Button";
+import ButtonLink from "../../components/ButtonLink/ButtonLink";
 
 export default function RedRoomPage() {
   return (
@@ -20,7 +20,7 @@ export default function RedRoomPage() {
           text="Це чудове місце для невеликого, але дуже красивого весілля, дня народження або просто посиденьок компанії в теплій,
     камерній атмосфері."
         />
-        <Button to="/book" text="Забронювати столик" />
+        <ButtonLink to="/book" btnClass="btnLineMargin" text="Забронювати столик" />
       </Section>
 
       <Menu />

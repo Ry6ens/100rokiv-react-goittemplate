@@ -4,7 +4,7 @@ import Section from "../../components/Section/Section";
 import Ghost from "../../components/Ghost/Ghost";
 import TitleH2 from "../../components/TitleH2/TitleH2";
 import Text from "../../components/Text/Text";
-import Button from "../../components/Button/Button";
+import ButtonLink from "components/ButtonLink/ButtonLink";
 
 export default function NotFoundPage() {
   var pageX = $(document).width();
@@ -33,7 +33,7 @@ export default function NotFoundPage() {
         <div>
           <TitleH2 text="Загубилися?" />
           <Text text="Почніть з головної сторінки" />
-          <Button to="/" text="Головна сторінка" buttonClass="boxButton" />
+          <ButtonLink to="/" text="Головна сторінка" />
         </div>
       </Section>
     </main>

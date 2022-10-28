@@ -6,7 +6,7 @@ import Section from "../../components/Section/Section";
 import Image from "../../components/Image/Image";
 import Gallery from "../../components/Gallery/Gallery";
 import Menu from "../../components/Menu/Menu";
-import Button from "../../components/Button/Button";
+import ButtonLink from "../../components/ButtonLink/ButtonLink";
 
 export default function GroundPage() {
   return (
@@ -24,7 +24,7 @@ export default function GroundPage() {
           text="Тут, до речі, знаходиться наш бар, де народжуються авторські коктейлі - унікальні напої з
       місцевих інгредієнтів.<br> Уявіть, як це чудово - спостерігати за тим, як створюється саме ваш!"
         />
-        <Button to="/book" text="Забронювати столик" />
+        <ButtonLink to="/book" btnClass="btnLineMargin" text="Забронювати столик" />
       </Section>
 
       <Menu />

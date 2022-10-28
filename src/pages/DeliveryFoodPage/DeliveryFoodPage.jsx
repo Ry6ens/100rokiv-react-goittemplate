@@ -68,7 +68,7 @@ export default function DeliveryFoodPage() {
       <Section>
         {isMobileTablet && (
           <SelectOptions
-            options="optionsDelivery"
+            options="optionsMenu"
             onChange={handleFilter}
           />
         )}

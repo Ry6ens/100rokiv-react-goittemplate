@@ -1,7 +1,7 @@
-import s from './BasketForm.module.scss';
-
 import BasketProductsTicket from './BasketProductsTicket/BasketProductsFood/BasketProductsTicket';
 import BasketProductsFood from './BasketProductsFood/BasketProductsFood';
+import BasketOrderSummary from './BasketOrderSummary/BasketOrderSummary';
+import ButtonLink from 'components/ButtonLink/ButtonLink'
 
 import TitleH1 from '../TitleH1/TitleH1';
 
@@ -12,10 +12,9 @@ export default function BasketForm() {
 
       <BasketProductsTicket />
       <BasketProductsFood />
+      <BasketOrderSummary />
 
-      <button className={s.btn} type="button">
-        Оформити
-      </button>
+      <ButtonLink to="delivery" text="Оформити" />
     </>
   );
 }

@@ -6,7 +6,7 @@ import ChornozemFBIMG from "../../images/events/chornozemFB.jpg";
 import chornozemSQIMG from "../../images/events/chornozemSQ.jpg";
 
 import Section from "../../components/Section/Section";
-import Button from "../../components/Button/Button";
+import ButtonLink from "../../components/ButtonLink/ButtonLink";
 import Image from "../../components/Image/Image";
 import TitleH1 from "../../components/TitleH1/TitleH1";
 // import Text from "../../components/Text/Text";
@@ -44,7 +44,7 @@ export default function WhatsOnPage() {
         </Link>
 
         {isOutlet && (
-          <Button to="event" text="Дізнатися більше" onClick={scrollTop} />
+          <ButtonLink to="event" text="Дізнатися більше" btnClass="btnLineMargin" onClick={scrollTop} />
         )}
       </Section>
       <Outlet />
