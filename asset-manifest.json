@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/100rokiv-react-goittemplate/static/css/main.399c0451.css",
-    "main.js": "/100rokiv-react-goittemplate/static/js/main.0d9da48f.js",
+    "main.js": "/100rokiv-react-goittemplate/static/js/main.5eebc627.js",
     "static/css/263.a945555c.chunk.css": "/100rokiv-react-goittemplate/static/css/263.a945555c.chunk.css",
     "static/js/263.4c26e839.chunk.js": "/100rokiv-react-goittemplate/static/js/263.4c26e839.chunk.js",
     "static/js/395.9eedd476.chunk.js": "/100rokiv-react-goittemplate/static/js/395.9eedd476.chunk.js",
@@ -83,7 +83,7 @@
     "static/media/plus.svg": "/100rokiv-react-goittemplate/static/media/plus.c2dda2289af56606ce30557770f45a0a.svg",
     "static/media/minus.svg": "/100rokiv-react-goittemplate/static/media/minus.d6ef00938146d848f5f9a2a00e9c4444.svg",
     "main.399c0451.css.map": "/100rokiv-react-goittemplate/static/css/main.399c0451.css.map",
-    "main.0d9da48f.js.map": "/100rokiv-react-goittemplate/static/js/main.0d9da48f.js.map",
+    "main.5eebc627.js.map": "/100rokiv-react-goittemplate/static/js/main.5eebc627.js.map",
     "263.a945555c.chunk.css.map": "/100rokiv-react-goittemplate/static/css/263.a945555c.chunk.css.map",
     "263.4c26e839.chunk.js.map": "/100rokiv-react-goittemplate/static/js/263.4c26e839.chunk.js.map",
     "395.9eedd476.chunk.js.map": "/100rokiv-react-goittemplate/static/js/395.9eedd476.chunk.js.map",
@@ -125,6 +125,6 @@
   },
   "entrypoints": [
     "static/css/main.399c0451.css",
-    "static/js/main.0d9da48f.js"
+    "static/js/main.5eebc627.js"
   ]
 }
