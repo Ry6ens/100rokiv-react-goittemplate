@@ -1,6 +1,10 @@
 import axios from "axios";
 
+export const instance = axios.create({
+  baseURL: 'https://storokiv-server.herokuapp.com/',
+});
+
 export const axiosGoogleSheet = async (formData) => {
-  const { data } = axios.post(`/api/google`, formData);
+  const { data } = instance.post(`/api/googleSheet`, formData);
   return data;
 };
