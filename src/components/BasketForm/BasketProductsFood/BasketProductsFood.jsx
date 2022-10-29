@@ -32,48 +32,45 @@ export default function BasketProductsFood() {
   return (
     <>
       {productsFood?.map(({ id, img, price, title, quantity }) => (
-        <>
-          <div className={s.productForm} key={id}>
-            <span className={s.closeBtn} id={id} onClick={deleteItem}>
-              <CloseBtn />
-            </span>
-            <TitleH2 text={title} titleClass="titleBasketForm" />
-            <div
-              className={s.img}
-              style={{
-                backgroundImage: `url(${img})`,
-              }}
-            ></div>
-            <div className={s.quantityOverlay}>
-              <button
-                id={id}
-                type="button"
-                className={s.quantityBtn}
-                onClick={handleDecrement}
-              >
-                <span className={s.overlay}>
-                  <Minus />
-                </span>
-              </button>
-              <span className={s.quantity}>{quantity}</span>
-              <button
-                id={id}
-                type="button"
-                className={s.quantityBtn}
-                onClick={handleIncrement}
-              >
-                <span className={s.overlay}>
-                  <Plus />
-                </span>
-              </button>
-            </div>
-            <div className={s.textProductPriceOverlay}>
-            <p className={s.textProductPrice}>{price * quantity} грн</p>
-
-            </div>
+        <div className={s.productForm} key={id}>
+          <span className={s.closeBtn} id={id} onClick={deleteItem}>
+            <CloseBtn />
+          </span>
+          <TitleH2 text={title} titleClass="titleBasketForm" />
+          <div
+            className={s.img}
+            style={{
+              backgroundImage: `url(${img})`,
+            }}
+          ></div>
+          <div className={s.quantityOverlay}>
+            <button
+              id={id}
+              type="button"
+              className={s.quantityBtn}
+              onClick={handleDecrement}
+            >
+              <span className={s.overlay}>
+                <Minus />
+              </span>
+            </button>
+            <span className={s.quantity}>{quantity}</span>
+            <button
+              id={id}
+              type="button"
+              className={s.quantityBtn}
+              onClick={handleIncrement}
+            >
+              <span className={s.overlay}>
+                <Plus />
+              </span>
+            </button>
           </div>
-        </>
-      ))}{' '}
+          <div className={s.textProductPriceOverlay}>
+            <p className={s.textProductPrice}>{price * quantity} грн</p>
+          </div>
+        </div>
+      ))}
     </>
   );
 }

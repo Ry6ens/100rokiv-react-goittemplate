@@ -16,20 +16,20 @@ export default function BasketOrderSummary({basketOrderSummaryClass = "overlayTa
       <TitleH2 text="Разом" />
       <table className={s.table}>
         <tbody>
-          <tr>
-            <td className={s.tableText}>Сума</td>
+          <tr className={s.tr}>
+            <td className={s.tableText}><div>Сума</div></td>
             <td>
               <Symbol fill="#43291b"/>
               {subTotal.toFixed(2)}</td>
           </tr>
 
-          <tr>
+          <tr className={s.tr}>
             <td className={s.tableText}>Доставка</td>
             <td>
             <Symbol fill="#43291b"/>
               {deliveryPrice.toFixed(2)}</td>
           </tr>
-          <tr>
+          <tr className={s.tr}>
             <td className={s.tableText}>До сплати</td>
             <td>
             <Symbol fill="#43291b"/>

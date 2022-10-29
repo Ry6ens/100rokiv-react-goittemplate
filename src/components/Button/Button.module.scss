@@ -1,0 +1,118 @@
+@use 'styles/mixins';
+
+.btn{
+  max-width: 400px;
+  height: 38px;
+
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: var(--letter-spacing);
+  text-transform: var(--text-transform);
+
+
+  background-color: var(--btn-color);
+  color: var(--color-bg-white);
+  border-color: transparent;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0%);
+
+  &:hover,
+  :focus {
+    background-color: var(--btn-hover);
+  }
+
+  @include mixins.mq(tablet) {
+    height: 48px;
+  }
+
+  @include mixins.mq(desktop) {
+    max-width: 500px;
+  }
+}
+
+.btnMargin {
+  max-width: 400px;
+  height: 38px;
+
+  margin-top: 30px;
+
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: var(--letter-spacing);
+  text-transform: var(--text-transform);
+
+
+  background-color: var(--btn-color);
+  color: var(--color-bg-white);
+  border-color: transparent;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0%);
+
+  &:hover,
+  :focus {
+    background-color: var(--btn-hover);
+  }
+
+  @include mixins.mq(tablet) {
+    height: 48px;
+  }
+
+  @include mixins.mq(desktop) {
+    max-width: 500px;
+  }
+}
+
+.btnProductDetails {
+  margin: 0px 20px;
+
+  height: 38px;
+
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: var(--letter-spacing);
+  text-transform: var(--text-transform);
+
+
+  background-color: var(--btn-color);
+  color: var(--color-bg-white);
+  border-color: transparent;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0%);
+
+  &:hover,
+  :focus {
+    background-color: var(--btn-hover);
+  }
+
+  @include mixins.mq(tablet) {
+    margin: 0px 20px 30px 0px;
+
+    grid-area: btn;
+    height: 48px;
+  }
+}
+
+.btnEventPrice {
+    grid-area: button;
+
+    width: 150px;
+    height: 38px;
+
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: var(--letter-spacing);
+    text-transform: var(--text-transform);
+
+
+    background-color: var(--btn-color);
+    color: var(--color-bg-white);
+    border-color: transparent;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+
+    &:hover,
+    :focus {
+      background-color: var(--btn-hover);
+    }
+
+    @include mixins.mq(tablet) {
+      width: 200px;
+        height: 48px;
+    }
+}

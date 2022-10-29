@@ -4,7 +4,8 @@ import { nanoid } from "@reduxjs/toolkit";
 
 import s from "./EventPrice.module.scss";
 
-import TitleH1 from "../TitleH1/TitleH1";
+import TitleH1 from "components/TitleH1/TitleH1";
+import Button from "components/Button/Button";
 
 import { productActions } from "redux/products/products-slice";
 
@@ -30,13 +31,7 @@ export default function EventForm() {
         </div>
 
         {isMobile && (
-          <button
-            className={s.btn}
-            type="button"
-            onClick={addToBasket}
-          >
-            Купити
-          </button>
+          <Button text="Купити" type="button" btnClass="btnEventPrice" onClick={addToBasket}/>
         )}
 
         <div className={s.ticketOvalsFirst}></div>
@@ -44,9 +39,7 @@ export default function EventForm() {
       </div>
 
       {isTabletDesktop && (
-        <button className={s.btn} type="button" onClick={addToBasket}>
-          Купити
-        </button>
+        <Button text="Купити" type="button" btnClass="btnEventPrice" onClick={addToBasket}/>
       )}
     </div>
   );

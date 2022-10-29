@@ -14,8 +14,8 @@ import TitleH1 from "../../components/TitleH1/TitleH1";
 export default function WhatsOnPage() {
   const location = useLocation();
 
-  const isMobileTablet = useMediaQuery({ maxWidth: 1023.98 });
-  const isDesktop = useMediaQuery({ minWidth: 1024 });
+  const isMobile = useMediaQuery({ maxWidth: 767.98 });
+  const isTabletDesktop = useMediaQuery({ minWidth: 768 });
 
   const scrollTop = () => {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
@@ -39,8 +39,8 @@ export default function WhatsOnPage() {
       /> */}
 
         <Link to="event" onClick={scrollTop}>
-          {isMobileTablet && <Image src={ChornozemFBIMG} alt="poster" />}
-          {isDesktop && <Image src={ChornozemFBIMG} alt="poster" />}
+          {isMobile && <Image src={chornozemSQIMG} alt="poster" />}
+          {isTabletDesktop && <Image src={ChornozemFBIMG} alt="poster" />}
         </Link>
 
         {isOutlet && (

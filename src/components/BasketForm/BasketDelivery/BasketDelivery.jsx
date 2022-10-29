@@ -9,7 +9,7 @@ import FormInputText from 'components/FormComponents/FormInputText';
 import FormInputTel from 'components/FormComponents/FormInputTel';
 import FormInputEmail from 'components/FormComponents/FormInputEmail';
 import FormInputRadio from 'components/FormComponents/FormInputRadio';
-import ButtonSubmit from 'components/ButtonSubmit/ButtonSubmit';
+import ButtonSubmit from 'components/Button/Button';
 import BasketOrderSummary from '../BasketOrderSummary/BasketOrderSummary';
 
 import { productActions } from 'redux/products/products-slice';
@@ -69,6 +69,7 @@ export default function BasketDelivery() {
       />
       <FormInputTel name="tel" control={control} />
       <FormInputEmail name="email" control={control} label="Електронна пошта" />
+
       <FormInputRadio name="deliveryPayment" control={control} />
       {watchDeliveryPayment === '125' && (
         <>
@@ -105,7 +106,7 @@ export default function BasketDelivery() {
         type="text"
       />
       <BasketOrderSummary basketOrderSummaryClass="overlayBasketDelivery" />
-      <ButtonSubmit text="Замовити" buttonClass="btnBasketDelivery" />
+      <ButtonSubmit text="Замовити" />
     </form>
   );
 }

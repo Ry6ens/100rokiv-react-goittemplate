@@ -8,7 +8,6 @@ import { ReactComponent as CloseBtn } from 'images/svg/closeBtn.svg';
 
 import { productActions } from 'redux/products/products-slice';
 
-
 export default function BasketProductsTicket() {
   const dispatch = useDispatch();
 
@@ -16,27 +15,25 @@ export default function BasketProductsTicket() {
   const productsTicket = products.filter(el => el.category === 'ticket');
 
   const deleteItem = ({ currentTarget: { id } }) => {
-    const findTicketById = productsTicket.find(el => el.id === id)
+    const findTicketById = productsTicket.find(el => el.id === id);
     dispatch(productActions.deleteFromBasket(findTicketById));
   };
 
   return (
     <>
       {productsTicket?.map(({ id, price, title, time, date }) => (
-        <>
-          <div className={s.ticketForm} key={id}>
-            <span className={s.closeBtn} id={id} onClick={deleteItem}>
-              <CloseBtn />
-            </span>
-            <TitleH2 text={title} titleClass="titleEventForm" />
-            <p className={s.infoData}>
-              {date} о {time}
-            </p>
-            <p className={s.textPrice}>{price} грн</p>
-            <div className={s.ticketOvalsFirst}></div>
-            <div className={s.ticketOvalsSecond}></div>
-          </div>
-        </>
+        <div className={s.ticketForm} key={id}>
+          <span className={s.closeBtn} id={id} onClick={deleteItem}>
+            <CloseBtn />
+          </span>
+          <TitleH2 text={title} titleClass="titleEventForm" />
+          <p className={s.infoData}>
+            {date} о {time}
+          </p>
+          <p className={s.textPrice}>{price} грн</p>
+          <div className={s.ticketOvalsFirst}></div>
+          <div className={s.ticketOvalsSecond}></div>
+        </div>
       ))}
     </>
   );

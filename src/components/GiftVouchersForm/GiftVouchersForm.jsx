@@ -10,7 +10,7 @@ import { getTelegramOperations } from "../../redux/telegram/telegram-operations"
 import { getEmailSuccess } from "../../redux/email/email-selectors";
 import { successFalse } from "../../redux/email/email-slice";
 
-import ButtonSubmit from "components/ButtonSubmit/ButtonSubmit";
+import ButtonSubmit from "components/Button/Button";
 import FormInputText from "components/FormComponents/FormInputText";
 import FormInputTel from "components/FormComponents/FormInputTel";
 import FormInputSelect from "components/FormComponents/FormInputSelect";
@@ -74,7 +74,7 @@ export default function GiftVouchersForm() {
           <FormInputSelect name="sum" control={control} label="Оберіть суму ..." required={"Обов'язкове поле"}/>
           <FormInputText name="name" control={control} label="Ім‘я того, хто дарує" type="text" required={"Обов'язкове поле"}/>
           <FormInputTel name="tel" control={control} required={"Обов'язкове поле"}/>
-          <ButtonSubmit text="Подарувати" />
+          <ButtonSubmit text="Подарувати" btnClass="btnMargin" />
         </form>
       )}
     </>

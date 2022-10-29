@@ -24,16 +24,16 @@
 
   background-color: var(--color-bg-white);
   border: 1px solid var(--color-bg-line);
+}
 
-  // table-layout: auto;
+.tr {
+  border-bottom: 1px solid var(--color-bg-line);
 }
 
 .tableText {
   padding: 15px 20px;
 
   text-align: right;
-
-  border-bottom: 1px solid var(--color-bg-line);
 }
 
 .tableText+td {
@@ -43,6 +43,4 @@
   justify-content: flex-end;
 
   padding: 15px 20px 15px 0px;
-
-  border-bottom: 1px solid var(--color-bg-line);
 }

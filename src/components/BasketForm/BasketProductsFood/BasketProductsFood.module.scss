@@ -43,6 +43,18 @@
   border: 1px solid var(--color-bg-line);
   z-index: 3;
   transition: color 0.2s ease 0.1s, background 0.2s ease 0.1s, border 0.2s ease 0.1s;
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus,
+  &:hover svg,
+  &:focus svg {
+    background-color: #f1716b;
+    fill: #fff;
+    border-color: #f1716b;
+    transition-delay: 0s;
+  }
 }
 
 .img {

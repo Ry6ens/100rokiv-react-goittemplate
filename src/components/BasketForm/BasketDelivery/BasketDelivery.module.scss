@@ -39,6 +39,14 @@
 .overlayHouseEntrance {
   display: flex;
   gap: 10px;
+
+  @include mixins.mq(tablet) {
+    gap: 20px;
+  }
+}
+
+.overlayHouseEntrance div {
+  width: 100%;
 }
 
 .errorOverlay {
