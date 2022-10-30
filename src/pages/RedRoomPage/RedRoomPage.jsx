@@ -14,23 +14,37 @@ export default function RedRoomPage() {
   return (
     <main>
       <Helmet>
+        {/* <!--Primary Meta Tags--> */}
         <title>100років•Червона Зала</title>
+        <meta name="title" content="100років•Червона Зала" />
         <meta
           name="description"
           content="Магічний простір, де ми проводимо Театр їжі та зустрічаємо невеликі компанії, що прагнуть приватності"
         />
+
+        {/* <!--Open Graph / Facebook Meta Tags--> */}
         <meta property="og:title" content="100років•Червона Зала" />
         <meta
           property="og:description"
           content="Магічний простір, де ми проводимо Театр їжі та зустрічаємо невеликі компанії, що прагнуть приватності"
         />
-        <meta
-          property="og:url"
-          content="https://100rokiv.netlify.app/redroom"
-        />
+        <meta property="og:url" content="https://100rokiv.netlify.app/redroom" />
         <meta property="og:type" content="website" />
         <meta
           property="og:image"
+          content="https://storokiv-server.herokuapp.com/images/ground.jpeg"
+        />
+
+        {/* <!--Twitter Meta Tags--> */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="100років•Червона Зала" />
+        <meta
+          name="twitter:description"
+          content="Магічний простір, де ми проводимо Театр їжі та зустрічаємо невеликі компанії, що прагнуть приватності"
+        />
+        <meta name="twitter:url" content="https://100rokiv.netlify.app/redroom" />
+        <meta
+          name="twitter:image"
           content="https://storokiv-server.herokuapp.com/images/redroom.jpeg"
         />
 

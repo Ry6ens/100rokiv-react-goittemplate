@@ -13,16 +13,16 @@ import './styles/styles.scss';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
-      <Provider store={store}>
-        <StyledEngineProvider injectFirst>
-          {/* <PersistGate loading={<Loader />} persistor={persistor}> */}
-          <ScrollToTop />
-          <HelmetProvider>
+      <HelmetProvider>
+        <Provider store={store}>
+          <StyledEngineProvider injectFirst>
+            {/* <PersistGate loading={<Loader />} persistor={persistor}> */}
+            <ScrollToTop />
             <App />
-          </HelmetProvider>
-          {/* </PersistGate> */}
-        </StyledEngineProvider>
-      </Provider>
+            {/* </PersistGate> */}
+          </StyledEngineProvider>
+        </Provider>
+      </HelmetProvider>
     </BrowserRouter>
   </React.StrictMode>
 );
