@@ -1,13 +1,16 @@
 import { Helmet } from 'react-helmet-async';
 
-import Home from "components/Home/Home";
+import Home from 'components/Home/Home';
 
 const HomePage = () => {
   return (
     <main>
       <Helmet>
         <title>100 років тому вперед</title>
-        <link rel="canonical" href="https://100rokiv.netlify.app" />
+        <meta
+          name="description"
+          content="Незвичайний Ресторан в Києві Де є Традиційні Страви Української Кухні"
+        />
       </Helmet>
       <Home />
     </main>
