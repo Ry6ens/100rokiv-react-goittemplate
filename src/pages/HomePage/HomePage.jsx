@@ -8,6 +8,8 @@ const HomePage = () => {
       <Helmet>
         {/* <!--Primary Meta Tags--> */}
         <title>100 років тому вперед</title>
+        <link rel="canonical" href="https://100rokiv.netlify.app/home" />
+
         <meta name="title" content="100 років тому вперед" />
         <meta
           name="description"
@@ -40,7 +42,6 @@ const HomePage = () => {
           content="https://storokiv-server.herokuapp.com/images/ground.jpeg"
         />
 
-        <link rel="canonical" href="https://100rokiv.netlify.app/home" />
       </Helmet>
       <Home />
     </main>
