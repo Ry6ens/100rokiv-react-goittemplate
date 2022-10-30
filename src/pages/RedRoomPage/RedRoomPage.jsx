@@ -19,7 +19,6 @@ export default function RedRoomPage() {
           name="description"
           content="Магічний простір, де ми проводимо Театр їжі та зустрічаємо невеликі компанії, що прагнуть приватності"
         />
-        {/* Open Graph / Facebook Meta Tags */}
         <meta property="og:title" content="100років•Червона Зала" />
         <meta
           property="og:description"
