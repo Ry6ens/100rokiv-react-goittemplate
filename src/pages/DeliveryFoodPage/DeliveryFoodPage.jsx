@@ -8,6 +8,7 @@ import Section from 'components/Section/Section';
 import SelectOptions from 'components/SelectOptions/SelectOptions';
 import DesktopOptions from 'components/SelectOptions/DesktopOptions/DesktopOptions';
 import ProductsList from 'components/ProductsList/ProductsList';
+import OpenGraphHelmet from 'components/OpenGraphHelmet/OpenGraphHelmet';
 
 import products from 'assets/product';
 
@@ -19,12 +20,11 @@ export default function DeliveryFoodPage() {
   const isDesktop = useMediaQuery({ minWidth: 1024 });
 
   useEffect(() => {
-    handleFilter(store.getState().products.selectOptions)
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    handleFilter(store.getState().products.selectOptions);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleFilter = value => {
-
     if (value === 'закуски') {
       const filteredProducts = products.filter(
         ({ category }) => category === 'закуски'
@@ -63,14 +63,17 @@ export default function DeliveryFoodPage() {
 
   return (
     <main>
+      <OpenGraphHelmet
+        title="100років • Доставка їжі"
+        description="Доставка ваших улюблених страв"
+        url="https://100rokiv.netlify.app/delivery-food"
+        image="https://storokiv-server.herokuapp.com/images/delivery-food.jpg"
+      />
       <TitleH1 text="100 РОКІВ ТОМУ ВПЕРЕД" />
       <TitleH2 text="ВДОМА" />
       <Section>
         {isMobileTablet && (
-          <SelectOptions
-            options="optionsMenu"
-            onChange={handleFilter}
-          />
+          <SelectOptions options="optionsMenu" onChange={handleFilter} />
         )}
 
         {isDesktop && <DesktopOptions onClick={handleFilter} />}
