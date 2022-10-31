@@ -1,10 +1,11 @@
-import $ from "jquery";
+import $ from 'jquery';
 
-import Section from "../../components/Section/Section";
-import Ghost from "../../components/Ghost/Ghost";
-import TitleH2 from "../../components/TitleH2/TitleH2";
-import Text from "../../components/Text/Text";
-import ButtonLink from "components/ButtonLink/ButtonLink";
+import Section from 'components/Section/Section';
+import Ghost from 'components/Ghost/Ghost';
+import TitleH2 from 'components/TitleH2/TitleH2';
+import Text from 'components/Text/Text';
+import ButtonLink from 'components/ButtonLink/ButtonLink';
+import OpenGraphHelmet from 'components/OpenGraphHelmet/OpenGraphHelmet';
 
 export default function NotFoundPage() {
   var pageX = $(document).width();
@@ -21,13 +22,19 @@ export default function NotFoundPage() {
     mouseX = event.pageX / -pageX;
     var xAxis = -mouseX * 100 - 100;
 
-    $("#boxGhostEyes").css({
-      transform: "translate(" + xAxis + "%,-" + yAxis + "%)",
+    $('#boxGhostEyes').css({
+      transform: 'translate(' + xAxis + '%,-' + yAxis + '%)',
     });
   });
 
   return (
     <main>
+      <OpenGraphHelmet
+        title="100років • Сторінка не знайдена"
+        description="Сторінка не знайдена"
+        url="https://100rokiv.netlify.app/*"
+        image="https://storokiv-server.herokuapp.com/images/above.jpg"
+      />
       <Section sectionClass="sectionNotFound">
         <Ghost />
         <div>

@@ -2,14 +2,15 @@ import { Link, useLocation } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import { Outlet } from "react-router-dom";
 
-import ChornozemFBIMG from "../../images/events/chornozemFB.jpg";
-import chornozemSQIMG from "../../images/events/chornozemSQ.jpg";
+import ChornozemFBIMG from "images/events/chornozemFB.jpg";
+import chornozemSQIMG from "images/events/chornozemSQ.jpg";
 
-import Section from "../../components/Section/Section";
-import ButtonLink from "../../components/ButtonLink/ButtonLink";
-import Image from "../../components/Image/Image";
-import TitleH1 from "../../components/TitleH1/TitleH1";
-// import Text from "../../components/Text/Text";
+import Section from "components/Section/Section";
+import ButtonLink from "components/ButtonLink/ButtonLink";
+import Image from "components/Image/Image";
+import OpenGraphHelmet from 'components/OpenGraphHelmet/OpenGraphHelmet';
+import TitleH1 from "components/TitleH1/TitleH1";
+// import Text from "components/Text/Text";
 
 export default function WhatsOnPage() {
   const location = useLocation();
@@ -29,6 +30,12 @@ export default function WhatsOnPage() {
 
   return (
     <main>
+      <OpenGraphHelmet
+        title="100років • Майбутні події"
+        description="Афіша заходів. Розклад подій 100 років тому вперед. Квитки онлайн."
+        url="https://100rokiv.netlify.app/whats-on"
+        image="https://storokiv-server.herokuapp.com/images/above.jpg"
+      />
       <Section>
         {isOutlet && <TitleH1 text="Майбутні події" titleClass="titleBottom" />}
 

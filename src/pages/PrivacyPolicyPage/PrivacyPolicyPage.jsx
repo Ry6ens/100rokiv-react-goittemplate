@@ -1,10 +1,18 @@
-import Section from "../../components/Section/Section";
-import TitleH1 from "../../components/TitleH1/TitleH1";
-import Text from "../../components/Text/Text";
+import Section from "components/Section/Section";
+import TitleH1 from "components/TitleH1/TitleH1";
+import Text from "components/Text/Text";
+import OpenGraphHelmet from 'components/OpenGraphHelmet/OpenGraphHelmet';
+
 
 export default function PrivacyPolicyPage() {
   return (
     <main>
+      <OpenGraphHelmet
+        title="100років • Політика конфеденційності"
+        description="Правила обробки, зберігання та захисту даних Клієнтів (надалі-Правила) визначають порядок поводження з даними користувачів сайту https://100rokiv.com.ua/"
+        url="https://100rokiv.netlify.app/privacy-policy"
+        image="https://storokiv-server.herokuapp.com/images/above.jpg"
+      />
       <Section>
         <TitleH1 text="Політика конфіденційності" />
         <Text

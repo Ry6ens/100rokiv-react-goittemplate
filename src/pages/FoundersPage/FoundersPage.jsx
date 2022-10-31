@@ -1,14 +1,22 @@
-import Image from "../../components/Image/Image";
-import Text from "../../components/Text/Text";
-import TitleH2 from "../../components/TitleH2/TitleH2";
-import Section from "../../components/Section/Section";
+import Image from "components/Image/Image";
+import Text from "components/Text/Text";
+import TitleH2 from "components/TitleH2/TitleH2";
+import Section from "components/Section/Section";
+import OpenGraphHelmet from 'components/OpenGraphHelmet/OpenGraphHelmet';
 
-import KlopotenkoIMG from "../../images/people/klopotenko.jpg";
-import PopereshnukIMG from "../../images/people/popereshnuk.jpg";
+
+import KlopotenkoIMG from "images/people/klopotenko.jpg";
+import PopereshnukIMG from "images/people/popereshnuk.jpg";
 
 export default function FoundersPage() {
   return (
     <main>
+      <OpenGraphHelmet
+        title="100років • Засновники"
+        description="Засновники ресторану 100 років тому вперед"
+        url="https://100rokiv.netlify.app/founders"
+        image="https://storokiv-server.herokuapp.com/images/above.jpg"
+      />
       <Section>
         <Image
           src={KlopotenkoIMG}

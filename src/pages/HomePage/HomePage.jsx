@@ -8,7 +8,7 @@ const HomePage = () => {
         title="100 років тому вперед"
         description="Незвичайний Ресторан в Києві Де є Традиційні Страви Української Кухні"
         url="https://100rokiv.netlify.app/home"
-        image="https://storokiv-server.herokuapp.com/images/ground.jpeg"
+        image="https://storokiv-server.herokuapp.com/images/above.jpeg"
       />
       <Home />
     </main>

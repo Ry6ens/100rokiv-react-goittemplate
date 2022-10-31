@@ -1,10 +1,17 @@
-import Section from "../../components/Section/Section";
-import EventPrice from "../../components/EventPrice/EventPrice";
-import Text from "../../components/Text/Text";
+import Section from 'components/Section/Section';
+import EventPrice from 'components/EventPrice/EventPrice';
+import Text from 'components/Text/Text';
+import OpenGraphHelmet from 'components/OpenGraphHelmet/OpenGraphHelmet';
 
 export default function EventPage() {
   return (
     <>
+      <OpenGraphHelmet
+        title="100років • Звана Вечеря «Чорнозем»"
+        description="Щасливі повідомити, що Євген Клопотенко проведе другу, додаткову, Вечерю Чорнозем — вже у понеділок, 10 жовтня"
+        url="https://100rokiv.netlify.app/event"
+        image="https://storokiv-server.herokuapp.com/images/event.jpg"
+      />
       <Section>
         <Text text="Всі квитки на Звану Вечерю 6 жовтня — продано!" />
         <Text text="Щасливі повідомити, що Євген Клопотенко проведе другу, додаткову, Вечерю Чорнозем — вже у понеділок, 10 жовтня." />

@@ -1,11 +1,19 @@
-import Section from "../../components/Section/Section";
-import TitleH1 from "../../components/TitleH1/TitleH1";
-import TitleH2 from "../../components/TitleH2/TitleH2";
-import Text from "../../components/Text/Text";
+import Section from "components/Section/Section";
+import TitleH1 from "components/TitleH1/TitleH1";
+import TitleH2 from "components/TitleH2/TitleH2";
+import Text from "components/Text/Text";
+import OpenGraphHelmet from 'components/OpenGraphHelmet/OpenGraphHelmet';
+
 
 export default function PublicOfferPage() {
   return (
     <main>
+      <OpenGraphHelmet
+        title="100років • Публічна оферта"
+        description="Правила обробки, зберігання та захисту даних Клієнтів (надалі-Правила) визначають порядок поводження з даними користувачів сайту https://100rokiv.com.ua/"
+        url="https://100rokiv.netlify.app/public-offer"
+        image="https://storokiv-server.herokuapp.com/images/above.jpg"
+      />
       <Section sectionClass="sectionPublicOffer">
         <TitleH1 text="Публічний договір (оферта)" />
         <Text
