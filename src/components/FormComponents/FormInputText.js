@@ -66,9 +66,6 @@ export default function FormInputText({
         control={control}
         rules={{
           required,
-          pattern: {
-            value: /[A-Za-z]|[бвгґджзклмнпрстфхцчшщйаеєиіїоуюяь]/,
-          },
         }}
         render={({
           field: { onChange, value },

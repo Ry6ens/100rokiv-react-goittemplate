@@ -22,7 +22,7 @@ export default function BasketDelivery() {
       name: '',
       tel: '',
       email: '',
-      deliveryPayment: "",
+      deliveryPayment: '',
       street: '',
       house: '',
       entrance: '',
@@ -55,7 +55,7 @@ export default function BasketDelivery() {
 
   useEffect(() => {
     dispatch(productActions.addDeliveryPrice(Number(watchDeliveryPayment)));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [watchDeliveryPayment]);
 
   return (
