@@ -13,7 +13,7 @@ export default function RedRoomPage() {
   return (
     <main>
       <OpenGraphHelmet
-        title="100років•Червона Зала"
+        title="100років • Червона Зала"
         description="Магічний простір, де ми проводимо Театр їжі та зустрічаємо невеликі компанії, що прагнуть приватності"
         url="https://100rokiv.netlify.app/redroom"
         image="https://storokiv-server.herokuapp.com/images/redroom.jpeg"
