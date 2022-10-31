@@ -1,16 +1,26 @@
-import AboveIMG from "../../images/above.jpeg";
+import AboveIMG from "images/above.jpeg";
 
-import TitleH1 from "../../components/TitleH1/TitleH1";
-import Text from "../../components/Text/Text";
-import Section from "../../components/Section/Section";
-import Image from "../../components/Image/Image";
-import Gallery from "../../components/Gallery/Gallery";
-import Menu from "../../components/Menu/Menu";
-import ButtonLink from "../../components/ButtonLink/ButtonLink";
+import TitleH1 from "components/TitleH1/TitleH1";
+import Text from "components/Text/Text";
+import Section from "components/Section/Section";
+import Image from "components/Image/Image";
+import Gallery from "components/Gallery/Gallery";
+import Menu from "components/Menu/Menu";
+import ButtonLink from "components/ButtonLink/ButtonLink";
+import OpenGraphHelmet from 'components/OpenGraphHelmet/OpenGraphHelmet';
+
 
 export default function AbovePage() {
   return (
     <main>
+      <OpenGraphHelmet
+        title="100років • Другий поверх"
+        description="Це найкраще місце для того, щоб зранку повільно снідати в проміннях яскравого сонця, а ввечері - відчути Україну на
+        смак, насолоджуючись атмосферою історичних вулиць Києва"
+        url="https://100rokiv.netlify.app/above"
+        image="https://storokiv-server.herokuapp.com/images/above.jpg"
+      />
+
       <Image src={AboveIMG} alt="aboveFloor" imgClass="imgFloor" />
 
       <Section>

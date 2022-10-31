@@ -1,16 +1,25 @@
-import GroundIMG from "../../images/ground.jpeg";
+import GroundIMG from "images/ground.jpeg";
 
-import TitleH1 from "../../components/TitleH1/TitleH1";
-import Text from "../../components/Text/Text";
-import Section from "../../components/Section/Section";
-import Image from "../../components/Image/Image";
-import Gallery from "../../components/Gallery/Gallery";
-import Menu from "../../components/Menu/Menu";
-import ButtonLink from "../../components/ButtonLink/ButtonLink";
+import TitleH1 from "components/TitleH1/TitleH1";
+import Text from "components/Text/Text";
+import Section from "components/Section/Section";
+import Image from "components/Image/Image";
+import Gallery from "components/Gallery/Gallery";
+import Menu from "components/Menu/Menu";
+import ButtonLink from "components/ButtonLink/ButtonLink";
+import OpenGraphHelmet from 'components/OpenGraphHelmet/OpenGraphHelmet';
+
 
 export default function GroundPage() {
   return (
     <main>
+      <OpenGraphHelmet
+        title="100років • Перший поверх"
+        description="Входячи, ви потрапляєте до затишної, оздобленої натуральним деревом зали"
+        url="https://100rokiv.netlify.app/ground"
+        image="https://storokiv-server.herokuapp.com/images/ground.jpg"
+      />
+
       <Image src={GroundIMG} alt="groundFloor" imgClass="imgFloor" />
 
       <Section>

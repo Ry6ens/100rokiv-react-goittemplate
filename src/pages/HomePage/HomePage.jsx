@@ -1,46 +1,15 @@
-import { Helmet } from 'react-helmet-async';
-
 import Home from 'components/Home/Home';
+import OpenGraphHelmet from 'components/OpenGraphHelmet/OpenGraphHelmet';
 
 const HomePage = () => {
   return (
     <main>
-      <Helmet>
-        {/* <!--Primary Meta Tags--> */}
-        <title>100 років тому вперед</title>
-        <link rel="canonical" href="https://100rokiv.netlify.app/home" />
-
-        <meta name="title" content="100 років тому вперед" />
-        <meta
-          name="description"
-          content="Незвичайний Ресторан в Києві Де є Традиційні Страви Української Кухні"
-        />
-
-        {/* <!--Open Graph / Facebook Meta Tags--> */}
-        <meta property="og:title" content="100 років тому вперед" />
-        <meta
-          property="og:description"
-          content="Незвичайний Ресторан в Києві Де є Традиційні Страви Української Кухні"
-        />
-        <meta property="og:url" content="https://100rokiv.netlify.app/home" />
-        <meta
-          property="og:image"
-          content="https://storokiv-server.herokuapp.com/images/ground.jpeg"
-        />
-
-        {/* <!--Twitter Meta Tags--> */}
-        <meta name="twitter:title" content="100 років тому вперед" />
-        <meta
-          name="twitter:description"
-          content="Незвичайний Ресторан в Києві Де є Традиційні Страви Української Кухні"
-        />
-        <meta name="twitter:url" content="https://100rokiv.netlify.app/home" />
-        <meta
-          name="twitter:image"
-          content="https://storokiv-server.herokuapp.com/images/ground.jpeg"
-        />
-
-      </Helmet>
+      <OpenGraphHelmet
+        title="100 років тому вперед"
+        description="Незвичайний Ресторан в Києві Де є Традиційні Страви Української Кухні"
+        url="https://100rokiv.netlify.app/home"
+        image="https://storokiv-server.herokuapp.com/images/ground.jpeg"
+      />
       <Home />
     </main>
   );
