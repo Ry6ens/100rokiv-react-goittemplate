@@ -23,14 +23,12 @@ const HomePage = () => {
           content="Незвичайний Ресторан в Києві Де є Традиційні Страви Української Кухні"
         />
         <meta property="og:url" content="https://100rokiv.netlify.app/home" />
-        <meta property="og:type" content="website" />
         <meta
           property="og:image"
           content="https://storokiv-server.herokuapp.com/images/ground.jpeg"
         />
 
         {/* <!--Twitter Meta Tags--> */}
-        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="100 років тому вперед" />
         <meta
           name="twitter:description"
