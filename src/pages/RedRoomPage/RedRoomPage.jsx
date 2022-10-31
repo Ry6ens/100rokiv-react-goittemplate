@@ -16,7 +16,7 @@ export default function RedRoomPage() {
         title="100років • Червона Зала"
         description="Магічний простір, де ми проводимо Театр їжі та зустрічаємо невеликі компанії, що прагнуть приватності"
         url="https://100rokiv.netlify.app/redroom"
-        image="https://storokiv-server.herokuapp.com/images/redroom.jpeg"
+        image="https://storokiv-server.herokuapp.com/images/redroom.jpg"
       />
 
       <Image src={RedRoomIMG} alt="redroom" imgClass="imgFloor" />
