@@ -10,6 +10,7 @@ export default function BookPage() {
         url="https://100rokiv.netlify.app/book"
         image="https://storokiv-server.herokuapp.com/images/above.jpg"
       />
+
       <GastraWidget />
     </main>
   );

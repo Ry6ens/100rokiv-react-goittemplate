@@ -32,7 +32,7 @@ export default function GastraWidget() {
         "background-color": "#fdfbf8",
         "button-background": "#46B37A",
         "button-text-color": "#ffffff",
-        "button-color__hover": "#259e5f",
+        "button-color__hover": "#259e5f"
         }'
       ></gasstra-widget>
     </>
