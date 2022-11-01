@@ -12,7 +12,8 @@ export default function GastraWidget() {
         maxGuestsNumber="10"
         locale="uk"
         width="100%"
-        height={(isMobile && "900px") || "680px"}
+        // height={(isMobile && "900px") || "680px"}
+        height="0"
         background-color="#fdfbf8"
         policies='{
                         "uk": {
