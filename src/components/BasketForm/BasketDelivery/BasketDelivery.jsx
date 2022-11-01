@@ -64,6 +64,7 @@ export default function BasketDelivery() {
           email: data.email,
           phone: data.tel.replace(/\s/g, ''),
         },
+        result_url: "https://100rokiv.netlify.app/home"
       })
     );
 
