@@ -1,8 +1,4 @@
-// import { useMediaQuery } from "react-responsive";
-
 export default function GastraWidget() {
-  // const isMobile = useMediaQuery({ maxWidth: 767.98 });
-
   return (
     <>
       <gasstra-widget
@@ -12,10 +8,7 @@ export default function GastraWidget() {
         maxGuestsNumber="10"
         locale="uk"
         width="100%"
-        // height={(isMobile && "900px") || "680px"}
         height="0"
-        // text-color="#43291b"
-        background-color="#fdfbf8"
         policies='{
                         "uk": {
                             "title": "Політика бронювання",
@@ -30,6 +23,7 @@ export default function GastraWidget() {
                                 }
                               }'
         custom='{
+        "background-color": "#fdfbf8",
         "text-color": "#43291b",
         "background-color": "#fdfbf8",
         "button-background": "#46B37A",
