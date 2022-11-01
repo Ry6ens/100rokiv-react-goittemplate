@@ -132,7 +132,7 @@ export default function BasketDelivery() {
         <BasketOrderSummary basketOrderSummaryClass="overlayBasketDelivery" />
         <ButtonSubmit text="Замовити" />
       </form>
-      <div dangerouslySetInnerHTML={{ __html: payHTML }}></div>
+      <button dangerouslySetInnerHTML={{ __html: payHTML }} target="_blank" type="button"></button>
     </>
   );
 }
