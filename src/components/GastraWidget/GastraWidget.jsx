@@ -28,10 +28,10 @@ export default function GastraWidget() {
                                 }
                               }'
         custom='{
-        "background-color": "#fffbed",
-        "button-background": "#ff5c5c",
+        "background-color": "#fdfbf8",
+        "button-background": "#46B37A",
         "button-text-color": "#ffffff",
-        "button-color__hover": "#43291b",
+        "button-color__hover": "#259e5f",
         }'
       ></gasstra-widget>
     </>
