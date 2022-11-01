@@ -14,6 +14,7 @@ export default function GastraWidget() {
         width="100%"
         // height={(isMobile && "900px") || "680px"}
         height="0"
+        // text-color="#43291b"
         background-color="#fdfbf8"
         policies='{
                         "uk": {
@@ -29,10 +30,12 @@ export default function GastraWidget() {
                                 }
                               }'
         custom='{
+        "text-color": "#43291b",
         "background-color": "#fdfbf8",
         "button-background": "#46B37A",
         "button-text-color": "#ffffff",
-        "button-color__hover": "#259e5f"
+        "button-color__hover": "#259e5f",
+        "checkbox-color": "#46B37A"
         }'
       ></gasstra-widget>
     </>
