@@ -13,7 +13,7 @@ export default function GastraWidget() {
         locale="uk"
         width="100%"
         height={(isMobile && "900px") || "680px"}
-        background-color="#f7f0e4"
+        background-color="#fdfbf8"
         policies='{
                         "uk": {
                             "title": "Політика бронювання",
@@ -28,7 +28,7 @@ export default function GastraWidget() {
                                 }
                               }'
         custom='{
-          "background-color": "#fffbed",
+        "background-color": "#fffbed",
         "button-background": "#ff5c5c",
         "button-text-color": "#ffffff",
         "button-color__hover": "#43291b",
