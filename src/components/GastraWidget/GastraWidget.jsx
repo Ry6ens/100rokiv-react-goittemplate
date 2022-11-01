@@ -13,7 +13,7 @@ export default function GastraWidget() {
         locale="uk"
         width="100%"
         // height={(isMobile && "900px") || "680px"}
-        // height="0"
+        height="0"
         background-color="#fdfbf8"
         policies='{
                         "uk": {
