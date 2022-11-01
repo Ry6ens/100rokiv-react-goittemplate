@@ -9,7 +9,7 @@ const products = [
   {
     id: '01',
     title: 'смажена затірка, ягоди смородини і чорнобривці',
-    price: 165,
+    price: 1,
     category: 'закуски',
     weight: 190,
     img: croquettes,

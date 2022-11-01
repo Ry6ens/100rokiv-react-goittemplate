@@ -5,6 +5,6 @@ export const instance = axios.create({
 });
 
 export const axiosSendGridMessage = async (formData) => {
-  const { data } = instance.post(`/api/email`, formData);
+  const { data } = await instance.post(`/api/email`, formData);
   return data;
 };

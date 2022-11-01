@@ -13,6 +13,7 @@ import getEmailSlice from "redux/email/email-slice";
 import getSheetSlice from "redux/google/sheet-slice";
 import getTelegramSlice from "redux/telegram/telegram-slice";
 import getProductsSlice from 'redux/products/products-slice'
+import getLiqpaySlice from 'redux/liqpay/liqpay-slice'
 
 export const store = configureStore({
   reducer: {
@@ -20,6 +21,7 @@ export const store = configureStore({
     email: getEmailSlice,
     google: getSheetSlice,
     telegram: getTelegramSlice,
+    liqpay: getLiqpaySlice,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

@@ -5,6 +5,6 @@ export const instance = axios.create({
 });
 
 export const axiosTelegram = async (formData) => {
-  const { data } = instance.post(`/api/telegram`, formData);
+  const { data } = await instance.post(`/api/telegram`, formData);
   return data;
 };

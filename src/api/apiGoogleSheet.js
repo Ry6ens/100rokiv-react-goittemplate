@@ -5,6 +5,6 @@ export const instance = axios.create({
 });
 
 export const axiosGoogleSheet = async (formData) => {
-  const { data } = instance.post(`/api/googleSheet`, formData);
+  const { data } = await instance.post(`/api/googleSheet`, formData);
   return data;
 };

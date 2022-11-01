@@ -6,6 +6,7 @@ import ButtonLink from 'components/ButtonLink/ButtonLink'
 import TitleH1 from '../TitleH1/TitleH1';
 
 export default function BasketForm() {
+
   return (
     <>
       <TitleH1 text="Кошик" />
@@ -14,7 +15,7 @@ export default function BasketForm() {
       <BasketProductsFood />
       <BasketOrderSummary />
 
-      <ButtonLink to="delivery" text="Оформити" />
+      <ButtonLink to="delivery" text="Оформити"  />
     </>
   );
 }
