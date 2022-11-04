@@ -13,9 +13,7 @@ const optionsMenu = [
 
 export default function SelectOptions({ options, onChange }) {
 
-  useEffect(()=> {const selectValue = e => {
-    onChange(e.value);
-  }}, [])
+  useEffect(()=> {}, [])
 
   const selectValue = e => {
     onChange(e.value);
