@@ -19,7 +19,7 @@ export default function DeliveryFoodPage() {
   const isDesktop = useMediaQuery({ minWidth: 1024 });
 
   useEffect(() => {
-    dispatch(getProductsByCategory('закуски'));
+    dispatch(getProductsByCategory('starters'));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

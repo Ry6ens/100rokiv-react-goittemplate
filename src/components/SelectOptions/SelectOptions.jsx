@@ -3,11 +3,11 @@ import Select from 'react-select';
 import s from './SelectOptions.module.scss';
 
 const optionsMenu = [
-  { value: 'закуски', label: 'закуски' },
-  { value: 'салати', label: 'салати' },
-  { value: 'перші страви', label: 'перші страви' },
-  { value: 'основні страви', label: 'основні страви' },
-  { value: 'солодке', label: 'солодке' },
+  { value: 'starters', label: 'закуски' },
+  { value: 'salads', label: 'салати' },
+  { value: 'first-courses', label: 'перші страви' },
+  { value: 'main-courses', label: 'основні страви' },
+  { value: 'sweet', label: 'солодке' },
 ];
 
 export default function SelectOptions({ onChange }) {

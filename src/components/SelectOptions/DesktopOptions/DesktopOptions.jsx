@@ -3,7 +3,7 @@ import { useState } from 'react';
 import s from './DesktopOptions.module.scss';
 
 export default function DesktopOptions({ onClick }) {
-  const [active, setActive] = useState('закуски');
+  const [active, setActive] = useState('starters');
 
   const handelClick = e => {
     setActive(e.target.textContent);
