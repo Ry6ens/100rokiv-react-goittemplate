@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 
 import Loader from 'components/Loader/Loader';
 
-const liqpay = document.querySelector('#liqpay_checkout');
+// const liqpay = document.querySelector('#liqpay_checkout');
 
 export default function CheckoutPage() {
   const payHTML = useSelector(store => store.liqpay.pay);
