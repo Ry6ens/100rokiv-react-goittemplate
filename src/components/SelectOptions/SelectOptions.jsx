@@ -17,7 +17,7 @@ export default function SelectOptions({ onChange }) {
 
   return (
     <Select
-      defaultValue={{ label: optionsMenu[0].value }}
+      defaultValue={{ label: optionsMenu[0].label }}
       options={optionsMenu}
       className={s.options}
       onChange={e => selectValue(e)}
