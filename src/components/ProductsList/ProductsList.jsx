@@ -16,13 +16,13 @@ export default function ProductsList() {
 
   return (
     <ul className={s.list}>
-      {data.map(({ _id, title, price, img }) => (
+      {data.map(({ _id, title, price, imgURL }) => (
         <li key={_id}>
           <Link to={`/delivery-food/${_id}`} onClick={scrollTop}>
             <div
               className={s.img}
               style={{
-                backgroundImage: `url(${img})`,
+                backgroundImage: `url(${imgURL})`,
               }}
             ></div>
             <TitleH2 text={title} titleClass="titleProductsList" />

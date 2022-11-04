@@ -19,7 +19,7 @@ export default function DeliveryFoodPage() {
   const isDesktop = useMediaQuery({ minWidth: 1024 });
 
   useEffect(() => {
-    dispatch(getProductsByCategory('starters'));
+    dispatch(getProductsByCategory("starters"))
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -38,7 +38,9 @@ export default function DeliveryFoodPage() {
       <TitleH1 text="100 РОКІВ ТОМУ ВПЕРЕД" />
       <TitleH2 text="ВДОМА" />
       <Section>
-        {isMobileTablet && <SelectOptions onChange={handleFilter} />}
+        {isMobileTablet && (
+          <SelectOptions onChange={handleFilter} />
+        )}
 
         {isDesktop && <DesktopOptions onClick={handleFilter} />}
         <ProductsList onClick={handleFilter} />
