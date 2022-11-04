@@ -1,5 +1,4 @@
 import Select from 'react-select';
-import { useEffect } from 'react';
 
 import s from './SelectOptions.module.scss';
 
@@ -11,10 +10,7 @@ const optionsMenu = [
   { value: 'солодке', label: 'солодке' },
 ];
 
-export default function SelectOptions({ options, onChange }) {
-
-  useEffect(()=> {}, [])
-
+export default function SelectOptions({ onChange }) {
   const selectValue = e => {
     onChange(e.value);
   };

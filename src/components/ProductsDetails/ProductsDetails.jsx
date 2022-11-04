@@ -1,8 +1,6 @@
 import { useParams, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 
-// import products from 'assets/product';
-
 import s from './ProductsDetails.module.scss';
 
 import Section from 'components/Section/Section';
@@ -13,25 +11,18 @@ import ButtonBack from 'components/ButtonBack/ButtonBack';
 import Button from 'components/Button/Button';
 
 import { basketActions } from 'redux/basket/basket-slice';
-import { getAllProducts } from 'redux/products/products-selectors';
+import { getProductsByCategory } from 'redux/products/products-selectors';
 
 export default function ProductsDetails({ onClick }) {
   const { id } = useParams();
   const location = useLocation();
   const dispatch = useDispatch();
-  const products = useSelector(getAllProducts)
-
+  const products = useSelector(getProductsByCategory)
 
   const backLinkHref = location.state?.from ?? '/delivery-food';
 
   const product = products.find(el => el._id === id);
-  const { title, price, weight, img, descr, category, quantity } = product;
-
-  const handelClick = () => {
-    const text = { value: category };
-    console.log(text);
-    onClick(text);
-  };
+  const { title, price, weight, img, descr, quantity } = product;
 
   function addToBasket() {
     dispatch(basketActions.addToBasket({ id , title, img , price, quantity }));
@@ -40,7 +31,7 @@ export default function ProductsDetails({ onClick }) {
   return (
     <Section>
       <div className={s.overlay}>
-        <ButtonBack backLinkHref={backLinkHref} onClick={handelClick} />
+        <ButtonBack backLinkHref={backLinkHref} />
         <Image src={img} alt={title} imgClass="imgProductsDetails" />
         <TitleH1 text={title} titleClass="titleProductDetails" />
         <p className={s.textPrice}>{price} грн</p>

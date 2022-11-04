@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
-import { useStore, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import TitleH1 from 'components/TitleH1/TitleH1';
 import TitleH2 from 'components/TitleH2/TitleH2';
@@ -11,23 +11,19 @@ import ProductsList from 'components/ProductsList/ProductsList';
 import OpenGraphHelmet from 'components/OpenGraphHelmet/OpenGraphHelmet';
 
 import { getProductsByCategory } from 'redux/products/products-operations';
-import { getProducts } from 'redux/products/products-operations';
 
 export default function DeliveryFoodPage() {
   const dispatch = useDispatch();
-  const store = useStore();
 
   const isMobileTablet = useMediaQuery({ maxWidth: 1023.98 });
   const isDesktop = useMediaQuery({ minWidth: 1024 });
 
   useEffect(() => {
-    dispatch(getProducts());
-    handleFilter(store.getState().products.selectOptions);
+    dispatch(getProductsByCategory('закуски'));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleFilter = value => {
-    console.log(value)
     dispatch(getProductsByCategory(value));
   };
 
@@ -42,9 +38,7 @@ export default function DeliveryFoodPage() {
       <TitleH1 text="100 РОКІВ ТОМУ ВПЕРЕД" />
       <TitleH2 text="ВДОМА" />
       <Section>
-        {isMobileTablet && (
-          <SelectOptions options="optionsMenu" onChange={handleFilter} />
-        )}
+        {isMobileTablet && <SelectOptions onChange={handleFilter} />}
 
         {isDesktop && <DesktopOptions onClick={handleFilter} />}
         <ProductsList onClick={handleFilter} />

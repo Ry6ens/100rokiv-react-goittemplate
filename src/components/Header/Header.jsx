@@ -10,7 +10,7 @@ import ButtonLink from 'components/ButtonLink/ButtonLink';
 export default function Header() {
   const isMobileTablet = useMediaQuery({ maxWidth: 1023.98 });
   const isDesktop = useMediaQuery({ minWidth: 1024 });
-  const products = useSelector(store => store.products.items);
+  const products = useSelector(store => store.basket.items);
 
   return (
     <header className={s.header}>
