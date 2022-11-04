@@ -1,7 +1,7 @@
 import { useParams, useLocation } from 'react-router-dom';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
-import products from 'assets/product';
+// import products from 'assets/product';
 
 import s from './ProductsDetails.module.scss';
 
@@ -12,16 +12,19 @@ import Text from 'components/Text/Text';
 import ButtonBack from 'components/ButtonBack/ButtonBack';
 import Button from 'components/Button/Button';
 
-import { productActions } from 'redux/products/products-slice';
+import { basketActions } from 'redux/basket/basket-slice';
+import { getAllProducts } from 'redux/products/products-selectors';
 
 export default function ProductsDetails({ onClick }) {
   const { id } = useParams();
   const location = useLocation();
   const dispatch = useDispatch();
+  const products = useSelector(getAllProducts)
+
 
   const backLinkHref = location.state?.from ?? '/delivery-food';
 
-  const product = products.find(el => el.id === id);
+  const product = products.find(el => el._id === id);
   const { title, price, weight, img, descr, category, quantity } = product;
 
   const handelClick = () => {
@@ -31,7 +34,7 @@ export default function ProductsDetails({ onClick }) {
   };
 
   function addToBasket() {
-    dispatch(productActions.addToBasket({ id , title, img , price, quantity }));
+    dispatch(basketActions.addToBasket({ id , title, img , price, quantity }));
   }
 
   return (

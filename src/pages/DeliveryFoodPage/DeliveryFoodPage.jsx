@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
-import { useStore } from 'react-redux';
+import { useStore, useDispatch } from 'react-redux';
 
 import TitleH1 from 'components/TitleH1/TitleH1';
 import TitleH2 from 'components/TitleH2/TitleH2';
@@ -10,55 +10,25 @@ import DesktopOptions from 'components/SelectOptions/DesktopOptions/DesktopOptio
 import ProductsList from 'components/ProductsList/ProductsList';
 import OpenGraphHelmet from 'components/OpenGraphHelmet/OpenGraphHelmet';
 
-import products from 'assets/product';
+import { getProductsByCategory } from 'redux/products/products-operations';
+import { getProducts } from 'redux/products/products-operations';
 
 export default function DeliveryFoodPage() {
-  const [productsData, setProductsData] = useState(products);
+  const dispatch = useDispatch();
   const store = useStore();
 
   const isMobileTablet = useMediaQuery({ maxWidth: 1023.98 });
   const isDesktop = useMediaQuery({ minWidth: 1024 });
 
   useEffect(() => {
+    dispatch(getProducts());
     handleFilter(store.getState().products.selectOptions);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleFilter = value => {
-    if (value === 'закуски') {
-      const filteredProducts = products.filter(
-        ({ category }) => category === 'закуски'
-      );
-      setProductsData(filteredProducts);
-    }
-
-    if (value === 'салати') {
-      const filteredProducts = products.filter(
-        ({ category }) => category === 'салати'
-      );
-      setProductsData(filteredProducts);
-    }
-
-    if (value === 'перші страви') {
-      const filteredProducts = products.filter(
-        ({ category }) => category === 'перші страви'
-      );
-      setProductsData(filteredProducts);
-    }
-
-    if (value === 'основні страви') {
-      const filteredProducts = products.filter(
-        ({ category }) => category === 'основні страви'
-      );
-      setProductsData(filteredProducts);
-    }
-
-    if (value === 'солодке') {
-      const filteredProducts = products.filter(
-        ({ category }) => category === 'солодке'
-      );
-      setProductsData(filteredProducts);
-    }
+    console.log(value)
+    dispatch(getProductsByCategory(value));
   };
 
   return (
@@ -77,7 +47,7 @@ export default function DeliveryFoodPage() {
         )}
 
         {isDesktop && <DesktopOptions onClick={handleFilter} />}
-        <ProductsList data={productsData} onClick={handleFilter} />
+        <ProductsList onClick={handleFilter} />
       </Section>
     </main>
   );

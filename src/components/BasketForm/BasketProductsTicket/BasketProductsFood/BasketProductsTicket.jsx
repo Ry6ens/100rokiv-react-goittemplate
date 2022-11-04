@@ -6,7 +6,7 @@ import TitleH2 from 'components/TitleH2/TitleH2';
 
 import { ReactComponent as CloseBtn } from 'images/svg/closeBtn.svg';
 
-import { productActions } from 'redux/products/products-slice';
+import { basketActions } from 'redux/basket/basket-slice';
 
 export default function BasketProductsTicket() {
   const dispatch = useDispatch();
@@ -16,7 +16,7 @@ export default function BasketProductsTicket() {
 
   const deleteItem = ({ currentTarget: { id } }) => {
     const findTicketById = productsTicket.find(el => el.id === id);
-    dispatch(productActions.deleteFromBasket(findTicketById));
+    dispatch(basketActions.deleteFromBasket(findTicketById));
   };
 
   return (

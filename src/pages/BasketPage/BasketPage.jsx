@@ -8,7 +8,7 @@ import TitleH2 from 'components/TitleH2/TitleH2';
 
 export default function Basket() {
   const location = useLocation();
-  const products = useSelector(store => store.products.totalQuantity);
+  const products = useSelector(store => store.basket.totalQuantity);
 
   let isOutlet = true;
   if (

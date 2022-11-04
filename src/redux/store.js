@@ -14,9 +14,11 @@ import getSheetSlice from "redux/google/sheet-slice";
 import getTelegramSlice from "redux/telegram/telegram-slice";
 import getProductsSlice from 'redux/products/products-slice'
 import getLiqpaySlice from 'redux/liqpay/liqpay-slice'
+import getBasketSlice from 'redux/basket/basket-slice'
 
 export const store = configureStore({
   reducer: {
+    basket: getBasketSlice,
     products: getProductsSlice,
     email: getEmailSlice,
     google: getSheetSlice,

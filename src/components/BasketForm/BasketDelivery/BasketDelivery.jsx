@@ -1,6 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 import s from './BasketDelivery.module.scss';
 import './styles.scss';
@@ -11,20 +12,16 @@ import FormInputEmail from 'components/FormComponents/FormInputEmail';
 import FormInputRadio from 'components/FormComponents/FormInputRadio';
 import ButtonSubmit from 'components/Button/Button';
 import BasketOrderSummary from '../BasketOrderSummary/BasketOrderSummary';
-import Loader from 'components/Loader/Loader';
 
-import { productActions } from 'redux/products/products-slice';
+import { basketActions } from 'redux/basket/basket-slice';
 import { getLiqPayOperations } from 'redux/liqpay/liqpay-operations';
 
 export default function BasketDelivery() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const orderItems = useSelector(store => store.products.items);
   const totalAmount = useSelector(store => store.products.totalAmount);
-  const payHTML = useSelector(store => store.liqpay.pay);
-  const loadingPay = useSelector(store => store.liqpay.loading);
-
-
-  console.log(payHTML);
 
   const { control, watch, handleSubmit, reset, formState } = useForm({
     defaultValues: {
@@ -70,13 +67,15 @@ export default function BasketDelivery() {
       })
     );
 
+    navigate('/basket/checkout');
+
     reset();
   };
 
   const watchDeliveryPayment = watch('deliveryPayment');
 
   useEffect(() => {
-    dispatch(productActions.addDeliveryPrice(Number(watchDeliveryPayment)));
+    dispatch(basketActions.addDeliveryPrice(Number(watchDeliveryPayment)));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [watchDeliveryPayment]);
 
@@ -135,8 +134,6 @@ export default function BasketDelivery() {
         <BasketOrderSummary basketOrderSummaryClass="overlayBasketDelivery" />
         <ButtonSubmit text="Замовити" />
       </form>
-
-      {loadingPay ? <Loader /> : <button dangerouslySetInnerHTML={{ __html: payHTML }} target="_blank" type="button"></button>}
     </>
   );
 }

@@ -7,9 +7,9 @@ import TitleH2 from 'components/TitleH2/TitleH2';
 import {ReactComponent as Symbol} from 'images/svg/hryvniaSymbol.svg'
 
 export default function BasketOrderSummary({basketOrderSummaryClass = "overlayTable"}) {
-  const subTotal = useSelector(store => store.products.subTotal)
-  const deliveryPrice = useSelector(store => store.products.deliveryPrice)
-  const totalAmount = useSelector(store => store.products.totalAmount)
+  const subTotal = useSelector(store => store.basket.subTotal)
+  const deliveryPrice = useSelector(store => store.basket.deliveryPrice)
+  const totalAmount = useSelector(store => store.basket.totalAmount)
 
   return (
     <div className={s[basketOrderSummaryClass]}>

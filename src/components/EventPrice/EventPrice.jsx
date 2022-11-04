@@ -7,7 +7,7 @@ import s from "./EventPrice.module.scss";
 import TitleH1 from "components/TitleH1/TitleH1";
 import Button from "components/Button/Button";
 
-import { productActions } from "redux/products/products-slice";
+import { basketActions } from "redux/basket/basket-slice";
 
 export default function EventForm() {
   const dispatch = useDispatch();
@@ -16,7 +16,7 @@ export default function EventForm() {
   const isTabletDesktop = useMediaQuery({ minWidth: 768 });
 
   function addToBasket() {
-    dispatch(productActions.addToBasket({ id: nanoid(), title: "Чорнозем", price: 2500, category: "ticket", time: '18:30', date: "10.10.2022", quantity: 1 }));
+    dispatch(basketActions.addToBasket({ id: nanoid(), title: "Чорнозем", price: 2500, category: "ticket", time: '18:30', date: "10.10.2022", quantity: 1 }));
 
   }
 

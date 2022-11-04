@@ -1,18 +1,12 @@
 import { useState } from 'react';
-import { useDispatch, useStore } from 'react-redux';
 
 import s from './DesktopOptions.module.scss';
 
-import { productActions } from 'redux/products/products-slice';
-
 export default function DesktopOptions({ onClick }) {
-  const dispatch = useDispatch();
-  const store = useStore();
-  const [active, setActive] = useState(store.getState().products.selectOptions);
+  const [active, setActive] = useState('закуски');
 
   const handelClick = e => {
     setActive(e.target.textContent);
-    dispatch(productActions.addOption(e.target.textContent));
     onClick(e.target.textContent);
   };
 

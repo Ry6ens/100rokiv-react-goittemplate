@@ -9,8 +9,8 @@ import { ReactComponent as HryvniaSymbol } from '../../../images/svg/hryvniaSymb
 
 export default function Basket() {
   const isTablet = useMediaQuery({ minWidth: 768 });
-  const products = useSelector(store => store.products.items);
-  const totalAmountProducts = useSelector(store => store.products.totalAmount);
+  const products = useSelector(store => store.basket.items);
+  const totalAmountProducts = useSelector(store => store.basket.totalAmount);
 
   return (
     <>

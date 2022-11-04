@@ -1,9 +1,7 @@
 import Select from 'react-select';
-import { useDispatch, useStore } from 'react-redux';
+import { useEffect } from 'react';
 
 import s from './SelectOptions.module.scss';
-
-import { productActions } from 'redux/products/products-slice';
 
 const optionsMenu = [
   { value: 'закуски', label: 'закуски' },
@@ -14,23 +12,22 @@ const optionsMenu = [
 ];
 
 export default function SelectOptions({ options, onChange }) {
-  const dispatch = useDispatch();
-  const store = useStore();
+
+  useEffect(()=> {const selectValue = e => {
+    onChange(e.value);
+  }}, [])
 
   const selectValue = e => {
-    dispatch(productActions.addOption(e.value));
     onChange(e.value);
   };
 
-  if (options === 'optionsMenu') {
-    return (
-      <Select
-        defaultValue={{ label: store.getState().products.selectOptions }}
-        options={optionsMenu}
-        className={s.options}
-        onChange={e => selectValue(e)}
-        isSearchable={false}
-      />
-    );
-  }
+  return (
+    <Select
+      defaultValue={{ label: optionsMenu[0].value }}
+      options={optionsMenu}
+      className={s.options}
+      onChange={e => selectValue(e)}
+      isSearchable={false}
+    />
+  );
 }

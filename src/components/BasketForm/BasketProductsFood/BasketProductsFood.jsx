@@ -8,25 +8,25 @@ import { ReactComponent as CloseBtn } from 'images/svg/closeBtn.svg';
 import { ReactComponent as Plus } from 'images/svg/plus.svg';
 import { ReactComponent as Minus } from 'images/svg/minus.svg';
 
-import { productActions } from 'redux/products/products-slice';
+import { basketActions } from 'redux/basket/basket-slice';
 
 export default function BasketProductsFood() {
   const dispatch = useDispatch();
 
-  const products = useSelector(store => store.products.items);
+  const products = useSelector(store => store.basket.items);
   const productsFood = products.filter(el => el.category !== 'ticket');
 
   const deleteItem = ({ currentTarget: { id } }) => {
     const findProductById = productsFood.find(el => el.id === id);
-    dispatch(productActions.deleteFromBasket(findProductById));
+    dispatch(basketActions.deleteFromBasket(findProductById));
   };
 
   const handleIncrement = ({ currentTarget: { id } }) => {
-    dispatch(productActions.incrementProduct(id));
+    dispatch(basketActions.incrementProduct(id));
   };
 
   const handleDecrement = ({ currentTarget: { id } }) => {
-    dispatch(productActions.decrementProduct(id));
+    dispatch(basketActions.decrementProduct(id));
   };
 
   return (
