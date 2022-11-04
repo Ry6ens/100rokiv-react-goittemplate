@@ -20,8 +20,8 @@ export default function BasketDelivery() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const orderItems = useSelector(store => store.products.items);
-  const totalAmount = useSelector(store => store.products.totalAmount);
+  const orderItems = useSelector(store => store.basket.items);
+  const totalAmount = useSelector(store => store.basket.totalAmount);
 
   const { control, watch, handleSubmit, reset, formState } = useForm({
     defaultValues: {
@@ -131,6 +131,7 @@ export default function BasketDelivery() {
           label="Коментар"
           type="text"
         />
+        
         <BasketOrderSummary basketOrderSummaryClass="overlayBasketDelivery" />
         <ButtonSubmit text="Замовити" />
       </form>

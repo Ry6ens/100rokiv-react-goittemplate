@@ -11,7 +11,7 @@ import { basketActions } from 'redux/basket/basket-slice';
 export default function BasketProductsTicket() {
   const dispatch = useDispatch();
 
-  const products = useSelector(store => store.products.items);
+  const products = useSelector(store => store.basket.items);
   const productsTicket = products.filter(el => el.category === 'ticket');
 
   const deleteItem = ({ currentTarget: { id } }) => {
