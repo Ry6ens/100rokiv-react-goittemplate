@@ -3,10 +3,9 @@ import { createSlice } from "@reduxjs/toolkit";
 import { getLiqPayOperations } from "./liqpay-operations";
 
 const initialState = {
-  items: [],
+  keys: [],
   loading: false,
   error: "",
-  pay: ""
 };
 
 const getTelegramSlice = createSlice({
@@ -17,11 +16,9 @@ const getTelegramSlice = createSlice({
       store.loading = true;
       store.error = null;
     },
-    [getLiqPayOperations.fulfilled]: (store, {meta, payload}) => {
-      console.log(payload);
+    [getLiqPayOperations.fulfilled]: (store, {payload}) => {
       store.loading = false;
-      store.items = meta.arg;
-      store.pay = payload.data;
+      store.keys = payload;
     },
     [getLiqPayOperations.rejected]: (store, payload) => {
       store.loading = false;

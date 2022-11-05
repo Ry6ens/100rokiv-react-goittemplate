@@ -131,7 +131,7 @@ export default function BasketDelivery() {
           label="Коментар"
           type="text"
         />
-        
+
         <BasketOrderSummary basketOrderSummaryClass="overlayBasketDelivery" />
         <ButtonSubmit text="Замовити" />
       </form>
