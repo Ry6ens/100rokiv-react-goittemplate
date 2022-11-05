@@ -46,8 +46,8 @@
 }
 
 @each $gallery in borshch,
-buriak,
-cukini,
+chomber-na-dyko,
+galushki-with-meat-cherries,
 galushki,
 indichka,
 kachana,
@@ -58,21 +58,24 @@ sirnuku,
 sudak,
 tomatoMelon {
   .photo-#{$gallery} {
-    background-image: url('../../images/menu/#{$gallery}.jpg');
+    // background-image: url('../../images/menu/#{$gallery}.jpg');
+    background-image: url('https://storokiv-server.herokuapp.com/images/gallery/#{$gallery}.jpg');
   }
 }
 
 .photo-indichka {
   @include mixins.mq(desktop) {
     grid-column: 1 / 3;
-    background-image: url('../../images/menu/indichka.jpg');
+    // background-image: url('../../images/menu/indichka.jpg');
+    background-image: url('https://storokiv-server.herokuapp.com/images/gallery/chomber-na-dyko.jpg');
+
   }
 }
 
 .photo-kachana {
   @include mixins.mq(desktop) {
     grid-column: 1 / 3;
-    background-image: url('../../images/menu/kachana.jpg');
+    // background-image: url('../../images/menu/kachana.jpg');
   }
 }
 
