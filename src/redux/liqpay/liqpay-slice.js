@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { getLiqPayOperations } from "./liqpay-operations";
+import { getLiqPayOperations, getLiqResultOperations } from "./liqpay-operations";
 
 const initialState = {
   keys: [],
+  result: {},
   loading: false,
   error: "",
 };
@@ -21,6 +22,20 @@ const getTelegramSlice = createSlice({
       store.keys = payload;
     },
     [getLiqPayOperations.rejected]: (store, payload) => {
+      store.loading = false;
+      store.error = payload;
+    },
+
+    // LiqPay Result
+    [getLiqResultOperations.pending]: (store, payload) => {
+      store.loading = true;
+      store.error = null;
+    },
+    [getLiqResultOperations.fulfilled]: (store, {payload}) => {
+      store.loading = false;
+      store.result = payload;
+    },
+    [getLiqResultOperations.rejected]: (store, payload) => {
       store.loading = false;
       store.error = payload;
     },
