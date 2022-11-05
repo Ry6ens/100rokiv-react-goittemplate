@@ -2,11 +2,11 @@
 import { useSelector } from 'react-redux';
 // import parse from 'html-react-parser';
 // import { useEffect } from 'react';
-import Iframe from 'react-iframe';
+// import Iframe from 'react-iframe';
 import { Helmet } from 'react-helmet-async';
 
 // import Loader from 'components/Loader/Loader';
-import Section from 'components/Section/Section';
+// import Section from 'components/Section/Section';
 
 // const liqpay = document.querySelector('#liqpay_checkout');
 
