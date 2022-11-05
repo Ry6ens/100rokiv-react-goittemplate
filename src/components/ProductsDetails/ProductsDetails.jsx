@@ -13,7 +13,7 @@ import Button from 'components/Button/Button';
 import { basketActions } from 'redux/basket/basket-slice';
 import { getProductsByCategory } from 'redux/products/products-selectors';
 
-export default function ProductsDetails({ onClick }) {
+export default function ProductsDetails() {
   const { id } = useParams();
   const location = useLocation();
   const dispatch = useDispatch();
@@ -22,17 +22,16 @@ export default function ProductsDetails({ onClick }) {
   const backLinkHref = location.state?.from ?? '/delivery-food';
 
   const product = products.find(el => el._id === id);
-  const { title, price, weight, img, descr, quantity } = product;
+  const { title, price, weight, imgURL, descr, quantity } = product;
 
   function addToBasket() {
-    dispatch(basketActions.addToBasket({ id , title, img , price, quantity }));
+    dispatch(basketActions.addToBasket({ id , title, imgURL , price, quantity }));
   }
-
   return (
     <Section>
       <div className={s.overlay}>
         <ButtonBack backLinkHref={backLinkHref} />
-        <Image src={img} alt={title} imgClass="imgProductsDetails" />
+        <Image src={imgURL} alt={title} imgClass="imgProductsDetails" />
         <TitleH1 text={title} titleClass="titleProductDetails" />
         <p className={s.textPrice}>{price} грн</p>
         <Button text="Замовити" btnClass="btnProductDetails" type="button" onClick={addToBasket} />

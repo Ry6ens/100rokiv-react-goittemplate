@@ -31,7 +31,7 @@ export default function BasketProductsFood() {
 
   return (
     <>
-      {productsFood?.map(({ id, img, price, title, quantity }) => (
+      {productsFood?.map(({ id, imgURL, price, title, quantity }) => (
         <div className={s.productForm} key={id}>
           <span className={s.closeBtn} id={id} onClick={deleteItem}>
             <CloseBtn />
@@ -40,7 +40,7 @@ export default function BasketProductsFood() {
           <div
             className={s.img}
             style={{
-              backgroundImage: `url(${img})`,
+              backgroundImage: `url(${imgURL})`,
             }}
           ></div>
           <div className={s.quantityOverlay}>
