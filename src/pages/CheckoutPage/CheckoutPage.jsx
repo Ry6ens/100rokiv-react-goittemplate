@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import { useSelector } from 'react-redux';
 // import parse from 'html-react-parser';
-// import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 // import Iframe from 'react-iframe';
 import { Helmet } from 'react-helmet-async';
 
@@ -13,28 +13,28 @@ import { Helmet } from 'react-helmet-async';
 export default function CheckoutPage() {
   const keys = useSelector(store => store.liqpay.keys);
   // const loadingPay = useSelector(store => store.liqpay.loading);
+  const [html, setHTML] = useState('');
 
-  console.log(keys.data);
-  console.log(keys.signature);
-
-  const html = `window.LiqPayCheckoutCallback = function() {
-    LiqPayCheckout.init({
-      data: "${keys.data}",
-      signature: "${keys.signature}",
-      embedTo: "#liqpay_checkout",
-      mode: "embed" // embed || popup,
-        }).on("liqpay.callback", function(data){
-      console.log(data.status);
-      console.log(data);
-      }).on("liqpay.ready", function(data){
-        // ready
-      }).on("liqpay.close", function(data){
-        // close
-    });
-  };`;
+  useEffect(() => {
+    setHTML(`window.LiqPayCheckoutCallback = function() {
+      LiqPayCheckout.init({
+        data: "${keys.data}",
+        signature: "${keys.signature}",
+        embedTo: "#liqpay_checkout",
+        mode: "embed" // embed || popup,
+          }).on("liqpay.callback", function(data){
+        console.log(data.status);
+        console.log(data);
+        }).on("liqpay.ready", function(data){
+          // ready
+        }).on("liqpay.close", function(data){
+          // close
+      });
+    };`);
+  }, [keys]);
 
   return (
-    <div>
+    <>
       {/* {loadingPay ? <Loader /> : parse(payHTML)} */}
       {/* <Iframe
         // url={`https://www.liqpay.ua/api/request?data=${keys.data}=&signature=${keys.signature}`}
@@ -54,6 +54,6 @@ export default function CheckoutPage() {
         <script>{html}</script>
         <script src="//static.liqpay.ua/libjs/checkout.js" async></script>
       </Helmet>
-    </div>
+    </>
   );
 }
