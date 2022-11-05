@@ -1,19 +1,20 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import styled from 'styled-components';
 
-import './Gallery.scss';
+import s from  "./Gallery.module.scss"
 
-import { items } from "./items";
+import Modal from 'components/Modal/Modal';
+import TitleH2 from 'components/TitleH2/TitleH2';
+import Section from 'components/Section/Section';
+import Image from 'components/Image/Image';
 
-import Modal from '../Modal/Modal';
-import TitleH2 from '../TitleH2/TitleH2';
-
-import { getProductsByImgSelector } from 'redux/products/products-selectors';
-import { getProductsByImg } from 'redux/products/products-operations';
+import { getAllProducts } from 'redux/products/products-selectors';
+import { getProducts } from 'redux/products/products-operations';
 
 export default function Gallery() {
   const dispatch = useDispatch();
-  const data = useSelector(getProductsByImgSelector);
+  const data = useSelector(getAllProducts);
   const [showModal, setShowModal] = useState(false);
 
   const handleClickModal = e => {
@@ -23,33 +24,38 @@ export default function Gallery() {
   };
 
   useEffect(() => {
-    dispatch(getProductsByImg())
+    dispatch(getProducts());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const elements = data.map(({ id, title, imgGallery }) => (
-    <div
-      key={id}
-      className={title}
-      data-image={imgGallery}
-      background-image
-      onClick={handleClickModal}
-    ></div>
-  ));
+  const elements = data.map(({ _id, imgGallery }) => {
+    const Wrapper = styled.div`
+      background-image: url(${imgGallery});
+    `;
+
+    return (
+      <Wrapper
+        key={_id}
+        className={s.photo}
+        data-image={imgGallery}
+        onClick={handleClickModal}
+      ></Wrapper>
+    );
+  });
 
   const getModalImage = showModal => {
     setShowModal(showModal);
   };
 
   return (
-    <section className="galleryPhotos">
+    <Section sectionClass="sectionGallery">
       <TitleH2 text="Галерея" />
-      <div className="galleryList">{elements}</div>
+      <div className={s.galleryList}>{elements}</div>
       {showModal && (
         <Modal onClose={getModalImage}>
-          <img src={showModal} alt="img" className="modalImg" />
+          <Image src={showModal} alt="img" imgClass="imgGalleryModal"/>
         </Modal>
       )}
-    </section>
+    </Section>
   );
 }

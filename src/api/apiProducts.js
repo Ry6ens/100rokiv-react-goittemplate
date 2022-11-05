@@ -1,8 +1,7 @@
 import axios from 'axios';
 
 export const instance = axios.create({
-  // baseURL: 'https://storokiv-server.herokuapp.com',
-  baseURL: 'http://localhost:4000',
+  baseURL: 'https://storokiv-server.herokuapp.com',
 });
 
 export const axiosGetProducts = async () => {
@@ -12,10 +11,5 @@ export const axiosGetProducts = async () => {
 
 export const axiosGetProductsByCategory = async (category) => {
   const { data } = await instance.get(`/api/products/category/${category}`);
-  return data;
-};
-
-export const axiosGetProductsByImg = async () => {
-  const { data } = await instance.get(`/api/products/img`);
   return data;
 };

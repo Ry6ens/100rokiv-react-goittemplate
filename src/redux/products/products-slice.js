@@ -1,11 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { getProducts, getProductsByCategory, getProductsByImg } from './products-operations';
+import { getProducts, getProductsByCategory } from './products-operations';
 
 const initialState = {
   items: [],
   itemsByCategory: [],
-  itemsByImg: [],
   deliveryPrice: 0,
   totalQuantity: 0,
   subTotal: 0,
@@ -42,21 +41,6 @@ const getProductsSlice = createSlice({
       store.itemsByCategory = payload;
     },
     [getProductsByCategory.rejected]: (store, { payload }) => {
-      store.loading = false;
-      store.error = payload;
-    },
-
-    //* getProductsByImg
-
-    [getProductsByImg.pending]: (store, payload) => {
-      store.loading = true;
-      store.error = null;
-    },
-    [getProductsByImg.fulfilled]: (store, { payload }) => {
-      store.loading = false;
-      store.itemsByImg = payload;
-    },
-    [getProductsByImg.rejected]: (store, { payload }) => {
       store.loading = false;
       store.error = payload;
     },
