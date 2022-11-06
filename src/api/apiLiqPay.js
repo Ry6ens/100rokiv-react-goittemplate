@@ -10,7 +10,7 @@ export const axiosLiqPay = async formData => {
   return data;
 };
 
-export const axiosLiqResult = async formData => {
-  const { data } = await instance.post(`/api/liqpay/result`, formData);
-  return data;
-};
+// export const axiosLiqResult = async formData => {
+//   const { data } = await instance.post(`/api/liqpay/result`, formData);
+//   return data;
+// };
