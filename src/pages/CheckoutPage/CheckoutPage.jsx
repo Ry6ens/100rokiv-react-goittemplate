@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 // import parse from 'html-react-parser';
 // import { useEffect, useState } from 'react';
 // import Iframe from 'react-iframe';
