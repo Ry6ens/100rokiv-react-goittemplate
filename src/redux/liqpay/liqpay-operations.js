@@ -14,16 +14,3 @@ export const getLiqPayOperations = createAsyncThunk(
     }
   }
 );
-
-// export const getLiqResultOperations = createAsyncThunk(
-//   "/liqpay",
-//   async (formData, { rejectWithValue }) => {
-//     try {
-//       const data = await axiosLiqResult(formData);
-//       return data;
-//     } catch (error) {
-//       const { data, status } = error.response;
-//       return rejectWithValue({ data, status });
-//     }
-//   }
-// );

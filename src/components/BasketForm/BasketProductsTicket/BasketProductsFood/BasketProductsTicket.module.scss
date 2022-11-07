@@ -3,10 +3,7 @@
 .ticketForm {
   position: relative;
   padding: 15px 20px;
-  background: var(--color-bg-white);
-  border-radius: 0 3px 3px 0;
-  box-shadow: 0 2px 8px #00000026;
-  overflow: hidden;
+
 
   max-width: 400px;
   margin: 30px auto;
@@ -14,19 +11,24 @@
   display: grid;
   align-items: end;
   grid-template-areas:
-    "title price"
-    "infoData price";
-  gap: 10px;
-  justify-content: space-between;
+    "title title title"
+    "infoData quantity price ";
+  row-gap: 10px;
+  // justify-content: space-between;
 
   text-align: left;
+
+  background: var(--color-bg-white);
+  border-radius: 0 3px 3px 0;
+  box-shadow: 0 2px 8px #00000026;
+  overflow: hidden;
 
   @include mixins.mq(tablet) {
     column-gap: 50px;
   }
 
   @include mixins.mq(desktop) {
-    max-width: 600px;
+    max-width: 500px;
   }
 }
 
@@ -119,5 +121,76 @@
     &::before {
       top: calc(100% + 1px);
     }
+  }
+}
+
+.textProductPriceOverlay {
+  grid-area: price;
+
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.textProductPrice {
+  width: 80px;
+
+  font-size: 16px;
+  line-height: var(--line-height-title);
+  letter-spacing: var(--letter-spacing-title);
+
+  text-transform: lowercase;
+  text-align: right;
+}
+
+.quantityOverlay {
+  grid-area: quantity;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.quantityBtn {
+
+  padding: 0px;
+
+  background-color: var(--color-bg-white);
+  border: none;
+}
+
+.overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 20px;
+  height: 20px;
+
+  background-color: var(--color-bg-white);
+  border: 1px solid var(--color-bg-line);
+
+  @include mixins.mq(desktop) {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 30px;
+  height: 30px;
+
+
+  @include mixins.mq(desktop) {
+    width: 35px;
+    height: 35px;
+
+    font-size: 14px;
+    line-height: var(--line-height-title);
+    letter-spacing: var(--letter-spacing-title);
   }
 }

@@ -5,6 +5,8 @@ import s from './BasketProductsTicket.module.scss';
 import TitleH2 from 'components/TitleH2/TitleH2';
 
 import { ReactComponent as CloseBtn } from 'images/svg/closeBtn.svg';
+import { ReactComponent as Plus } from 'images/svg/plus.svg';
+import { ReactComponent as Minus } from 'images/svg/minus.svg';
 
 import { basketActions } from 'redux/basket/basket-slice';
 
@@ -19,9 +21,17 @@ export default function BasketProductsTicket() {
     dispatch(basketActions.deleteFromBasket(findTicketById));
   };
 
+  const handleIncrement = ({ currentTarget: { id } }) => {
+    dispatch(basketActions.incrementProduct(id));
+  };
+
+  const handleDecrement = ({ currentTarget: { id } }) => {
+    dispatch(basketActions.decrementProduct(id));
+  };
+
   return (
     <>
-      {productsTicket?.map(({ id, price, title, time, date }) => (
+      {productsTicket?.map(({ id, price, title, time, date, quantity }) => (
         <div className={s.ticketForm} key={id}>
           <span className={s.closeBtn} id={id} onClick={deleteItem}>
             <CloseBtn />
@@ -30,7 +40,32 @@ export default function BasketProductsTicket() {
           <p className={s.infoData}>
             {date} о {time}
           </p>
-          <p className={s.textPrice}>{price} грн</p>
+          <div className={s.quantityOverlay}>
+            <button
+              id={id}
+              type="button"
+              className={s.quantityBtn}
+              onClick={handleDecrement}
+            >
+              <span className={s.overlay}>
+                <Minus />
+              </span>
+            </button>
+            <span className={s.quantity}>{quantity}</span>
+            <button
+              id={id}
+              type="button"
+              className={s.quantityBtn}
+              onClick={handleIncrement}
+            >
+              <span className={s.overlay}>
+                <Plus />
+              </span>
+            </button>
+          </div>
+          <div className={s.textProductPriceOverlay}>
+            <p className={s.textProductPrice}>{price * quantity} грн</p>
+          </div>
           <div className={s.ticketOvalsFirst}></div>
           <div className={s.ticketOvalsSecond}></div>
         </div>

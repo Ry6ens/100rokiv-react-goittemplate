@@ -17,7 +17,6 @@ export default function EventForm() {
 
   function addToBasket() {
     dispatch(basketActions.addToBasket({ id: nanoid(), title: "Чорнозем", price: 2500, category: "ticket", time: '18:30', date: "10.10.2022", quantity: 1 }));
-
   }
 
   return (

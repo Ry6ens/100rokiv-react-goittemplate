@@ -25,20 +25,6 @@ const getTelegramSlice = createSlice({
       store.loading = false;
       store.error = payload;
     },
-
-    // LiqPay Result
-    // [getLiqResultOperations.pending]: (store, payload) => {
-    //   store.loading = true;
-    //   store.error = null;
-    // },
-    // [getLiqResultOperations.fulfilled]: (store, {payload}) => {
-    //   store.loading = false;
-    //   store.result = payload;
-    // },
-    // [getLiqResultOperations.rejected]: (store, payload) => {
-    //   store.loading = false;
-    //   store.error = payload;
-    // },
   },
 });
 
