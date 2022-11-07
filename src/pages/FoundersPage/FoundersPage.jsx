@@ -4,11 +4,11 @@ import TitleH2 from "components/TitleH2/TitleH2";
 import Section from "components/Section/Section";
 import OpenGraphHelmet from 'components/OpenGraphHelmet/OpenGraphHelmet';
 
-
 import KlopotenkoIMG from "images/people/klopotenko.jpg";
 import PopereshnukIMG from "images/people/popereshnuk.jpg";
 
 export default function FoundersPage() {
+
   return (
     <main>
       <OpenGraphHelmet
