@@ -51,19 +51,27 @@ export default function BasketDelivery() {
     }
   }, [formState, reset]);
 
+  const watchDeliveryPayment = watch('deliveryPayment');
+
+  useEffect(() => {
+    dispatch(basketActions.addDeliveryPrice(Number(watchDeliveryPayment)));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [watchDeliveryPayment]);
+
   const onSubmit = (data, e) => {
     e.preventDefault();
 
-    const descriptionOrders = orderItems.map(el => el.title);
+    const descriptionOrders = orderItems.map(el => {
+      return `${el.title} - ${el.quantity}x${el.price}=${
+        el.quantity * el.price
+      }`;
+    });
 
     dispatch(
       getLiqPayOperations({
+        ...data,
         description: descriptionOrders.join('; '),
         amount: totalAmount,
-        delivery: {
-          email: data.email,
-          phone: data.tel.replace(/\s/g, ''),
-        },
       })
     );
 
@@ -71,13 +79,6 @@ export default function BasketDelivery() {
 
     reset();
   };
-
-  const watchDeliveryPayment = watch('deliveryPayment');
-
-  useEffect(() => {
-    dispatch(basketActions.addDeliveryPrice(Number(watchDeliveryPayment)));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [watchDeliveryPayment]);
 
   return (
     <>
