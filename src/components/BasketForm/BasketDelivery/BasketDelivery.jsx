@@ -60,6 +60,7 @@ export default function BasketDelivery() {
 
   const onSubmit = (data, e) => {
     e.preventDefault();
+    const { name, tel, email, deliveryPayment, street, house, entrance } = data;
 
     const descriptionOrders = orderItems.map(el => {
       return `${el.title} - ${el.quantity}x${el.price}=${
@@ -69,7 +70,13 @@ export default function BasketDelivery() {
 
     dispatch(
       getLiqPayOperations({
-        ...data,
+        name: name,
+        tel: tel.replace(/[+]/g,"").replace(/ /g,""),
+        email: email,
+        deliveryPayment: deliveryPayment,
+        street: street,
+        house: house,
+        entrance: entrance,
         description: descriptionOrders.join('; '),
         amount: totalAmount,
       })
