@@ -60,12 +60,12 @@ export default function BasketDelivery() {
 
   const onSubmit = (data, e) => {
     e.preventDefault();
-    const { name, tel, email, deliveryPayment, street, house, entrance } = data;
+    const { name, tel, email, deliveryPayment, street, house, entrance, comments } = data;
 
-    const descriptionOrders = orderItems.map(el => {
-      return `${el.title} - ${el.quantity}x${el.price}=${
+    const descriptionOrders = orderItems.map((el, index) => {
+      return `\n${index + 1}. ${el.title} (${el.quantity}x${el.price}) = ${
         el.quantity * el.price
-      }`;
+      };`;
     });
 
     dispatch(
@@ -77,8 +77,9 @@ export default function BasketDelivery() {
         street: street,
         house: house,
         entrance: entrance,
-        description: descriptionOrders.join('; '),
+        description: descriptionOrders.join(' '),
         amount: totalAmount,
+        comments: comments,
       })
     );
 

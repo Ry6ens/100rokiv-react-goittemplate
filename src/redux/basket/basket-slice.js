@@ -67,7 +67,13 @@ const getBasketSlice = createSlice({
       if (payload === 0) {
         state.totalAmount = state.subTotal;
       } else state.totalAmount = state.totalAmount + state.deliveryPrice;
-
+    },
+    clearBasket: (state, { payload }) => {
+      state.items = [];
+      state.deliveryPrice = 0;
+      state.totalQuantity = 0;
+      state.subTotal = 0;
+      state.totalAmount = 0;
     },
   },
 });

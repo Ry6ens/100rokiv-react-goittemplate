@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { getLiqPayOperations } from "./liqpay-operations";
 
 const initialState = {
-  keys: [],
+  keys: null,
   result: {},
   loading: false,
   error: "",

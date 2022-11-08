@@ -21,6 +21,7 @@ const BasketPage = lazy(() => import('../../pages/BasketPage'));
 const CheckoutPage = lazy(() => import('../../pages/CheckoutPage'));
 const DeliveryFoodPage = lazy(() => import('../../pages/DeliveryFoodPage'));
 const ProductDetailsPage = lazy(() => import('../../pages/ProductDetailsPage'));
+const SuccessPage = lazy(() => import('../../pages/SuccessPage'));
 
 export default function UserRoutes() {
   return (
@@ -46,6 +47,7 @@ export default function UserRoutes() {
           <Route path="delivery" element={<DeliveryPage />} />
           <Route path="checkout" element={<CheckoutPage />} />
         </Route>
+        <Route path="success" element={<SuccessPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Suspense>
