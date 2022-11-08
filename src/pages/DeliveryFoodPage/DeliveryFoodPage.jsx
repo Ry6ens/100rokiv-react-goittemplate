@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useMediaQuery } from 'react-responsive';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import TitleH1 from 'components/TitleH1/TitleH1';
 import TitleH2 from 'components/TitleH2/TitleH2';
@@ -11,17 +11,19 @@ import ProductsList from 'components/ProductsList/ProductsList';
 import OpenGraphHelmet from 'components/OpenGraphHelmet/OpenGraphHelmet';
 
 import { getProductsByCategory } from 'redux/products/products-operations';
+import { getSelectedCategory } from 'redux/products/products-selectors';
 
 export default function DeliveryFoodPage() {
   const dispatch = useDispatch();
+  const selectedCategory = useSelector(getSelectedCategory)
+
 
   const isMobileTablet = useMediaQuery({ maxWidth: 1023.98 });
   const isDesktop = useMediaQuery({ minWidth: 1024 });
 
   useEffect(() => {
-    dispatch(getProductsByCategory("starters"))
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    dispatch(getProductsByCategory(selectedCategory))
+  }, [dispatch, selectedCategory]);
 
   const handleFilter = value => {
     dispatch(getProductsByCategory(value));

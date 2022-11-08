@@ -1,28 +1,46 @@
-import { useState } from 'react';
+import { useSelector } from 'react-redux';
 
 import s from './DesktopOptions.module.scss';
 
+import { getSelectedCategory } from 'redux/products/products-selectors';
+
 export default function DesktopOptions({ onClick }) {
-  const [active, setActive] = useState('starters');
+  const selectedCategory = useSelector(getSelectedCategory);
 
   const handelClick = e => {
-    setActive(e.target.dataset.value);
     onClick(e.target.dataset.value);
   };
 
   return (
     <div className={s.list} onClick={handelClick}>
-      <div className={active === 'starters' ? s.activeItem : s.item} data-value="starters">
+      <div
+        className={selectedCategory === 'starters' ? s.activeItem : s.item}
+        data-value="starters"
+      >
         закуски
       </div>
-      <div className={active === 'salads' ? s.activeItem : s.item} data-value="salads">салати</div>
-      <div className={active === 'first-courses' ? s.activeItem : s.item} data-value="first-courses">
+      <div
+        className={selectedCategory === 'salads' ? s.activeItem : s.item}
+        data-value="salads"
+      >
+        салати
+      </div>
+      <div
+        className={selectedCategory === 'first-courses' ? s.activeItem : s.item}
+        data-value="first-courses"
+      >
         перші страви
       </div>
-      <div className={active === 'main-courses' ? s.activeItem : s.item} data-value="main-courses">
+      <div
+        className={selectedCategory === 'main-courses' ? s.activeItem : s.item}
+        data-value="main-courses"
+      >
         основні страви
       </div>
-      <div className={active === 'sweet' ? s.activeItem : s.item} data-value="sweet">
+      <div
+        className={selectedCategory === 'sweet' ? s.activeItem : s.item}
+        data-value="sweet"
+      >
         солодке
       </div>
     </div>

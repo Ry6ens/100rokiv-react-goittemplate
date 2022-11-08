@@ -1,6 +1,9 @@
 import Select from 'react-select';
+import {  useSelector } from 'react-redux';
 
 import s from './SelectOptions.module.scss';
+
+import { getSelectedCategory } from 'redux/products/products-selectors';
 
 const optionsMenu = [
   { value: 'starters', label: 'закуски' },
@@ -11,13 +14,20 @@ const optionsMenu = [
 ];
 
 export default function SelectOptions({ onChange }) {
+  const selectedCategory = useSelector(getSelectedCategory)
+
   const selectValue = e => {
     onChange(e.value);
   };
 
+  const defaultValue = () => {
+    const result = optionsMenu.find(el => el.value === selectedCategory)
+    return result.label
+  }
+
   return (
     <Select
-      defaultValue={{ label: optionsMenu[0].label }}
+      defaultValue={{ label: defaultValue() }}
       options={optionsMenu}
       className={s.options}
       onChange={e => selectValue(e)}

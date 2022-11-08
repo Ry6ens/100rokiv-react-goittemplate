@@ -27,6 +27,7 @@ export default function ProductsDetails() {
   function addToBasket() {
     dispatch(basketActions.addToBasket({ id , title, imgURL , price, quantity }));
   }
+
   return (
     <Section>
       <div className={s.overlay}>

@@ -119,7 +119,7 @@ export default function BasketDelivery() {
                 name="house"
                 control={control}
                 label="Будинок"
-                type="number"
+                type="text"
                 required={"Обов'язкове поле"}
               />
               <FormInputText

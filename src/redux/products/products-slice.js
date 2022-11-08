@@ -5,10 +5,7 @@ import { getProducts, getProductsByCategory } from './products-operations';
 const initialState = {
   items: [],
   itemsByCategory: [],
-  deliveryPrice: 0,
-  totalQuantity: 0,
-  subTotal: 0,
-  totalAmount: 0,
+  selectedCategory: 'starters',
   loading: false,
   error: '',
 };
@@ -39,6 +36,7 @@ const getProductsSlice = createSlice({
     [getProductsByCategory.fulfilled]: (store, { payload }) => {
       store.loading = false;
       store.itemsByCategory = payload;
+      store.selectedCategory = payload[0].category;
     },
     [getProductsByCategory.rejected]: (store, { payload }) => {
       store.loading = false;

@@ -2,7 +2,6 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   items: [],
-  selectOptions: 'закуски',
   deliveryPrice: 0,
   totalQuantity: 0,
   subTotal: 0,
