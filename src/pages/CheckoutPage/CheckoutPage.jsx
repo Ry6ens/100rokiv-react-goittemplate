@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import { useSelector, useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 // import parse from 'html-react-parser';
 import { useEffect } from 'react';
 // import Iframe from 'react-iframe';
@@ -16,7 +16,7 @@ import { basketActions } from 'redux/basket/basket-slice';
 
 export default function CheckoutPage() {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const keys = useSelector(store => store.liqpay.keys);
   // const loadingPay = useSelector(store => store.liqpay.loading);
   // const [html, setHTML] = useState('');
