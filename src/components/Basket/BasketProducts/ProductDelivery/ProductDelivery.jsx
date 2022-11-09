@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
-import s from './BasketDelivery.module.scss';
+import s from './ProductDelivery.module.scss';
 import './styles.scss';
 
 import FormInputText from 'components/FormComponents/FormInputText';
@@ -11,17 +11,17 @@ import FormInputTel from 'components/FormComponents/FormInputTel';
 import FormInputEmail from 'components/FormComponents/FormInputEmail';
 import FormInputRadio from 'components/FormComponents/FormInputRadio';
 import ButtonSubmit from 'components/Button/Button';
-import BasketOrderSummary from '../BasketOrderSummary/BasketOrderSummary';
+import BasketOrderSummary from '../ProductOrderSummary/ProductOrderSummary';
 
-import { basketActions } from 'redux/basket/basket-slice';
+import { basketProductsActions } from 'redux/basketProducts/basketProducts-slice';
 import { getLiqPayOperations } from 'redux/liqpay/liqpay-operations';
 
-export default function BasketDelivery() {
+export default function ProductDelivery() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const orderItems = useSelector(store => store.basket.items);
-  const totalAmount = useSelector(store => store.basket.totalAmount);
+  const orderItems = useSelector(store => store.basketProducts.items);
+  const totalAmount = useSelector(store => store.basketProducts.totalAmount);
 
   const { control, watch, handleSubmit, reset, formState } = useForm({
     defaultValues: {
@@ -54,7 +54,7 @@ export default function BasketDelivery() {
   const watchDeliveryPayment = watch('deliveryPayment');
 
   useEffect(() => {
-    dispatch(basketActions.addDeliveryPrice(Number(watchDeliveryPayment)));
+    dispatch(basketProductsActions.addDeliveryPrice(Number(watchDeliveryPayment)));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [watchDeliveryPayment]);
 

@@ -8,3 +8,8 @@ export const axiosLiqPay = async formData => {
   const { data } = await instance.post(`/api/liqpay/pay`, formData);
   return data;
 };
+
+export const axiosLiqPayTickets = async formData => {
+  const { data } = await instance.post(`/api/liqpay/payTickets`, formData);
+  return data;
+};

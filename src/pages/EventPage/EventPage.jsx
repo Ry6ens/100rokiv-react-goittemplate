@@ -1,5 +1,5 @@
 import Section from 'components/Section/Section';
-import EventPrice from 'components/EventPrice/EventPrice';
+import EventTicket from 'components/EventTicket/EventTicket';
 import Text from 'components/Text/Text';
 import OpenGraphHelmet from 'components/OpenGraphHelmet/OpenGraphHelmet';
 
@@ -21,7 +21,7 @@ export default function EventPage() {
       </Section>
 
       <Section>
-        <EventPrice />
+        <EventTicket />
       </Section>
     </>
   );

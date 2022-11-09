@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 
-import s from './BasketProductsFood.module.scss';
+import s from './ProductsForm.module.scss';
 
 import TitleH2 from 'components/TitleH2/TitleH2';
 
@@ -8,25 +8,25 @@ import { ReactComponent as CloseBtn } from 'images/svg/closeBtn.svg';
 import { ReactComponent as Plus } from 'images/svg/plus.svg';
 import { ReactComponent as Minus } from 'images/svg/minus.svg';
 
-import { basketActions } from 'redux/basket/basket-slice';
+import { basketProductsActions } from 'redux/basketProducts/basketProducts-slice';
 
-export default function BasketProductsFood() {
+export default function ProductsForm() {
   const dispatch = useDispatch();
 
-  const products = useSelector(store => store.basket.items);
+  const products = useSelector(store => store.basketProducts.items);
   const productsFood = products.filter(el => el.category !== 'ticket');
 
   const deleteItem = ({ currentTarget: { id } }) => {
     const findProductById = productsFood.find(el => el.id === id);
-    dispatch(basketActions.deleteFromBasket(findProductById));
+    dispatch(basketProductsActions.deleteFromBasket(findProductById));
   };
 
   const handleIncrement = ({ currentTarget: { id } }) => {
-    dispatch(basketActions.incrementProduct(id));
+    dispatch(basketProductsActions.incrementProduct(id));
   };
 
   const handleDecrement = ({ currentTarget: { id } }) => {
-    dispatch(basketActions.decrementProduct(id));
+    dispatch(basketProductsActions.decrementProduct(id));
   };
 
   return (

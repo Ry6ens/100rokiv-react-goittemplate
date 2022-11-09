@@ -10,7 +10,7 @@ import Text from 'components/Text/Text';
 import ButtonBack from 'components/ButtonBack/ButtonBack';
 import Button from 'components/Button/Button';
 
-import { basketActions } from 'redux/basket/basket-slice';
+import { basketProductsActions } from 'redux/basketProducts/basketProducts-slice';
 import { getProductsByCategory } from 'redux/products/products-selectors';
 
 export default function ProductsDetails() {
@@ -25,7 +25,7 @@ export default function ProductsDetails() {
   const { title, price, weight, imgURL, descr, quantity } = product;
 
   function addToBasket() {
-    dispatch(basketActions.addToBasket({ id , title, imgURL , price, quantity }));
+    dispatch(basketProductsActions.addToBasket({ id , title, imgURL , price, quantity }));
   }
 
   return (

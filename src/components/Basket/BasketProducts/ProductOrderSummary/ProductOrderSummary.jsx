@@ -1,15 +1,15 @@
 import { useSelector } from 'react-redux';
 
-import s from './BasketOrderSummary.module.scss';
+import s from './ProductOrderSummary.module.scss';
 
 import TitleH2 from 'components/TitleH2/TitleH2';
 
 import {ReactComponent as Symbol} from 'images/svg/hryvniaSymbol.svg'
 
-export default function BasketOrderSummary({basketOrderSummaryClass = "overlayTable"}) {
-  const subTotal = useSelector(store => store.basket.subTotal)
-  const deliveryPrice = useSelector(store => store.basket.deliveryPrice)
-  const totalAmount = useSelector(store => store.basket.totalAmount)
+export default function ProductOrderSummary({basketOrderSummaryClass = "overlayTable"}) {
+  const subTotal = useSelector(store => store.basketProducts.subTotal)
+  const deliveryPrice = useSelector(store => store.basketProducts.deliveryPrice)
+  const totalAmount = useSelector(store => store.basketProducts.totalAmount)
 
   return (
     <div className={s[basketOrderSummaryClass]}>

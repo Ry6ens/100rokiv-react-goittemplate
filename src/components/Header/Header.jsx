@@ -4,13 +4,14 @@ import { useSelector } from 'react-redux';
 import Burger from './Burger/Burger';
 import s from './Header.module.scss';
 
-import BasketIcon from 'components/BasketForm/BasketIcon/BasketIcon'
+import BasketIcon from 'components/Basket/shared/BasketIcon/BasketIcon';
 import ButtonLink from 'components/ButtonLink/ButtonLink';
 
 export default function Header() {
   const isMobileTablet = useMediaQuery({ maxWidth: 1023.98 });
   const isDesktop = useMediaQuery({ minWidth: 1024 });
-  const products = useSelector(store => store.basket.items);
+  const products = useSelector(store => store.basketProducts.items);
+  const tickets = useSelector(store => store.basketTickets.items);
 
   return (
     <header className={s.header}>
@@ -29,7 +30,7 @@ export default function Header() {
 
       {isMobileTablet && <Burger />}
 
-      {products.length ? (
+      {products.length || tickets.length ? (
         <BasketIcon />
       ) : (
         <div className={s.overlay}>

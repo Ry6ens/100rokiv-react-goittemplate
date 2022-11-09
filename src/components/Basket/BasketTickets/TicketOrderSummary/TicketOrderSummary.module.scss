@@ -1,0 +1,46 @@
+@use 'styles/mixins';
+
+.overlayTable {
+  max-width: 400px;
+  margin: 0 auto;
+
+  @include mixins.mq(desktop) {
+    max-width: 500px;
+  }
+}
+
+.overlayBasketDelivery {
+  margin-top: 20px;
+  max-width: 400px;
+
+  @include mixins.mq(desktop) {
+    max-width: 500px;
+  }
+}
+
+.table {
+  width: 100%;
+  margin: 30px auto;
+
+  background-color: var(--color-bg-white);
+  border: 1px solid var(--color-bg-line);
+}
+
+.tr {
+  border-bottom: 1px solid var(--color-bg-line);
+}
+
+.tableText {
+  padding: 15px 20px;
+
+  text-align: right;
+}
+
+.tableText+td {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  justify-content: flex-end;
+
+  padding: 15px 20px 15px 0px;
+}

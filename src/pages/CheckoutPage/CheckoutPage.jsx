@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */
 import { useSelector, useDispatch } from 'react-redux';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 // import parse from 'html-react-parser';
 import { useEffect } from 'react';
 // import Iframe from 'react-iframe';
@@ -12,11 +12,13 @@ import { useEffect } from 'react';
 // import { getLiqResultOperations } from 'redux/liqpay/liqpay-operations';
 
 // const liqpay = document.querySelector('#liqpay_checkout');
-import { basketActions } from 'redux/basket/basket-slice';
+import { basketProductsActions } from 'redux/basketProducts/basketProducts-slice';
+import { basketTicketsActions } from 'redux/basketTickets/basketTickets-slice';
+import { basketLiqPayActions } from 'redux/liqpay/liqpay-slice';
 
 export default function CheckoutPage() {
   const dispatch = useDispatch();
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const keys = useSelector(store => store.liqpay.keys);
   // const loadingPay = useSelector(store => store.liqpay.loading);
   // const [html, setHTML] = useState('');
@@ -40,8 +42,10 @@ export default function CheckoutPage() {
       .on('liqpay.callback', function (data) {
         console.log(data);
         if (data.status === 'success') {
-          dispatch(basketActions.clearBasket());
-          // navigate('/success');
+          dispatch(basketProductsActions.clearBasket());
+          dispatch(basketTicketsActions.clearBasket())
+          dispatch(basketLiqPayActions.clearBasket())
+          navigate('/success');
         }
       })
       .on('liqpay.ready', function (data) {

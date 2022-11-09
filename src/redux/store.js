@@ -13,17 +13,19 @@ import getEmailSlice from "redux/email/email-slice";
 import getSheetSlice from "redux/google/sheet-slice";
 import getTelegramSlice from "redux/telegram/telegram-slice";
 import getProductsSlice from 'redux/products/products-slice'
-import getLiqpaySlice from 'redux/liqpay/liqpay-slice'
-import getBasketSlice from 'redux/basket/basket-slice'
+import getLiqPaySlice from 'redux/liqpay/liqpay-slice'
+import getBasketProductsSlice from 'redux/basketProducts/basketProducts-slice'
+import getBasketTicketsSlice from 'redux/basketTickets/basketTickets-slice'
 
 export const store = configureStore({
   reducer: {
-    basket: getBasketSlice,
+    basketProducts: getBasketProductsSlice,
+    basketTickets: getBasketTicketsSlice,
     products: getProductsSlice,
     email: getEmailSlice,
     google: getSheetSlice,
     telegram: getTelegramSlice,
-    liqpay: getLiqpaySlice,
+    liqpay: getLiqPaySlice,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

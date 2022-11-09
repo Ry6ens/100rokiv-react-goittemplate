@@ -10,15 +10,11 @@ import { getProductsByCategory } from 'redux/products/products-selectors';
 export default function ProductsList() {
   const data = useSelector(getProductsByCategory);
 
-  const scrollTop = () => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-  };
-
   return (
     <ul className={s.list}>
       {data.map(({ _id, title, price, imgURL }) => (
         <li key={_id}>
-          <Link to={`/delivery-food/${_id}`} onClick={scrollTop}>
+          <Link to={`/delivery-food/${_id}`} >
             <div
               className={s.img}
               style={{

@@ -1,15 +1,15 @@
 import s from "./Menu.module.scss";
 
-import MenuFoodJPG from "../../images/docs/menu-food.jpg";
-import MenuFoodPDF from "../../images/docs/menu-food.pdf";
-import MenuWineJPG from "../../images/docs/menu-wine.jpg";
-import MenuWinePDF from "../../images/docs/menu-wine.pdf";
-import MenuBarJPG from "../../images/docs/menu-bar.jpg";
-import MenuBarPDF from "../../images/docs/menu-bar.pdf";
+import MenuFoodJPG from "images/docs/menu-food.jpg";
+import MenuFoodPDF from "images/docs/menu-food.pdf";
+import MenuWineJPG from "images/docs/menu-wine.jpg";
+import MenuWinePDF from "images/docs/menu-wine.pdf";
+import MenuBarJPG from "images/docs/menu-bar.jpg";
+import MenuBarPDF from "images/docs/menu-bar.pdf";
 
-import Section from "../Section/Section";
-import Image from "../Image/Image";
-import TitleH2 from "../TitleH2/TitleH2";
+import Section from "components/Section/Section";
+import Image from "components/Image/Image";
+import TitleH2 from "components/TitleH2/TitleH2";
 
 export default function Menu() {
   return (
