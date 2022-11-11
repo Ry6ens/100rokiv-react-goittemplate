@@ -1,68 +1,54 @@
-import { useForm } from "react-hook-form";
-import { useDispatch, useSelector } from "react-redux";
-import moment from "moment";
-import { useEffect } from "react";
+import { useForm } from 'react-hook-form';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
-import { getEmailOperations } from "../../redux/email/email-operations";
-import { getSheetOperations } from "../../redux/google/sheet-operations";
-import { getTelegramOperations } from "../../redux/telegram/telegram-operations";
+import { getEmailOperations } from 'redux/email/email-operations';
+import { getSheetOperations } from 'redux/google/sheet-operations';
+import { getTelegramOperations } from 'redux/telegram/telegram-operations';
+import { getTelegramSuccess } from 'redux/telegram/telegram-selectors';
+import { telegramActions } from 'redux/telegram/telegram-slice';
 
-import { getEmailSuccess } from "../../redux/email/email-selectors";
-import { successFalse } from "../../redux/email/email-slice";
+import ButtonSubmit from 'components/Shared/Button/Button';
+import FormInputText from 'components/FormComponents/FormInputText';
+import FormInputTel from 'components/FormComponents/FormInputTel';
+import FormInputSelect from 'components/FormComponents/FormInputSelect';
 
-import ButtonSubmit from "components/Button/Button";
-import FormInputText from "components/FormComponents/FormInputText";
-import FormInputTel from "components/FormComponents/FormInputTel";
-import FormInputSelect from "components/FormComponents/FormInputSelect";
-
-import s from "./GiftVouchersForm.module.scss";
-import "./styles.scss";
+import s from './GiftVouchersForm.module.scss';
+import './styles.scss';
 
 export default function GiftVouchersForm() {
   const dispatch = useDispatch();
-  const emailSuccess = useSelector(getEmailSuccess);
+  const location = useLocation();
 
-  const {
-    control,
-    handleSubmit,
-    reset,
-    formState,
-  } = useForm({
+  const telegramSuccess = useSelector(getTelegramSuccess);
+
+  const { control, handleSubmit, reset } = useForm({
     defaultValues: {
-      name: "",
-      tel: "",
-      sum: "",
+      name: '',
+      tel: '',
+      sum: '',
     },
   });
 
   useEffect(() => {
-
-    dispatch(successFalse(false));
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  useEffect(() => {
-    if (formState.isSubmitSuccessful) {
-      reset({
-        name: '',
-        tel: '',
-        sum: '',
-      });
-    }
-  }, [formState, reset]);
+    dispatch(telegramActions.clearTelegram());
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location]);
 
   const onSubmit = (data, e) => {
     e.preventDefault();
-    const date = moment(new Date()).format("DD-MM-yyyy, HH:mm");
-    dispatch(getEmailOperations({ ...data, date }));
-    dispatch(getSheetOperations({ ...data, date }));
-    dispatch(getTelegramOperations({ ...data, date }));
+
+    dispatch(getEmailOperations(data));
+    dispatch(getSheetOperations(data));
+    dispatch(getTelegramOperations(data));
+
     reset();
   };
 
   return (
     <>
-      {emailSuccess === true ? (
+      {telegramSuccess === true ? (
         <div className={s.successBox}>
           <p>Дякуємо за замовлення</p>
           <p className={s.successBoxText}>
@@ -71,9 +57,24 @@ export default function GiftVouchersForm() {
         </div>
       ) : (
         <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
-          <FormInputSelect name="sum" control={control} label="Оберіть суму ..." required={"Обов'язкове поле"}/>
-          <FormInputText name="name" control={control} label="Ім‘я того, хто дарує" type="text" required={"Обов'язкове поле"}/>
-          <FormInputTel name="tel" control={control} required={"Обов'язкове поле"}/>
+          <FormInputSelect
+            name="sum"
+            control={control}
+            label="Оберіть суму ..."
+            required={"Обов'язкове поле"}
+          />
+          <FormInputText
+            name="name"
+            control={control}
+            label="Ім‘я того, хто дарує"
+            type="text"
+            required={"Обов'язкове поле"}
+          />
+          <FormInputTel
+            name="tel"
+            control={control}
+            required={"Обов'язкове поле"}
+          />
           <ButtonSubmit text="Подарувати" btnClass="btnMargin" />
         </form>
       )}

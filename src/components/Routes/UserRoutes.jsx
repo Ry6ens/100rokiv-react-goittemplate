@@ -6,7 +6,7 @@ import Loader from '../Loader/Loader';
 const HomePage = lazy(() => import('../../pages/HomePage'));
 const BookPage = lazy(() => import('../../pages/BookPage'));
 const MenuPage = lazy(() => import('../../pages/MenuPage'));
-const DeliveryPage = lazy(() => import('../../pages/DeliveryPage'));
+const DeliveryPage = lazy(() => import('../../pages/BasketPage/DeliveryPage'));
 const GiftVouchersPage = lazy(() => import('../../pages/GiftVouchersPage'));
 const WhatsOnPage = lazy(() => import('../../pages/WhatsOnPage'));
 const FoundersPage = lazy(() => import('../../pages/FoundersPage'));
@@ -18,8 +18,8 @@ const AbovePage = lazy(() => import('../../pages/AbovePage'));
 const RedRoomPage = lazy(() => import('../../pages/RedRoomPage'));
 const EventPage = lazy(() => import('../../pages/EventPage'));
 const BasketPage = lazy(() => import('../../pages/BasketPage'));
-const CheckoutPage = lazy(() => import('../../pages/CheckoutPage'));
-const DeliveryFoodPage = lazy(() => import('../../pages/DeliveryFoodPage'));
+const CheckoutPage = lazy(() => import('../../pages/BasketPage/CheckoutPage'));
+const ProductsPage = lazy(() => import('../../pages/ProductsPage'));
 const ProductDetailsPage = lazy(() => import('../../pages/ProductDetailsPage'));
 const SuccessPage = lazy(() => import('../../pages/SuccessPage'));
 
@@ -30,7 +30,7 @@ export default function UserRoutes() {
         <Route path="/" element={<Navigate to="home" />} />
         <Route path="home" element={<HomePage />} />
         <Route path="book" element={<BookPage />} />
-        <Route path="delivery-food" element={<DeliveryFoodPage />} />
+        <Route path="delivery-food" element={<ProductsPage />} />
         <Route path="delivery-food/:id" element={<ProductDetailsPage />} />
         <Route path="menu" element={<MenuPage />} />
         <Route path="gift-vouchers" element={<GiftVouchersPage />} />

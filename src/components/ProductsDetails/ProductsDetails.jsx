@@ -3,12 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 
 import s from './ProductsDetails.module.scss';
 
-import Section from 'components/Section/Section';
+import Section from 'components/Shared/Section/Section';
 import Image from 'components/Image/Image';
-import TitleH1 from 'components/TitleH1/TitleH1';
-import Text from 'components/Text/Text';
-import ButtonBack from 'components/ButtonBack/ButtonBack';
-import Button from 'components/Button/Button';
+import TitleH1 from 'components/Shared/TitleH1/TitleH1';
+import Text from 'components/Shared/Text/Text';
+import ButtonBack from 'components/Shared/ButtonBack/ButtonBack';
+import Button from 'components/Shared/Button/Button';
 
 import { basketProductsActions } from 'redux/basketProducts/basketProducts-slice';
 import { getProductsByCategory } from 'redux/products/products-selectors';

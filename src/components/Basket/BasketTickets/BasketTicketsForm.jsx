@@ -1,7 +1,7 @@
-import TitleH1 from "components/TitleH1/TitleH1";
+import TitleH1 from "components/Shared/TitleH1/TitleH1";
 import TicketForm from "./TicketForm/TicketForm"
 import TicketOrderSummary from "./TicketOrderSummary/TicketOrderSummary";
-import ButtonLink from "components/ButtonLink/ButtonLink";
+import ButtonLink from "components/Shared/ButtonLink/ButtonLink";
 
 export default function BasketTicketsForm() {
   return (

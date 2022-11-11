@@ -2,13 +2,13 @@ import { Link } from "react-router-dom";
 
 import s from "./Home.module.scss";
 
-import Ground from "../../images/ground.jpeg";
-import Above from "../../images/above.jpeg";
-import Redroom from "../../images/redroom.jpeg";
+import Ground from "images/ground.jpeg";
+import Above from "images/above.jpeg";
+import Redroom from "images/redroom.jpeg";
 
-import Section from "../Section/Section";
-import TitleH1 from "../TitleH1/TitleH1";
-import Text from "../Text/Text";
+import Section from "components/Shared/Section/Section";
+import TitleH1 from "components/Shared/TitleH1/TitleH1";
+import Text from "components/Shared/Text/Text";
 
 export default function Home() {
   return (

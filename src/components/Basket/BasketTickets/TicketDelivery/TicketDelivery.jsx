@@ -6,11 +6,11 @@ import { useNavigate } from 'react-router-dom';
 import s from './TicketDelivery.module.scss';
 import './styles.scss';
 
-import TitleH1 from 'components/TitleH1/TitleH1';
+import TitleH1 from 'components/Shared/TitleH1/TitleH1';
 import FormInputText from 'components/FormComponents/FormInputText';
 import FormInputTel from 'components/FormComponents/FormInputTel';
 import FormInputEmail from 'components/FormComponents/FormInputEmail';
-import ButtonSubmit from 'components/Button/Button';
+import ButtonSubmit from 'components/Shared/Button/Button';
 import TicketOrderSummary from '../TicketOrderSummary/TicketOrderSummary';
 
 import { getLiqPayTicketsOperations } from 'redux/liqpay/liqpay-operations';
@@ -47,7 +47,7 @@ export default function TicketDelivery() {
     const { name, tel, email, comments } = data;
 
     const descriptionOrders = orderItems.map((el, index) => {
-      return `\n${el.title} (${el.quantity}x${el.price}) = ${
+      return `\nквиток "${el.title}" (${el.quantity}x${el.price}) = ${
         el.quantity * el.price
       };`;
     });

@@ -3,8 +3,8 @@ import { useSelector } from 'react-redux';
 
 import s from './ProductsList.module.scss';
 
-import TitleH2 from 'components/TitleH2/TitleH2';
-import Text from 'components/Text/Text';
+import TitleH2 from 'components/Shared/TitleH2/TitleH2';
+import Text from 'components/Shared/Text/Text';
 import { getProductsByCategory } from 'redux/products/products-selectors';
 
 export default function ProductsList() {

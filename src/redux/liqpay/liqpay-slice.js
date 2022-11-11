@@ -16,7 +16,6 @@ const getLiqPaySlice = createSlice({
   initialState,
   reducers: {
     clearBasket: (state, { payload }) => {
-      console.log('clearBasket');
       state.keys = null;
       state.loading = false;
       state.error = '';

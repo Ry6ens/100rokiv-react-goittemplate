@@ -4,8 +4,8 @@ import { useSelector } from 'react-redux';
 import BasketNav from 'components/Basket/shared/BasketNav/BasketNav';
 import BasketProductsForm from 'components/Basket/BasketProducts/BasketProductsForm';
 import BasketTicketsForm from 'components/Basket/BasketTickets/BasketTicketsForm';
-import Section from 'components/Section/Section';
-import TitleH2 from 'components/TitleH2/TitleH2';
+import Section from 'components/Shared/Section/Section';
+import TitleH2 from 'components/Shared/TitleH2/TitleH2';
 
 export default function Basket() {
   const location = useLocation();

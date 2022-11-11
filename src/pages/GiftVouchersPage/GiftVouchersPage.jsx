@@ -1,17 +1,10 @@
-import { useSelector } from 'react-redux';
-
-import Section from 'components/Section/Section';
-import TitleH1 from 'components/TitleH1/TitleH1';
-import Text from 'components/Text/Text';
+import Section from 'components/Shared/Section/Section';
+import TitleH1 from 'components/Shared/TitleH1/TitleH1';
+import Text from 'components/Shared/Text/Text';
 import GiftVouchersForm from 'components/GiftVouchersForm/GiftVouchersForm';
-import Loader from 'components/Loader/Loader';
 import OpenGraphHelmet from 'components/OpenGraphHelmet/OpenGraphHelmet';
 
-import { getEmailLoading } from 'redux/email/email-selectors';
-
 function GiftVouchersPage() {
-  const emailLoading = useSelector(getEmailLoading);
-
   return (
     <main>
       <OpenGraphHelmet
@@ -27,7 +20,7 @@ function GiftVouchersPage() {
         <Text text="Радимо не друкувати електронний сертифікат – нам достатньо переглянути його на екрані смартфону." />
       </Section>
       <Section>
-        {emailLoading === true ? <Loader /> : <GiftVouchersForm />}
+        <GiftVouchersForm />
       </Section>
     </main>
   );

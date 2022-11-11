@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import s from './ProductsForm.module.scss';
 
-import TitleH2 from 'components/TitleH2/TitleH2';
+import TitleH2 from 'components/Shared/TitleH2/TitleH2';
 
 import { ReactComponent as CloseBtn } from 'images/svg/closeBtn.svg';
 import { ReactComponent as Plus } from 'images/svg/plus.svg';

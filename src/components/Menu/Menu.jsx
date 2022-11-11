@@ -7,9 +7,9 @@ import MenuWinePDF from "images/docs/menu-wine.pdf";
 import MenuBarJPG from "images/docs/menu-bar.jpg";
 import MenuBarPDF from "images/docs/menu-bar.pdf";
 
-import Section from "components/Section/Section";
+import Section from "components/Shared/Section/Section";
 import Image from "components/Image/Image";
-import TitleH2 from "components/TitleH2/TitleH2";
+import TitleH2 from "components/Shared/TitleH2/TitleH2";
 
 export default function Menu() {
   return (

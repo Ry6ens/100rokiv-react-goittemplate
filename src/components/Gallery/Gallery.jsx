@@ -5,8 +5,8 @@ import styled from 'styled-components';
 import s from  "./Gallery.module.scss"
 
 import Modal from 'components/Modal/Modal';
-import TitleH2 from 'components/TitleH2/TitleH2';
-import Section from 'components/Section/Section';
+import TitleH2 from 'components/Shared/TitleH2/TitleH2';
+import Section from 'components/Shared/Section/Section';
 import Image from 'components/Image/Image';
 
 import { getAllProducts } from 'redux/products/products-selectors';

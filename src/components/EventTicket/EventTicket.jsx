@@ -4,8 +4,8 @@ import { nanoid } from "@reduxjs/toolkit";
 
 import s from "./EventTicket.module.scss";
 
-import TitleH1 from "components/TitleH1/TitleH1";
-import Button from "components/Button/Button";
+import TitleH1 from "components/Shared/TitleH1/TitleH1";
+import Button from "components/Shared/Button/Button";
 
 import { basketTicketsActions } from "redux/basketTickets/basketTickets-slice";
 

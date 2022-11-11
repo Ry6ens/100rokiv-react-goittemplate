@@ -1,6 +1,6 @@
-import Section from 'components/Section/Section';
-import TitleH2 from 'components/TitleH2/TitleH2';
-import Text from 'components/Text/Text';
+import Section from 'components/Shared/Section/Section';
+import TitleH2 from 'components/Shared/TitleH2/TitleH2';
+import Text from 'components/Shared/Text/Text';
 
 export default function SuccessPage() {
   return (

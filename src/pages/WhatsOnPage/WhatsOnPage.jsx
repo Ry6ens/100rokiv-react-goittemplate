@@ -5,12 +5,12 @@ import { Outlet } from "react-router-dom";
 import ChornozemFBIMG from "images/events/chornozemFB.jpg";
 import chornozemSQIMG from "images/events/chornozemSQ.jpg";
 
-import Section from "components/Section/Section";
-import ButtonLink from "components/ButtonLink/ButtonLink";
+import Section from "components/Shared/Section/Section";
+import ButtonLink from "components/Shared/ButtonLink/ButtonLink";
 import Image from "components/Image/Image";
 import OpenGraphHelmet from 'components/OpenGraphHelmet/OpenGraphHelmet';
-import TitleH1 from "components/TitleH1/TitleH1";
-// import Text from "components/Text/Text";
+import TitleH1 from "components/Shared/TitleH1/TitleH1";
+// import Text from "components/Shared/Text/Text";
 
 export default function WhatsOnPage() {
   const location = useLocation();

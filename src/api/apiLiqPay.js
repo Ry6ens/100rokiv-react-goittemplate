@@ -5,7 +5,7 @@ export const instance = axios.create({
 });
 
 export const axiosLiqPay = async formData => {
-  const { data } = await instance.post(`/api/liqpay/pay`, formData);
+  const { data } = await instance.post(`/api/liqpay/payProducts`, formData);
   return data;
 };
 

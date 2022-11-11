@@ -1,7 +1,7 @@
 import Image from "components/Image/Image";
-import Text from "components/Text/Text";
-import TitleH2 from "components/TitleH2/TitleH2";
-import Section from "components/Section/Section";
+import Text from "components/Shared/Text/Text";
+import TitleH2 from "components/Shared/TitleH2/TitleH2";
+import Section from "components/Shared/Section/Section";
 import OpenGraphHelmet from 'components/OpenGraphHelmet/OpenGraphHelmet';
 
 import KlopotenkoIMG from "images/people/klopotenko.jpg";

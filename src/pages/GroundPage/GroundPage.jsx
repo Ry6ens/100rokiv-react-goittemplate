@@ -1,12 +1,12 @@
 import GroundIMG from "images/ground.jpeg";
 
-import TitleH1 from "components/TitleH1/TitleH1";
-import Text from "components/Text/Text";
-import Section from "components/Section/Section";
+import TitleH1 from "components/Shared/TitleH1/TitleH1";
+import Text from "components/Shared/Text/Text";
+import Section from "components/Shared/Section/Section";
 import Image from "components/Image/Image";
 import Gallery from "components/Gallery/Gallery";
 import Menu from "components/Menu/Menu";
-import ButtonLink from "components/ButtonLink/ButtonLink";
+import ButtonLink from "components/Shared/ButtonLink/ButtonLink";
 import OpenGraphHelmet from 'components/OpenGraphHelmet/OpenGraphHelmet';
 
 

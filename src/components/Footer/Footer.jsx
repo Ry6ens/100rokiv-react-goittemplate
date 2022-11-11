@@ -2,9 +2,11 @@ import { useMediaQuery } from 'react-responsive';
 import { NavLink } from 'react-router-dom';
 
 import s from './Footer.module.scss';
-import Navigation from '../Navigation/Navigation';
-import { ReactComponent as Facebook } from '../../images/svg/facebook.svg';
-import { ReactComponent as Instagram } from '../../images/svg/instagram.svg';
+
+import Navigation from 'components/Navigation/Navigation';
+
+import { ReactComponent as Facebook } from 'images/svg/facebook.svg';
+import { ReactComponent as Instagram } from 'images/svg/instagram.svg';
 
 export default function Footer() {
   const isDesktop = useMediaQuery({ minWidth: 1024 });

@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 
 import s from './ProductOrderSummary.module.scss';
 
-import TitleH2 from 'components/TitleH2/TitleH2';
+import TitleH2 from 'components/Shared/TitleH2/TitleH2';
 
 import {ReactComponent as Symbol} from 'images/svg/hryvniaSymbol.svg'
 

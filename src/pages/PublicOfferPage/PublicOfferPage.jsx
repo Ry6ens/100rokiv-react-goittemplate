@@ -1,7 +1,7 @@
-import Section from "components/Section/Section";
-import TitleH1 from "components/TitleH1/TitleH1";
-import TitleH2 from "components/TitleH2/TitleH2";
-import Text from "components/Text/Text";
+import Section from "components/Shared/Section/Section";
+import TitleH1 from "components/Shared/TitleH1/TitleH1";
+import TitleH2 from "components/Shared/TitleH2/TitleH2";
+import Text from "components/Shared/Text/Text";
 import OpenGraphHelmet from 'components/OpenGraphHelmet/OpenGraphHelmet';
 
 

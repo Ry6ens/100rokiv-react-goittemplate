@@ -10,7 +10,7 @@ import FormInputText from 'components/FormComponents/FormInputText';
 import FormInputTel from 'components/FormComponents/FormInputTel';
 import FormInputEmail from 'components/FormComponents/FormInputEmail';
 import FormInputRadio from 'components/FormComponents/FormInputRadio';
-import ButtonSubmit from 'components/Button/Button';
+import ButtonSubmit from 'components/Shared/Button/Button';
 import BasketOrderSummary from '../ProductOrderSummary/ProductOrderSummary';
 
 import { basketProductsActions } from 'redux/basketProducts/basketProducts-slice';

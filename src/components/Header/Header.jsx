@@ -5,7 +5,7 @@ import Burger from './Burger/Burger';
 import s from './Header.module.scss';
 
 import BasketIcon from 'components/Basket/shared/BasketIcon/BasketIcon';
-import ButtonLink from 'components/ButtonLink/ButtonLink';
+import ButtonLink from 'components/Shared/ButtonLink/ButtonLink';
 
 export default function Header() {
   const isMobileTablet = useMediaQuery({ maxWidth: 1023.98 });

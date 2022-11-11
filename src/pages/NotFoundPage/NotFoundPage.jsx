@@ -1,10 +1,10 @@
 import $ from 'jquery';
 
-import Section from 'components/Section/Section';
+import Section from 'components/Shared/Section/Section';
 import Ghost from 'components/Ghost/Ghost';
-import TitleH2 from 'components/TitleH2/TitleH2';
-import Text from 'components/Text/Text';
-import ButtonLink from 'components/ButtonLink/ButtonLink';
+import TitleH2 from 'components/Shared/TitleH2/TitleH2';
+import Text from 'components/Shared/Text/Text';
+import ButtonLink from 'components/Shared/ButtonLink/ButtonLink';
 import OpenGraphHelmet from 'components/OpenGraphHelmet/OpenGraphHelmet';
 
 export default function NotFoundPage() {

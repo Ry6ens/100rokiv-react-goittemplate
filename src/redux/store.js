@@ -1,5 +1,5 @@
-import { configureStore } from "@reduxjs/toolkit";
 import {
+  persistReducer,
   persistStore,
   FLUSH,
   REHYDRATE,
@@ -7,27 +7,22 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
-} from "redux-persist";
+} from 'redux-persist';
+import { configureStore } from '@reduxjs/toolkit';
+import storage from 'redux-persist/lib/storage';
 
-import getEmailSlice from "redux/email/email-slice";
-import getSheetSlice from "redux/google/sheet-slice";
-import getTelegramSlice from "redux/telegram/telegram-slice";
-import getProductsSlice from 'redux/products/products-slice'
-import getLiqPaySlice from 'redux/liqpay/liqpay-slice'
-import getBasketProductsSlice from 'redux/basketProducts/basketProducts-slice'
-import getBasketTicketsSlice from 'redux/basketTickets/basketTickets-slice'
+import rootReducer from './rootReducer';
+
+const persistConfig = {
+  key: 'root',
+  storage,
+};
+
+const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = configureStore({
-  reducer: {
-    basketProducts: getBasketProductsSlice,
-    basketTickets: getBasketTicketsSlice,
-    products: getProductsSlice,
-    email: getEmailSlice,
-    google: getSheetSlice,
-    telegram: getTelegramSlice,
-    liqpay: getLiqPaySlice,
-  },
-  middleware: (getDefaultMiddleware) =>
+  reducer: persistedReducer,
+  middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
@@ -35,4 +30,4 @@ export const store = configureStore({
     }),
 });
 
-export const persistor = persistStore(store);
+export const persistedStore = persistStore(store);

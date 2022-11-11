@@ -1,8 +1,8 @@
 import ProductsForm from './ProductsForm/ProductsForm';
 import ProductOrderSummary from './ProductOrderSummary/ProductOrderSummary';
-import ButtonLink from 'components/ButtonLink/ButtonLink';
+import ButtonLink from 'components/Shared/ButtonLink/ButtonLink';
 
-import TitleH1 from 'components/TitleH1/TitleH1';
+import TitleH1 from 'components/Shared/TitleH1/TitleH1';
 
 export default function BasketProductsForm() {
   return (

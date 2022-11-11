@@ -1,9 +1,20 @@
-import Section from 'components/Section/Section';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+
+import Section from 'components/Shared/Section/Section';
 import EventTicket from 'components/EventTicket/EventTicket';
-import Text from 'components/Text/Text';
+import Text from 'components/Shared/Text/Text';
 import OpenGraphHelmet from 'components/OpenGraphHelmet/OpenGraphHelmet';
 
+import { basketProductsActions } from 'redux/basketProducts/basketProducts-slice';
+
 export default function EventPage() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(basketProductsActions.clearBasket());
+  }, [dispatch]);
+
   return (
     <>
       <OpenGraphHelmet

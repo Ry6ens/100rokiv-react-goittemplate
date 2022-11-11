@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import './hamburgers.scss';
 import './Burger.scss';
 
-import Navigation from '../../Navigation/Navigation';
+import Navigation from 'components/Navigation/Navigation';
 
 export default function Burger() {
   const handleClick = ({ target, currentTarget }) => {
