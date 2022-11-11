@@ -16,6 +16,7 @@ import rootReducer from './rootReducer';
 const persistConfig = {
   key: 'root',
   storage,
+  blacklist: ['liqpay']
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

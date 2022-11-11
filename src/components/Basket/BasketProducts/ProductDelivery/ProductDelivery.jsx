@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import s from './ProductDelivery.module.scss';
 import './styles.scss';
 
+import TitleH1 from 'components/Shared/TitleH1/TitleH1';
+import Text from 'components/Shared/Text/Text';
 import FormInputText from 'components/FormComponents/FormInputText';
 import FormInputTel from 'components/FormComponents/FormInputTel';
 import FormInputEmail from 'components/FormComponents/FormInputEmail';
@@ -51,16 +53,29 @@ export default function ProductDelivery() {
     }
   }, [formState, reset]);
 
-  const watchDeliveryPayment = watch('deliveryPayment');
+  const watchDeliveryPayment = watch('deliveryPayment')
+    .replace('Самовивіз з ресторану м. Київ ', '')
+    .replace('Доставка по м. Київ ', '');
 
   useEffect(() => {
-    dispatch(basketProductsActions.addDeliveryPrice(Number(watchDeliveryPayment)));
+    dispatch(
+      basketProductsActions.addDeliveryPrice(Number(watchDeliveryPayment))
+    );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [watchDeliveryPayment]);
 
   const onSubmit = (data, e) => {
     e.preventDefault();
-    const { name, tel, email, deliveryPayment, street, house, entrance, comments } = data;
+    const {
+      name,
+      tel,
+      email,
+      deliveryPayment,
+      street,
+      house,
+      entrance,
+      comments,
+    } = data;
 
     const descriptionOrders = orderItems.map((el, index) => {
       return `\n${index + 1}. ${el.title} (${el.quantity}x${el.price}) = ${
@@ -68,12 +83,21 @@ export default function ProductDelivery() {
       };`;
     });
 
+    const deliveryTypeStr = `\n${deliveryPayment
+      .replace('м. Київ 0', '')
+      .replace(' 125', '')}`;
+
+    const deliveryPaymentStr = deliveryPayment
+      .replace('Самовивіз з ресторану м. Київ ', '')
+      .replace('Доставка по м. Київ ', '');
+
     dispatch(
       getLiqPayOperations({
         name: name,
-        tel: tel.replace(/[+]/g,"").replace(/ /g,""),
+        tel: tel.replace(/[+]/g, '').replace(/ /g, ''),
         email: email,
-        deliveryPayment: deliveryPayment,
+        deliveryType: deliveryTypeStr,
+        deliveryPayment: deliveryPaymentStr,
         street: street,
         house: house,
         entrance: entrance,
@@ -90,6 +114,8 @@ export default function ProductDelivery() {
 
   return (
     <>
+      <TitleH1 text="Спосіб доставки" />
+
       <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
         <FormInputText
           name="name"
@@ -105,7 +131,19 @@ export default function ProductDelivery() {
           label="Електронна пошта"
         />
 
+        <div>
+          <Text
+            text="▶ Приймаємо замовлення щодня — з 12:00 до 20:00 години"
+            textClass="textProductDelivery"
+          />
+          <Text
+            text="▶ При замовленні від 700 грн безкоштовно"
+            textClass="textProductDelivery"
+          />
+        </div>
+
         <FormInputRadio name="deliveryPayment" control={control} />
+
         {watchDeliveryPayment === '125' && (
           <>
             <FormInputText

@@ -10,11 +10,11 @@ import { nanoid } from '@reduxjs/toolkit';
 const options = [
   {
     label: 'Самовивіз з ресторану м. Київ',
-    value: "0",
+    value: 'Самовивіз з ресторану м. Київ 0',
   },
   {
-    label: 'Доставка по м. Київ 125грн',
-    value: "125",
+    label: 'Доставка по м. Київ 125 грн',
+    value: 'Доставка по м. Київ 125',
   },
 ];
 
@@ -94,7 +94,7 @@ const StyledFormControlLabel = styled(props => (
   },
 }));
 
-export default function FormInputRadio({ name, control, label }) {
+export default function FormInputRadio({ name, control, label}) {
   const generateRadioOptions = () => {
     return options.map((props, { label, value }) => (
       <StyledFormControlLabel
@@ -122,7 +122,7 @@ export default function FormInputRadio({ name, control, label }) {
           fieldState: { error },
           formState,
         }) => (
-          <RadioGroup value={value} onChange={onChange}>
+          <RadioGroup onChange={onChange}>
             {generateRadioOptions()}
           </RadioGroup>
         )}
