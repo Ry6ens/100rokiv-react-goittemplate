@@ -7,12 +7,14 @@ import { getEmailOperations } from 'redux/email/email-operations';
 import { getSheetOperations } from 'redux/google/sheet-operations';
 import { getTelegramOperations } from 'redux/telegram/telegram-operations';
 import { getTelegramSuccess } from 'redux/telegram/telegram-selectors';
+import { getTelegramLoading } from 'redux/telegram/telegram-selectors';
 import { telegramActions } from 'redux/telegram/telegram-slice';
 
 import ButtonSubmit from 'components/Shared/Button/Button';
 import FormInputText from 'components/FormComponents/FormInputText';
 import FormInputTel from 'components/FormComponents/FormInputTel';
 import FormInputSelect from 'components/FormComponents/FormInputSelect';
+import Loader from 'components/Loader/Loader';
 
 import s from './GiftVouchersForm.module.scss';
 import './styles.scss';
@@ -22,6 +24,7 @@ export default function GiftVouchersForm() {
   const location = useLocation();
 
   const telegramSuccess = useSelector(getTelegramSuccess);
+  const telegramLoading = useSelector(getTelegramLoading);
 
   const { control, handleSubmit, reset } = useForm({
     defaultValues: {
@@ -33,7 +36,7 @@ export default function GiftVouchersForm() {
 
   useEffect(() => {
     dispatch(telegramActions.clearTelegram());
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location]);
 
   const onSubmit = (data, e) => {
@@ -48,14 +51,7 @@ export default function GiftVouchersForm() {
 
   return (
     <>
-      {telegramSuccess === true ? (
-        <div className={s.successBox}>
-          <p>Дякуємо за замовлення</p>
-          <p className={s.successBoxText}>
-            Менеджер ресторану зв'яжеться з вами найближчим часом
-          </p>
-        </div>
-      ) : (
+      {!telegramSuccess && !telegramLoading && (
         <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
           <FormInputSelect
             name="sum"
@@ -77,6 +73,17 @@ export default function GiftVouchersForm() {
           />
           <ButtonSubmit text="Подарувати" btnClass="btnMargin" />
         </form>
+      )}
+
+      {telegramLoading && <Loader />}
+
+      {telegramSuccess && (
+        <div className={s.successBox}>
+          <p>Дякуємо за замовлення</p>
+          <p className={s.successBoxText}>
+            Менеджер ресторану зв'яжеться з вами найближчим часом
+          </p>
+        </div>
       )}
     </>
   );

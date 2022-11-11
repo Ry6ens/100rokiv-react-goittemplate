@@ -90,7 +90,7 @@ export default function ProductDelivery() {
     const deliveryPaymentStr = deliveryPayment
       .replace('Самовивіз з ресторану м. Київ ', '')
       .replace('Доставка по м. Київ ', '');
-
+console.log(descriptionOrders)
     dispatch(
       getLiqPayOperations({
         name: name,
