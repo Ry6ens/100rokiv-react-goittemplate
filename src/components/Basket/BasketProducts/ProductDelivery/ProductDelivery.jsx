@@ -83,7 +83,7 @@ export default function ProductDelivery() {
       };`;
     });
 
-    const deliveryTypeStr = `\n${deliveryPayment
+    const deliveryTypeStr = `${deliveryPayment
       .replace('м. Київ 0', '')
       .replace(' 125', '')}`;
 
