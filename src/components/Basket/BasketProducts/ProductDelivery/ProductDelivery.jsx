@@ -86,11 +86,10 @@ export default function ProductDelivery() {
     const deliveryTypeStr = `${deliveryPayment
       .replace('м. Київ 0', '')
       .replace(' 125', '')}`;
-
     const deliveryPaymentStr = deliveryPayment
       .replace('Самовивіз з ресторану м. Київ ', '')
       .replace('Доставка по м. Київ ', '');
-console.log(descriptionOrders)
+
     dispatch(
       getLiqPayOperations({
         name: name,
