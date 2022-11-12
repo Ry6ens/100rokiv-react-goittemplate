@@ -28,7 +28,6 @@ const getProductsSlice = createSlice({
     },
 
     //* getProductsByCategory
-
     [getProductsByCategory.pending]: (store, payload) => {
       store.loading = true;
       store.error = null;

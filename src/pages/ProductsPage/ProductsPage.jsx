@@ -13,6 +13,7 @@ import OpenGraphHelmet from 'components/OpenGraphHelmet/OpenGraphHelmet';
 import { getProductsByCategory } from 'redux/products/products-operations';
 import { getSelectedCategory } from 'redux/products/products-selectors';
 import { basketTicketsActions } from 'redux/basketTickets/basketTickets-slice';
+import { basketLiqPayActions } from 'redux/liqpay/liqpay-slice';
 
 export default function ProductsPage() {
   const dispatch = useDispatch();
@@ -24,6 +25,7 @@ export default function ProductsPage() {
   useEffect(() => {
     dispatch(getProductsByCategory(selectedCategory));
     dispatch(basketTicketsActions.clearBasket());
+    dispatch(basketLiqPayActions.clearBasket())
 
   }, [dispatch, selectedCategory]);
 

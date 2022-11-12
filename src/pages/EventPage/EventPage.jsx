@@ -7,12 +7,15 @@ import Text from 'components/Shared/Text/Text';
 import OpenGraphHelmet from 'components/OpenGraphHelmet/OpenGraphHelmet';
 
 import { basketProductsActions } from 'redux/basketProducts/basketProducts-slice';
+import { basketLiqPayActions } from 'redux/liqpay/liqpay-slice';
 
 export default function EventPage() {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(basketProductsActions.clearBasket());
+    dispatch(basketLiqPayActions.clearBasket())
+
   }, [dispatch]);
 
   return (
