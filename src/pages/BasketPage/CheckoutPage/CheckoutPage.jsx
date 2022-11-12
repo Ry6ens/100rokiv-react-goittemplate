@@ -6,7 +6,7 @@ import { basketProductsActions } from 'redux/basketProducts/basketProducts-slice
 import { basketTicketsActions } from 'redux/basketTickets/basketTickets-slice';
 import { basketLiqPayActions } from 'redux/liqpay/liqpay-slice';
 
-import Loader from 'components/Loader/Loader';
+// import Loader from 'components/Loader/Loader';
 
 export default function CheckoutPage() {
   const dispatch = useDispatch();
@@ -40,8 +40,8 @@ export default function CheckoutPage() {
         }
       })
       .on('liqpay.ready', function (data) {
-        console.log(data);
-        liqpayReady(data);
+        // console.log(data);
+        // liqpayReady(data);
       })
       .on('liqpay.close', function (data) {
         // close
