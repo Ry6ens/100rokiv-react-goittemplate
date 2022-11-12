@@ -20,7 +20,7 @@ export default function CheckoutPage() {
   }, [keys]);
 
   let liqpayReady = data => {
-    return data ? true : false;
+    return Boolean(data) ? true : false;
   };
 
   window.LiqPayCheckoutCallback = function () {
@@ -40,16 +40,17 @@ export default function CheckoutPage() {
         }
       })
       .on('liqpay.ready', function (data) {
+        console.log(data);
         liqpayReady(data);
       })
       .on('liqpay.close', function (data) {
         // close
       });
   };
-
+console.log(liqpayReady())
   return (
     <>
-      {liqpayReady ? <></> : <Loader />}
+      {/* {liqpayReady() ? <></> : <Loader />} */}
       <div id="liqpay_checkout"></div>
     </>
   );
