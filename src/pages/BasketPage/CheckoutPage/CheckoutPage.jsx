@@ -6,12 +6,13 @@ import { basketProductsActions } from 'redux/basketProducts/basketProducts-slice
 import { basketTicketsActions } from 'redux/basketTickets/basketTickets-slice';
 import { basketLiqPayActions } from 'redux/liqpay/liqpay-slice';
 
-// import Loader from 'components/Loader/Loader';
+import Loader from 'components/Loader/Loader';
 
 export default function CheckoutPage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const keys = useSelector(store => store.liqpay.keys);
+  const loading = useSelector(store => store.liqpay.loading)
 
   useEffect(() => {
     if (keys !== null) {
@@ -50,7 +51,7 @@ export default function CheckoutPage() {
 console.log(liqpayReady())
   return (
     <>
-      {/* {liqpayReady() ? <></> : <Loader />} */}
+      {loading ? <Loader /> : <></>}
       <div id="liqpay_checkout"></div>
     </>
   );

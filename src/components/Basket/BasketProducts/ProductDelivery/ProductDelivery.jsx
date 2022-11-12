@@ -17,6 +17,7 @@ import BasketOrderSummary from '../ProductOrderSummary/ProductOrderSummary';
 
 import { basketProductsActions } from 'redux/basketProducts/basketProducts-slice';
 import { getLiqPayOperations } from 'redux/liqpay/liqpay-operations';
+import { basketLiqPayActions } from 'redux/liqpay/liqpay-slice';
 
 export default function ProductDelivery() {
   const dispatch = useDispatch();
@@ -90,6 +91,7 @@ export default function ProductDelivery() {
       .replace('Самовивіз з ресторану м. Київ ', '')
       .replace('Доставка по м. Київ ', '');
 
+    dispatch(basketLiqPayActions.clearBasket());
     dispatch(
       getLiqPayOperations({
         name: name,

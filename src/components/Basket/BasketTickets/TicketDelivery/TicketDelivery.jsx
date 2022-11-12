@@ -13,6 +13,7 @@ import FormInputEmail from 'components/FormComponents/FormInputEmail';
 import ButtonSubmit from 'components/Shared/Button/Button';
 import TicketOrderSummary from '../TicketOrderSummary/TicketOrderSummary';
 
+import { basketLiqPayActions } from 'redux/liqpay/liqpay-slice';
 import { getLiqPayTicketsOperations } from 'redux/liqpay/liqpay-operations';
 
 export default function TicketDelivery() {
@@ -52,6 +53,7 @@ export default function TicketDelivery() {
       };`;
     });
 
+    dispatch(basketLiqPayActions.clearBasket());
     dispatch(
       getLiqPayTicketsOperations({
         name: name,
