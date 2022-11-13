@@ -1,6 +1,5 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
-import getEmailSlice from 'redux/email/email-slice';
 import getSheetSlice from 'redux/google/sheet-slice';
 import getTelegramSlice from 'redux/telegram/telegram-slice';
 import getProductsSlice from 'redux/products/products-slice';
@@ -12,7 +11,6 @@ const rootReducer = combineReducers({
   basketProducts: getBasketProductsSlice,
   basketTickets: getBasketTicketsSlice,
   products: getProductsSlice,
-  email: getEmailSlice,
   google: getSheetSlice,
   telegram: getTelegramSlice,
   liqpay: getLiqPaySlice,

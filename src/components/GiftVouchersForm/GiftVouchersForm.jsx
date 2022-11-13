@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { getEmailOperations } from 'redux/email/email-operations';
 import { getSheetOperations } from 'redux/google/sheet-operations';
 import { getTelegramOperations } from 'redux/telegram/telegram-operations';
 import { getTelegramSuccess } from 'redux/telegram/telegram-selectors';
@@ -42,7 +41,6 @@ export default function GiftVouchersForm() {
   const onSubmit = (data, e) => {
     e.preventDefault();
 
-    dispatch(getEmailOperations(data));
     dispatch(getSheetOperations(data));
     dispatch(getTelegramOperations(data));
 
